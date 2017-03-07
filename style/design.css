@@ -1,0 +1,63 @@
+
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+	
+}
+
+
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+}
+
+#menu ul li {
+	float: left;
+}
+
+
+li {
+    /*float: left;*/
+    list-style-position: outside;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px; /* marges intérieures*/
+    text-decoration: none;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+li a:hover { /*hover : passer la souris */
+    background-color: #111;
+}
+
+.center > section {
+	min-height: 300px;
+	background-image: url('img/acup.png');
+	background-size: cover; /*étendre l'image au maximum*/
+	background-position: center;
+	background-repeat: no-repeat; 
+}
+
+img {
+    max-width: 100%;
+    height: 100px;
+}
+
+#formulaire ul li{
+	list-style-type: none;
+	margin-left: 30%;
+	max-width: 50%;
+	padding: 2px;
+
+}
