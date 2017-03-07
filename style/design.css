@@ -43,7 +43,7 @@ li a:hover { /*hover : passer la souris */
 
 .center > section {
 	min-height: 300px;
-	background-image: url('img/acup.png');
+	background-image: url('../img/acup.png');
 	background-size: cover; /*étendre l'image au maximum*/
 	background-position: center;
 	background-repeat: no-repeat; 
