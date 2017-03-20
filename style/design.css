@@ -61,3 +61,20 @@ img {
 	padding: 2px;
 
 }
+
+table#tab_patho {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#tab_patho th {
+    background-color: #333;
+    color : white;
+    border-bottom: solid black 1px;
+}
+
+table#tab_patho td {
+    border-bottom: solid black 1px;
+}
+
+
