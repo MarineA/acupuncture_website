@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-03-19 16:29:17
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/presentation.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58cea3cd26ec78_90368606',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a4207c99c925610ca301919fce8f341d2ab2cee3' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/presentation.html',
+      1 => 1489857119,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:menu.tpl' => 1,
+  ),
+),false)) {
+function content_58cea3cd26ec78_90368606 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 	<!DOCTYPE html>
 
 	    <html lang="fr">
@@ -7,25 +32,17 @@
 			    <title>Remède par l'acupuncture</title>
 			    <meta name="keywords" content="HTMLW3C">
 			    <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
-			    <script type='text/javascript' src='scripts/script.js'></script>
+			    <?php echo '<script'; ?>
+ type='text/javascript' src='scripts/script.js'><?php echo '</script'; ?>
+>
 			</head>
 
 			<body>
 
-			<div id="menu">
-				<section id="section">
-					<ul>
-		 				<li><a href="">Accueil</a></li>
-		 				<li><a href="">Présentation</a></li>
-		  				<li><a href="">A propos</a></li>
-		 				<li><a href="">Recherche</a></li>
-					</ul> 
-				</section>
-			</div>
+			
+            <?php $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
-			<div class="center">
-				<section></section>
-			</div>
 
 			<div class="center">
 			<p>
@@ -76,7 +93,8 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 					</li>
 					<li>
 						<label for="phone">Numéro de téléphone&nbsp;:</label>
-						<input type="text" id="phone" name="phone" pattern="[0-9]{10}" required>
+						<input type="text" id="phone" name="phone" pattern="[0-9]<?php echo 10;?>
+" required>
 					</li>
 
 					<li>
@@ -85,7 +103,8 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 					</li>
 					<li>
 						<label for="password">Mot de passe&nbsp;:</label>
-						<input type="password" id="password" name="password" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required>
+						<input type="password" id="password" name="password" pattern="[a-z]+[A-Z]+[0-9]+]<?php echo 6;?>
+" required>
 					</li>
 					<li>
 						<label for="password_addr_repeat">Confirmez votre mot de passe&nbsp;:</label>
@@ -123,4 +142,5 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 
 
 
-		  </html>
+		  </html><?php }
+}
