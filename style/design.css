@@ -53,13 +53,39 @@ img {
     max-width: 100%;
     height: 100px;
 }
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color:limegreen;
+}
+
+.connexion {
+    display:inline-block;
+    width: 42%; 
+    height: auto;  
+    vertical-align:top;
+}
+
+.inscription {
+    display:inline-block;
+    width: 54%; 
+    height: auto;
+}
 
 #formulaire ul li{
 	list-style-type: none;
-	margin-left: 30%;
-	max-width: 50%;
+	margin-left: 10%;
+	max-width: 90%%;
 	padding: 2px;
 
+}
+
+label{
+	display: block;
+	width: 55%;
+	float: left;
 }
 
 table#tab_patho {
@@ -78,3 +104,13 @@ table#tab_patho td {
 }
 
 
+#footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+    color : white;
+    text-align: right;
+}

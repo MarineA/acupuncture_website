@@ -1,5 +1,7 @@
 
 <div class="center">
+    
+    <h1>Remède par l'acupuncture</h1>
 <p>
 ification Commission for Acupuncture and Oriental Medicine, and licensed by the Pennsylvania Medical Board. Brandy first became interested in acupuncture after seeing the quick, positive response in her performance horses that were treated with acupuncture.
 
@@ -17,7 +19,32 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 </p>
 </div>
 
-<h1>Inscription </h1>
+<div class="connexion">
+<h2> Connexion </h2>
+    
+   <form oninput="getTotal(this)" method="post" action="lib/main.php?variable=truc" id="formulaire">
+
+    <ul>
+        <li>
+            <label for="email_addr">Adresse e-mail&nbsp;:</label>
+            <input type="email" id="email_addr" name="email_addr" required>
+        </li>
+        <li>
+            <label for="password">Mot de passe&nbsp;:</label>
+            <input type="password" id="password" name="password" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required>
+        </li>
+        <li>
+            <input type="submit" value="Connexion" /> 
+        </li>
+    </ul>
+</form>
+    
+    
+</div>
+    
+<div class="inscription">
+<h2>Inscription </h2>
+
 <form oninput="getTotal(this)" method="post" action="lib/main.php?variable=truc" id="formulaire">
 
     <ul>
@@ -65,6 +92,8 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
         </li>
     </ul>
 </form>
+</div>
+
 
 </div>
 

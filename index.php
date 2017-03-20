@@ -1,6 +1,5 @@
 <?php
 require("lib/smarty/Smarty.class.php"); // On inclut la classe Smarty
-require('lib/smarty/SmartyPaginate.class.php'); // Pour la pagination
 require("ConnexionDb.php");
 
 $smarty = new Smarty();
@@ -16,8 +15,8 @@ $page_request = $_REQUEST[$page_var];
 
 //Tableau faisant le lien entre le nom de la page (affiché dans l'url) et le template correspondant
 $menu = array ( 
-            'presentation' => 'templates/presentation.tpl', 
-            'pathologies' => 'templates/pathos.tpl' 
+            'Presentation' => 'templates/presentation.tpl', 
+            'Pathologies' => 'templates/pathos.tpl' 
             ); 
 
 // On vérifie que la page demandée existe
