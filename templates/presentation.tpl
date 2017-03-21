@@ -22,7 +22,7 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 <div class="connexion">
 <h2> Connexion </h2>
     
-   <form oninput="getTotal(this)" method="post" action="lib/main.php?variable=truc" id="formulaire">
+   <form method="post" action="lib/main.php?variable=truc" id="formulaire">
 
     <ul>
         <li>
@@ -45,13 +45,21 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 <div class="inscription">
 <h2>Inscription </h2>
 
-<form oninput="getTotal(this)" method="post" action="lib/main.php?variable=truc" id="formulaire">
+<form method="post" action="lib/main.php?variable=truc" id="formulaire">
 
     <ul>
         <li>
             <label for="name">Nom&nbsp;:</label>
             <input type="text" id="name" name="name" placeholder="Dupont" required>
         </li>
+        <li>
+            <label for="phone">Numéro de téléphone&nbsp;:</label>
+            <input type="text" id="phone" name="phone" placeholder="0123456789" pattern="0[0-9]{9}" required
+                   oninput="checkPhone(this)">
+
+        </li>
+
+
         <li>
             <label for="firstname">Prénom&nbsp;:</label>
             <input type="text" id="firstname" name="firstname" placeholder="Camille" required>
@@ -61,19 +69,19 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
             <input type="date" id="birthdate" name="birthdate" required>
         </li>
         <li>
-            <label for="email_addr">Adresse e-mail&nbsp;:</label>
-            <input type="email" id="email_addr" name="email_addr" required>
+            <label for="emailAddr">Adresse e-mail&nbsp;:</label>
+            <input type="email" id="emailAddr" name="emailAddr" placeholder="toto@a.fr" required>
         </li>
         <li>
-            <label for="email_addr_repeat">Confirmez l'adresse e-mail&nbsp;:</label>
-            <input type="email" id="email_addr_repeat" name="email_addr_repeat" required 
-            oninput="check(this)">
+            <label for="emailAddrRepeat">Confirmez l'adresse e-mail&nbsp;:</label>
+            <input type="email" id="emailAddrRepeat" name="emailAddrRepeat" placeholder="toto@a.fr" required
+            oninput="checkMail(this)">
         </li>
-        <li>
+       {** <li>
             <label for="phone">Numéro de téléphone&nbsp;:</label>
-            <input type="text" id="phone" name="phone" pattern="[0-9]{10}" required>
+            <input type="text" id="phone" name="phone" placeholder="00 00 00 00 00" pattern="[0-9]{10}" required>
         </li>
-
+**}
         <li>
             <label for="login">Login&nbsp;:</label>
             <input type="text" id="login" name="login" required>

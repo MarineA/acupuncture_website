@@ -1,4 +1,4 @@
-function check(input) {
+/*function check(input) {
 	  if (input.value != document.getElementById('email_addr').value) {
 		input.setCustomValidity('Les deux adresses e-mail ne correspondent pas.');
 	  } else {
@@ -6,7 +6,30 @@ function check(input) {
 		input.setCustomValidity('');
 	  }
 	}
-	
+*/
+
+function checkMail(input) {
+    if (input.value != document.getElementById('emailAddr').value) {
+        input.setCustomValidity('Les deux adresses e-mail ne correspondent pas.');
+    } else {
+        // le champ est valide : on réinitialise le message d'erreur
+        input.setCustomValidity('');
+    }
+}
+
+
+function checkPhone(input) {
+    if (input.value != "0[0-9]{9}") {
+        input.setCustomValidity('Le format du numéro est incorrect');
+    } else {
+        // le champ est valide : on réinitialise le message d'erreur
+        input.setCustomValidity('');
+    }
+}
+
+
+
+
 function checkPassword(input) {
 	  if (input.value != document.getElementById('password').value) {
 		input.setCustomValidity('Les deux mdp ne correspondent pas.');
