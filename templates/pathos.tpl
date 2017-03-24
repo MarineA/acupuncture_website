@@ -4,11 +4,11 @@
         <th>Méridien</th>
         <th>Description</th> 
     </tr>
-    {foreach from=$listePatho item=item}
+    {foreach from=$query item=item}
       <tr>
-        <td>{$item['type']}</td>
-        <td>{$item['mer']}</td>
-        <td>{$item['desc']}</td> 
+        <td>{$item->getType()}</td>
+        <td>{$item->getMer()}</td>
+        <td>{$item->getDesc()}</td> 
       </tr>
     {/foreach}
 </table>
