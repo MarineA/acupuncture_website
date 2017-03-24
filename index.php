@@ -1,12 +1,20 @@
 <?php
-require("lib/smarty/Smarty.class.php"); // On inclut la classe Smarty
-require("ConnexionDb.php");
 
-$smarty = new Smarty();
+require("lib/smarty/Smarty.class.php");
+require("database/ConnexionDb.php");
+require("models/Patho.php");
+require("controller/PathoController.php"); 
 
-$db = new ConnexionDb();
+// Initialisation Smarty 
+$smarty = new Smarty;
 
-//menu 
+// Connexion à la database 
+$db = new ConnexionDb;
+
+$pathoController = new PathoController;
+
+// Gestion du menu 
+
 //Variable de l'url
 $page_var = 'page'; 
 
@@ -29,23 +37,20 @@ if ( array_key_exists ( $page_request, $menu ) ) {
 
 //On assigne les informations
 $smarty->compile_id = $template; 
-$smarty->caching = 1; 
-$smarty->assign('menu', $menu); 
-$smarty->assign('template', $template); 
+$smarty->caching = 1;
 $query = "";
 //On assigne la query liée au template
 if($template == 'templates/pathos.tpl' ){
-    $query =listPatho($smarty, $db);
+    $query = $pathoController->getAll($smarty, $db);
 }
-$smarty->assign('query', $query);
-$smarty->assign('page_var', $page_var); 
-$smarty->display('templates/index.tpl'); 
 
-//Fonction permettant de récupérer la liste des pathologies 
-function listPatho($smarty, $db){  
-    $sql = 'SELECT * FROM patho'; 
-    $listePatho = $db->requete($sql);
-    return $listePatho;
-}
+//On fournit toutes les variables nécessaires au template
+$smarty->assign(array(
+    'menu' => $menu,
+    'template' => $template,
+    'query' => $query,
+    'page_var' => $page_var));
+
+$smarty->display('templates/index.tpl'); 
  
 ?>
