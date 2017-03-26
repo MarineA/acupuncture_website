@@ -1,11 +1,3 @@
-templates_c/templates_presentation_tpl^197138007bfeb1faf502403542c18cd743bc5e80_0.file.presentation.tpl.cache.php
-templates_c/templates_presentation_tpl^3cb9f160e2268538f5475dd31b9aa584827d1f44_0.file.menu.tpl.cache.php
-templates_c/templates_presentation_tpl^53320aa26d0df52e5cd872d3b93509b61e9da030_0.file.header.tpl.cache.php
-templates_c/templates_presentation_tpl^541520ca673e8e3efc128dcc682b9f32193e9907_0.file.footer.tpl.cache.php
-templates_c/templates_presentation_tpl^565c80bf7448debe4c61a8536d209a478689b73d_0.file.index.tpl.cache.php
-.idea/deployment.xml
-.idea/modules.xml
-.idea/TLI_Justine.iml
-.idea/vcs.xml
-.idea/workspace.xml
-cache/templates_presentation_tpl^32b1fa6d551cb689b7a5ef6888d3408c03eb7810.index.tpl.php
+templates_c/*
+.idea/*
+cache/*
