@@ -1,16 +1,33 @@
-<?php    
+<?php
+
+require("lib/smarty/Smarty.class.php");
+require("models/manager/PathoManager.php");
 
 class PathoController
 {
-    //Fonction permettant de récupérer la liste des pathologies 
-    public function getAll($smarty, $db){
-        $sql = 'SELECT * FROM patho'; 
-        $listePatho = array();
-        $result = $db->requete($sql);
-        foreach ($result as $row) {
-            $patho = new Patho($row['mer'], $row['type'], $row['desc']);
-            array_push($listePatho, $patho);
-        }
-        return $listePatho;
+    private $smarty;
+
+    public function __construct() {
+        $this->smarty = new Smarty();
     }
+
+
+    //Fonction permettant de récupérer la liste des pathologies 
+    public function getAll(){
+
+        $manager = new PathoManager();
+
+        $query = $manager->getAll();
+
+        //On fournit toutes les variables nécessaires au template
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'query' => $query));
+
+        $this->smarty->display('templates/index.tpl');
+    }
+
+
+
+
 }

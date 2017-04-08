@@ -1,0 +1,37 @@
+<?xml version='1.0' standalone='yes'?>
+<routing>
+
+    <route>
+        <path>/</path>
+        <controller>Home</controller>
+        <action>home</action>
+    </route>
+
+    <route>
+        <path>/home</path>
+        <controller>Home</controller>
+        <action>home</action>
+    </route>
+
+    <route>
+        <path>/pathologies</path>
+        <controller>Patho</controller>
+        <action>getAll</action>
+    </route>
+
+    <route>
+        <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
+        <controller>Calculatrice</controller>
+        <action>calcul</action>
+        <operation>(addition|soustraction|division|multiplication)</operation>
+        <valeur1>(\d+)</valeur1>
+        <valeur2>(\d+)</valeur2>
+    </route>
+
+    <route>
+        <path>/404</path>
+        <controller>Error</controller>
+        <action>error_404</action>
+    </route>
+
+</routing>

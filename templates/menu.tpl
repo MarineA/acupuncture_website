@@ -1,14 +1,16 @@
 <div id="menu">
     <section id="section">
-        {* We generate the menu list from the available pages in the menu *} 
-        <ul id="navigation"> 
-        {foreach key=url_val item=template_name from=$menu} 
-           <li> 
-              <a href="{$SCRIPT_NAME}?{$page_var}={$url_val}"> 
-                 {$url_val}<br /> 
+        <ul id="navigation">
+           <li>
+              <a href="home">
+                 Home
               </a> 
-           </li> 
-        {/foreach} 
+           </li>
+            <li>
+                <a href="pathologies">
+                    Pathologies
+                </a>
+            </li>
         </ul>  
     </section>
 </div>
