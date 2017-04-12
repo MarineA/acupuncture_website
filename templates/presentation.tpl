@@ -27,11 +27,11 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
     <ul>
         <li>
             <label for="email_addr">Adresse e-mail&nbsp;:</label>
-            <input type="email" id="email_addr" name="email_addr" required>
+            <input type="email" id="email_addr" name="email_addr" required oninput="checkMail(this)">
         </li>
         <li>
             <label for="password">Mot de passe&nbsp;:</label>
-            <input type="password" id="password" name="password" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required>
+            <input type="password" id="password" name="password" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required oninput="checkPassword(this)">
         </li>
         <li>
             <input type="submit" value="Connexion" /> 

@@ -1,4 +1,4 @@
-
+/* Formulaire d'inscription' */
 function checkFNames(input) {
     var reg = new RegExp("^([a-zA-Z])+([- ]?[a-zA-Z])+$");
 
