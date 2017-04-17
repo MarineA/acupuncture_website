@@ -1,6 +1,7 @@
-<?xml version='1.0' standalone='yes'?>
+<?xml version='1.0' standalone='no'?>
 
 <!-- Site pour faire la vérification de la DTD : http://www.xmlvalidation.com -->
+<!--
 <!DOCTYPE routing [
         <!ELEMENT routing (route*)>
         <!ELEMENT route (path, controller, action,operation?,valeur1?, valeur2?)>
@@ -11,9 +12,12 @@
         <!ELEMENT valeur1 (#PCDATA)>
         <!ELEMENT valeur2 (#PCDATA)>
         ]>
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema"> <!--"http://www.w3.org/2000/10/XMLSchema"-->
+<!-- voir avec Virtosh pour appeler la bonne route -->
+
 
 <routing>
-
 
     <route>
         <path>/</path>

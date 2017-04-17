@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<xsd:schema xmlns:xsd=""> <!-- Mettre la bonne adresse : http://www.w3.org/2001/XMLSchema -->
+
+    <!-- nouveau type pour forcer une chaîne de caractère non vide / -->
+    <xsd:simpleType name="StringNonVide" minOccurs="1">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:pattern value="^[a-zA-Z0-9]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- création de l'élément route appelé ensuite dans routing / -->
+    <xsd:element name="route">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="path" type="xsd:string" default="/" minOccurs="1">
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="^\/.*$"/> <!-- Pattern obligeant de commencer par un / -->
+                    </xsd:restriction>
+                </xsd:element>
+                <xsd:element name="controller" type="StringNonVide" />
+                 <xsd:element name="action" type="StringNonVide" />
+                 <xsd:element name="operation" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <!-- minOccurs=0 maxOccurs=1 permet d'avoir l'élément 0 ou 1 fois => caractère optionnel -->
+                 <xsd:element name="valeur1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                 <xsd:element name="valeur2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+             </xsd:sequence>
+         </xsd:complexType>
+     </xsd:element>
+
+
+    <!-- création de l'élément racine routing / -->
+     <xsd:element name="routing" >
+         <xsd:complexType>
+             <xsd:sequence>
+                 <xsd:element ref="route" minOccurs="1" maxOccurs="unbounded" />
+                 <!-- minOccurs=1 maxOccurs=unbounded => élément apparaissant une ou une infinité de fois-->
+             </xsd:sequence>
+         </xsd:complexType>
+     </xsd:element>
+
+
+ </xsd:schema>
