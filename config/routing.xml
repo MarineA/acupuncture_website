@@ -1,6 +1,13 @@
 <?xml version='1.0' standalone='no'?>
 
-<!-- Site pour faire la vérification de la DTD : http://www.xmlvalidation.com -->
+<!-- Site pour faire la vérification de la DTD et du schéma : http://www.xmlvalidation.com -->
+
+<!-- Si on veut enlever le schema pour mettre juste la DTD, enlever la partie
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="SchemaRouting.xsd"
+située en paramètre de routing
+Et enlever les commentaires de la partie DTD
+-->
 <!--
 <!DOCTYPE routing [
         <!ELEMENT routing (route*)>
@@ -13,11 +20,9 @@
         <!ELEMENT valeur2 (#PCDATA)>
         ]>
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema"> <!--"http://www.w3.org/2000/10/XMLSchema"-->
-<!-- voir avec Virtosh pour appeler la bonne route -->
 
-
-<routing>
+<routing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="SchemaRouting.xsd">
 
     <route>
         <path>/</path>
