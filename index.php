@@ -4,12 +4,8 @@ define ('DEFAULT_MODULE', 'home');
 define ('DEFAULT_FUNCTION', 'index');
 
 define ('DIR_CTRL', __DIR__.'/controller/');
-define ('DIR_MODEL', __DIR__.'/model/');
-define ('DIR_VIEW',  __DIR__.'/view/');
-define ('DIR_SERV', __DIR__.'/service/');
 
 define ('ROUTING', __DIR__.'/config/routing.xml');
-define ('ROUTING_WS', __DIR__.'/config/routing_ws.xml');
 
 // Fonctions utiles pour la redirection
 
@@ -81,7 +77,7 @@ function getParametersRoute($route, $uri){
     return $tab;
 }
 
-/* Traitements */
+// Traitements
 
 $uri = getCurrentUri();
 
@@ -104,9 +100,11 @@ if(isset($target)){
 
     include DIR_CTRL.$controller.'.php';
     $instance = new $controller();
-    echo $instance->$action($param);
+    $instance->$action($param);
 } else {
-    echo 'error : source introuvable';
+    include DIR_CTRL.'errorController.php';
+    $instance = new ErrorController();
+    $instance->showError404();
 }
  
 ?>
