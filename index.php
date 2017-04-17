@@ -14,6 +14,7 @@ define ('ROUTING_WS', __DIR__.'/config/routing_ws.xml');
 // Fonctions utiles pour la redirection
 
 function getCurrentUri()
+    /* récupère la fin des chemins */
 {
     $basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';
     $uri = substr($_SERVER['REQUEST_URI'], strlen($basepath));

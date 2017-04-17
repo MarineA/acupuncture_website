@@ -1,5 +1,19 @@
 <?xml version='1.0' standalone='yes'?>
+
+<!-- Site pour faire la vérification de la DTD : http://www.xmlvalidation.com -->
+<!DOCTYPE routing [
+        <!ELEMENT routing (route*)>
+        <!ELEMENT route (path, controller, action,operation?,valeur1?, valeur2?)>
+        <!ELEMENT path (#PCDATA)>
+        <!ELEMENT controller (#PCDATA)>
+        <!ELEMENT action (#PCDATA)>
+        <!ELEMENT operation (#PCDATA)>
+        <!ELEMENT valeur1 (#PCDATA)>
+        <!ELEMENT valeur2 (#PCDATA)>
+        ]>
+
 <routing>
+
 
     <route>
         <path>/</path>
