@@ -1,23 +1,15 @@
-
-body{
-	margin-left: 5%;
-	margin-right: 5%;
-	
-}
-
-
+/* CSS pour l'impression */
 
 #menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    background-color: #333;
     width: 100%;
 }
 
 #menu ul li {
-	float: left;
+    float: left;
 }
 
 
@@ -29,63 +21,49 @@ li {
 
 li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px; /* marges intérieures*/
     text-decoration: none;
 }
 
-
-/* Change the link color to #111 (black) on hover */
-li a:hover { /*hover : passer la souris */
-    background-color: #111;
-}
-
-.center > section {
-	min-height: 300px;
-	background-image: url('../img/acup.png');
-	background-size: cover; /*étendre l'image au maximum*/
-	background-position: center;
-	background-repeat: no-repeat; 
-}
-
-img {
-    max-width: 100%;
-    height: 100px;
-}
 h1 {
     text-align: center;
+    color: black;
 }
 
 h2 {
-    color:limegreen;
+    color: black;
+}
+
+a {
+    text-decoration: none;
 }
 
 .connexion {
     display:inline-block;
-    width: 42%; 
-    height: auto;  
+    width: 42%;
+    height: auto;
     vertical-align:top;
 }
 
 .inscription {
     display:inline-block;
-    width: 54%; 
+    width: 54%;
     height: auto;
 }
 
 #formulaire ul li{
-	list-style-type: none;
-	margin-left: 10%;
-	max-width: 90%;
-	padding: 2px;
+    list-style-type: none;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
 
 }
 
 label{
-	display: block;
-	width: 55%;
-	float: left;
+    display: block;
+    width: 55%;
+    float: left;
 }
 
 table#tab_patho {
@@ -108,22 +86,12 @@ table#tab_patho td {
 .rss_article {
     margin-top: 2%;
     width : 100%;
+    border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px lightslategray;
 }
 
-.rss_title {
+.rss_title .rss_description {
     position: relative;
-    background-color: seagreen;
-    color: white;
-    border-radius: 10px 10px 0 0;
-    padding: 10px;
-}
-
-.rss_description {
-    position: relative;
-    border-radius: 0 0 10px 10px;
-    background-color: #fafafa;
     padding: 10px;
 }
 
@@ -132,12 +100,7 @@ table#tab_patho td {
     margin: 0;
     padding: 0;
     overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    background-color: #333;
     width: 100%;
-    color : white;
-    text-align: right;
+    text-align: left;
 }
-
-
-
 

@@ -20,6 +20,12 @@
                     Webservices
                 </a>
             </li>
+
+            <li>
+                <a href="actualite" tabindex="0">
+                    Actualité
+                </a>
+            </li>
         </ul>
 </div>
 

@@ -20,6 +20,12 @@
     </route>
 
     <route>
+        <path>/actualite</path>
+        <controller>Home</controller>
+        <action>getRSS</action>
+    </route>
+
+    <route>
         <path>/informations</path>
         <controller>Home</controller>
         <action>getInfos</action>

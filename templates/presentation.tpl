@@ -108,17 +108,6 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 </form>
 </div>
 
-<div id="flux_rss">
-    <ul>
-        {foreach from=$donnee_rss->item item=item}
-            <li>
-                {$item->title}
-            </li>
-        {/foreach}
-    </ul>
-</div>
-
-
 </div>
 
 
