@@ -53,6 +53,12 @@ class CalculatriceController
         return;
     }
 
+    public function descriptionCalculatrice(){
+        $this->smarty->assign('template', 'templates/calculatrice.tpl');
+
+        $this->smarty->display("templates/index.tpl");
+    }
+
 }
 
 ?>

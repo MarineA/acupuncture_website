@@ -20,18 +20,24 @@
     </route>
 
     <route>
+        <path>/informations</path>
+        <controller>Home</controller>
+        <action>getInfos</action>
+    </route>
+
+    <route>
+        <path>/calculatrice</path>
+        <controller>Calculatrice</controller>
+        <action>descriptionCalculatrice</action>
+    </route>
+
+    <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
         <controller>Calculatrice</controller>
         <action>calcul</action>
         <operation>(addition|soustraction|division|multiplication)</operation>
         <valeur1>(\d+)</valeur1>
         <valeur2>(\d+)</valeur2>
-    </route>
-
-    <route>
-        <path>/404</path>
-        <controller>Error</controller>
-        <action>error_404</action>
     </route>
 
 </routing>

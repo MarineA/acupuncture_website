@@ -1,18 +1,26 @@
 <div id="menu">
-    <section id="section">
         <ul id="navigation">
            <li>
-              <a href="home">
+              <a href="home" tabindex="3">
                  Home
               </a> 
            </li>
             <li>
-                <a href="pathologies">
+                <a href="pathologies" tabindex="2">
                     Pathologies
                 </a>
             </li>
-        </ul>  
-    </section>
+            <li>
+                <a href="informations" tabindex="1">
+                    Informations
+                </a>
+            </li>
+            <li>
+                <a href="calculatrice" tabindex="0">
+                    Webservices
+                </a>
+            </li>
+        </ul>
 </div>
 
 <div class="center">
