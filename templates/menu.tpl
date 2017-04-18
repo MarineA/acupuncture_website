@@ -11,6 +11,11 @@
                     Pathologies
                 </a>
             </li>
+            <li>
+                <a href="recherches">
+                    Recherches
+                </a>
+            </li>
         </ul>  
     </section>
 </div>

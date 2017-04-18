@@ -27,6 +27,11 @@ class PathoController
         $this->smarty->display('templates/index.tpl');
     }
 
+    public function getPathoBySymptome() {
+
+
+    }
+
 
 
 

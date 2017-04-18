@@ -20,6 +20,12 @@
     </route>
 
     <route>
+        <path>/recherches</path>
+        <controller>Symptome</controller>
+        <action>getSymptome</action>
+    </route>
+
+    <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
         <controller>Calculatrice</controller>
         <action>calcul</action>
