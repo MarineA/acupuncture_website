@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--  <pma:table name="patho">
+                CREATE TABLE `patho` (
+                `idP` int(11) NOT NULL AUTO_INCREMENT,
+                `mer` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'code du méridien',
+                `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `desc` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'description de la pathologie',
+                PRIMARY KEY (`idP`),
+                KEY `code` (`mer`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+
+
+            <database name="acupuncteurs"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="SchemaPatho.xsd">
+
+    <table name="patho">
+        <column name="idP">1</column>
+        <column name="mer">P</column>
+        <column name="type">me</column>
+        <column name="desc">méridien du poumon externe</column>
+    </table>
+                -->
+
+
+    <!-- nouveau type type_idP pour forcer un chiffre entre 0 et 99 999 999 999 / -->
+    <xsd:simpleType name="type_idP">
+        <xsd:restriction base="xsd:int">
+            <xsd:pattern value="[0-9]{1,11}" /> <!-- ^et $ sont implicites et redondants si on les met -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- nouveau type type_meridien pour forcer une chaîne majuscule non nulle et de 5 caractères maximum / -->
+    <xsd:simpleType name="type_meridien">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="5"/>
+            <xsd:pattern value="[A-Z]+" /> <!-- ^et $ sont implicites et redondants si on les met -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- nouveau type type_typeP pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 10 caractères -->
+    <xsd:simpleType name="type_typeP">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+            <xsd:pattern value="[a-z]+" /> <!-- ^et $ sont implicites et redondants si on les met -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- nouveau type type_desc pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 50 caractères -->
+    <xsd:simpleType name="type_desc">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="50"/>
+            <xsd:pattern value="[a-z]+" /> <!-- ^et $ sont implicites et redondants si on les met -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+
+    <!-- création de l'élément route appelé ensuite dans routing / -->
+    <xsd:element name="database">
+        <xsd:complexType>
+            <xsd:attribute name="acupuncteurs" />
+            <xsd:sequence>
+                <xsd:element name="table" >
+                    <xsd:complexType>
+                        <xsd:attribute name="patho"/>
+                        <xsd:sequence>
+                            <xsd:element name="idP" type="type_idP" minOccurs="1" maxOccurs="1">
+                                <xsd:unique name="idP_unique" >
+                                   <xsd:selector xpath="idP" />
+                                    <xsd:field xpath="idP" />
+                                </xsd:unique>
+                            </xsd:element>
+                            <xsd:element name="mer" type="type_meridien" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element name="type" type="type_typeP" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element name="desc" type="type_desc" minOccurs="1" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
