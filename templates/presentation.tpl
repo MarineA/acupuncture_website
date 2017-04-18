@@ -22,7 +22,7 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 <div class="connexion">
 <h2> Connexion </h2>
     
-   <form method="post" action="lib/main.php?variable=truc" id="formulaire">
+   <form method="post" action="session/connexion" id="formulaire">
 
     <ul>
         <li>

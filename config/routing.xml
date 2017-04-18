@@ -18,6 +18,25 @@
         <controller>Patho</controller>
         <action>getAll</action>
     </route>
+    
+    <route>
+        <path>/session/connexion</path>
+        <controller>Session</controller>
+        <action>connexion</action>
+    </route>
+    
+    <route>
+        <path>/session/inscription</path>
+        <controller>Session</controller>
+        <action>inscription</action>
+    </route>
+
+    <route>
+        <path>/session/deconnexion</path>
+        <controller>Session</controller>
+        <action>deconnexion</action>
+    </route> 
+
 
     <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
