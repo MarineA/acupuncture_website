@@ -1,7 +1,7 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
-require("models/manager/PathoManager.php");
+include_once("lib/smarty/Smarty.class.php");
+include_once("models/manager/PathoManager.php");
 
 class PathoController
 {

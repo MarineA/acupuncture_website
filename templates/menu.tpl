@@ -11,6 +11,16 @@
                     Pathologies
                 </a>
             </li>
+           <li class="liste_droite">
+                <a href="session/connexion">
+                    Connexion
+                </a>
+            </li>
+            <li class="liste_droite">
+                <a href="session/inscription">
+                    Inscription
+                </a>
+            </li>
         </ul>  
     </section>
 </div>

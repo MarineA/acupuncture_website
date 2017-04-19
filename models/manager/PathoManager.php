@@ -1,7 +1,7 @@
 <?php
 
-require("models/database/ConnexionDb.php");
-require("models/Patho.php");
+include_once("models/database/ConnexionDb.php");
+include_once("models/Patho.php");
 
 class PathoManager {
 
