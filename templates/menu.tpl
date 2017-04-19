@@ -12,12 +12,12 @@
                 </a>
             </li>
            <li class="liste_droite">
-                <a href="session/connexion">
+                <a href="session/connexion_form">
                     Connexion
                 </a>
             </li>
             <li class="liste_droite">
-                <a href="session/inscription">
+                <a href="session/inscription_form">
                     Inscription
                 </a>
             </li>

@@ -41,8 +41,8 @@ li a:hover { /*hover : passer la souris */
     background-color: #111;
 }
 
-.liste_droite {
-    text-align: right;
+#navigation .liste_droite {
+    float:right;
 }
 
 .center > section {

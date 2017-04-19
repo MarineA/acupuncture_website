@@ -20,11 +20,22 @@
     </route>
     
     <route>
+        <path>/session/connexion_form</path>
+        <controller>Session</controller>
+        <action>connexion_form</action>
+    </route>
+    
+    <route>
         <path>/session/connexion</path>
         <controller>Session</controller>
         <action>connexion</action>
     </route>
     
+    <route>
+        <path>/session/inscription_form</path>
+        <controller>Session</controller>
+        <action>inscription_form</action>
+    </route>
     <route>
         <path>/session/inscription</path>
         <controller>Session</controller>
