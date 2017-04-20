@@ -23,8 +23,8 @@ class PathoManager {
         return $listePatho;
     }
 
-    public function getPathoBySymptome() {
-        $sql = 'SELECT * FROM patho,symptome WHERE symptome = :symptome';
+    public function getPathoBySymptome($symptomes) {
+        $sql = 'SELECT * FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on symptPatho.idS = symptome.idS WHERE symptome.desc = \'Agitation\'';
         $listePatho = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {

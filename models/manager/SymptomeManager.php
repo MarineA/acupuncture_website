@@ -2,6 +2,7 @@
 
 include_once("models/database/ConnexionDb.php");
 include_once("models/Symptome.php");
+include_once("models/Patho.php");
 
 /**
  * Created by PhpStorm.
@@ -27,5 +28,17 @@ class SymptomeManager
             array_push($listeSymptomes, $symptome);
         }
         return $listeSymptomes;
+    }
+
+    public function getPathoBySymptome($symptomes) {
+        $sql = 'SELECT * FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on symptPatho.idS = symptome.idS WHERE symptome.desc ='. $symptomes ;
+        $listePatho = array();
+        $result = $this->db->requete($sql);
+        foreach ($result as $row) {
+            $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+            array_push($listePatho, $patho);
+        }
+        return $listePatho;
+
     }
 }

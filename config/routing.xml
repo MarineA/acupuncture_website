@@ -13,16 +13,36 @@
         <action>home</action>
     </route>
 
+
     <route>
         <path>/pathologies</path>
         <controller>Patho</controller>
         <action>getAll</action>
     </route>
 
+    <!--<route>
+        <path>/pathologies_recherche</path>
+        <controller>Patho</controller>
+        <action>getSymptomes</action>
+    </route>
+-->
+
+    <route>
+        <path>/pathologies_symptome</path>
+        <controller>Patho</controller>
+        <action>getPathoBySymptome</action>
+    </route>
+
     <route>
         <path>/recherches</path>
         <controller>Symptome</controller>
         <action>getSymptome</action>
+    </route>
+
+    <route>
+        <path>/recherches/symptomes</path>
+        <controller>Symptome</controller>
+        <action>getPathoBySymptome</action>
     </route>
 
     <route>

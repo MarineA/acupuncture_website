@@ -32,15 +32,30 @@ class SymptomeController
         $this->smarty->display('templates/index.tpl');
     }
 
-    public function getSymptomeByPatho() {
+/*    public function getSymptomeByPatho() {
 
-        $manager = new PathoManager();
-        $query = $manager->getPatho();
+        $manager = new SymptomeManager();
+        $query = $manager->getSymptomes();
 
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
             'query' => $query));
 
         $this->smarty->display('templates/index.tpl');
+    }
+*/
+    public function getPathoBySymptome() {
+        $symptomes = $_GET['symptomes'];
+        $manager = new SymptomeManager();
+
+        $query = $manager->getPathoBySymptome($symptomes);
+
+        //On fournit toutes les variables nécessaires au template
+        $this->smarty->assign(array(
+            'template' => 'templates/symptome.tpl',
+            'query' => $query));
+
+        $this->smarty->display('templates/index.tpl');
+
     }
 }
