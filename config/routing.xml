@@ -1,6 +1,5 @@
 <?xml version='1.0' standalone='no'?>
 
-<!-- Site pour faire la vérification de la DTD et du schéma : http://www.xmlvalidation.com -->
 
 <!-- Si on veut enlever le schema pour mettre juste la DTD, enlever la partie
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

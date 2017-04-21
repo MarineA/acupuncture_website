@@ -6,7 +6,7 @@
     <!-- J'ai pas encore réussi à intégrer les types pour être plus précis dans la définition de notre structure xml.
     A voir plus tard -->
 
-    
+
     <!-- Dans les expressions régulières : ^et $ sont implicites et redondants si on les met -->
     <!-- nouveau type type_idP pour forcer un chiffre entre 0 et 99 999 999 999 / -->
     <!--
