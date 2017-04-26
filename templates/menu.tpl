@@ -29,6 +29,7 @@
         </ul>
 </div>
 
-<div class="center">
-    <section></section>
+
+<div class="banniere">
 </div>
+

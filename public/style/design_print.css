@@ -1,17 +1,13 @@
 /* CSS pour l'impression */
 
-#menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    width: 100%;
+
+#menu, .banniere {
+    display: none;
 }
 
-#menu ul li {
-    float: left;
+.introduction{
+    display: block;
 }
-
 
 li {
     /*float: left;*/
@@ -95,12 +91,14 @@ table#tab_patho td {
     padding: 10px;
 }
 
-#footer {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    width: 100%;
-    text-align: left;
-}
 
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    text-align: center;
+}

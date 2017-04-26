@@ -1,5 +1,5 @@
 
-<div class="center">
+<div class="introduction">
     
     <h1>Remède par l'acupuncture</h1>
 <p>

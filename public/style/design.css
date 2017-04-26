@@ -41,7 +41,7 @@ li a:hover { /*hover : passer la souris */
     background-color: #111;
 }
 
-.center > section {
+.banniere {
 	min-height: 300px;
 	background-image: url('../img/acup.png');
 	background-size: cover; /*étendre l'image au maximum*/
@@ -135,9 +135,8 @@ table#tab_patho td {
     background-color: #333;
     width: 100%;
     color : white;
-    text-align: right;
+    text-align: center;
 }
-
 
 
 

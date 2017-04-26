@@ -4,7 +4,6 @@
 		    <head>
 		        <link rel="stylesheet" href="public/style/design.css">
 				<link rel="stylesheet" type="text/css" href="public/style/design_print.css" media="print" />
-		        <link rel="stylesheet" href="public/style/inscription/inscription.css">
 		        <meta charset="UTF-8">
 			    <title>Remède par l'acupuncture</title>
 			    <meta name="keywords" content="HTMLW3C">

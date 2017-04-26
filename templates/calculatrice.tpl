@@ -24,7 +24,7 @@
     <li>multiplication</li>
 </ul>
 <p>Exemple :</p>
-<p>http://www.cpe.fr/calculatrice/addition/5/8 a chera 13.</p>
+<p>http://www.cpe.fr/calculatrice/addition/5/8 renvoie 13.</p>
 
 
 
