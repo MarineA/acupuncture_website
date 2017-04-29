@@ -5,145 +5,173 @@ include_once("lib/smarty/Smarty.class.php");
 include_once("models/manager/SessionManager.php");
 include_once("controller/PathoController.php");
 
-class SessionController {
+class SessionController
+{
     
     private $manager;
     private $smarty;
     private $controller_pathos;
     
-        public function __construct()
-        {
-            $this->manager = new SessionManager;
-            $this->smarty = new Smarty;
-            $this->controller_pathos = new PathoController;
-        }
-
-    public function connexion_form(){
-         
+    public function __construct()
+    {
+        $this->manager           = new SessionManager();
+        $this->smarty            = new Smarty();
+        $this->controller_pathos = new PathoController();
+    }
+    
+    public function connexion_form()
+    {
+        
         //route pour le menu
         $this->smarty->assign(array(
-            'template' => 'templates/connexion.tpl',
+            'template' => 'templates/connexion.tpl'
         ));
-
+        
         $this->smarty->display("templates/index.tpl");
     }
     
-    public function inscription_form(){
+    public function inscription_form()
+    {
+        
         //Route pour le menu
-         $this->smarty->assign(array(
-            'template' => 'templates/inscription.tpl',
+        $this->smarty->assign(array(
+            'template' => 'templates/inscription.tpl'
         ));
-
+        
         $this->smarty->display("templates/index.tpl");
     }
     
-    public function connexion() {
-       
-       
-    //Formulaire de connexion 
-    if(!empty($_POST)){
+    public function connexion()
+    {
         
-        // Connexion à la database 
-        
-        $emailAddr = $_POST['emailAddr'];
-        $password_main = $_POST['password_main'];
-        
-        $infos = array(
-            "emailAddr" => $emailAddr,
-            "password_main" => $password_main 
-            );
-        
+        if (!isset($_SESSION['login'])) {
+            
+            //Formulaire de connexion 
+            if (!empty($_POST)) {
+                
+                // Connexion à la database 
+                $login         = $_POST['login'];
+                $emailAddr     = $_POST['emailAddr'];
+                $password_main = $_POST['password_main'];
+                $password_main = hash("sha256", $password_main); //Hash du mot de passe
+                
+                $infos = array(
+                    "login" => $login,
+                    "emailAddr" => $emailAddr,
+                    "password_main" => $password_main
+                );
+                
+                
+                $manager = new SessionManager();
+                
+                $id = $manager->connexion($infos);
+                
+                
+                //    
+                if ($id != 0) {
+                    //$_SESSION['AuthAdmin'] = array( 'emailAddr' => $emailAddr, 'password_main' => $password_main);
                     
-        $manager = new SessionManager();
-       
-        $id = $manager->connexion($infos);
-    
-        
-     //    
-        if($id != 0 ) {
-
-            $_SESSION['AuthAdmin'] = array( 'emailAddr' => $emailAddr, 'password_main' => $password_main);
-
-            //$_SESSION['emailAddr'] = $_POST['emailAddr'];
+                    $_SESSION['login'] = $login;
+                    
+                    
+                    //redirection
+                    $this->controller_pathos->getAll();
+                    $this->smarty->display('templates/index.tpl');
+                    
+                } else {
+                    //Si l'utilisateur inconnu
+                    
+                    $this->smarty->assign(array(
+                        'template' => 'templates/inscription.tpl'
+                    ));
+                    
+                    $this->smarty->display("templates/index.tpl");
+                }
+                
+                
+            }
             
             
-            //redirection
-            $this->smarty->assign(array(
-                'template' => 'templates/pathos.tpl'
-            ));
-
-            $this->smarty->display("templates/index.tpl");
-
-        } else {
-            //Si l'utilisateur inconnu
-            $error_unknown ='Utilisateur inexistant !';
+        } else 
+        {
+            echo "déja connecté"
         }
         
-        
-        }
-
-
-     }
+    }
     
-       
-
-//**************************************************************
-    public function inscription(){
+    //**************************************************************
+    public function inscription()
+    {
         
         
-        
-        //Formualire d'inscritption
-        if (!empty($_POST) && strlen($_POST['name'])>2 && strlen($_POST['firstname'])>2 && filter_var($_POST['emailAddr'], FILTER_VALIDATE_EMAIL)) {
+        if (!isset($_SESSION['login'])) {
             
-        $name =  $_POST['name'];
-        $firstname = $_POST['firstname'];
-        $birthdate = $_POST['birthdate'];
-        $emailAddr = $_POST['emailAddr'];
-        $login = $_POST['login'];
-        $password_main = $_POST['password_main'];
-        $password_main = hash("sha256", $password_main);  //Hash du mot de passe
-
-        $consumer = array(
-            "name" => $name,
-            "firstname" => $firstname,
-            "birthdate" => $birthdate,
-            "emailAddr" => $emailAddr,
-            "login" => $login, 
-            "password_main" => $password_main 
-            );
+            //Formualire d'inscritption
+            if (!empty($_POST) && strlen($_POST['name']) > 2 && strlen($_POST['firstname']) > 2 && filter_var($_POST['emailAddr'], FILTER_VALIDATE_EMAIL)) {
+                
+                $name          = $_POST['name'];
+                $firstname     = $_POST['firstname'];
+                $birthdate     = $_POST['birthdate'];
+                $emailAddr     = $_POST['emailAddr'];
+                $login         = $_POST['login'];
+                $password_main = $_POST['password_main'];
+                $password_main = hash("sha256", $password_main); //Hash du mot de passe
+                
+                $consumer = array(
+                    "name" => $name,
+                    "firstname" => $firstname,
+                    "birthdate" => $birthdate,
+                    "emailAddr" => $emailAddr,
+                    "login" => $login,
+                    "password_main" => $password_main
+                );
+                
+                $manager = new SessionManager();
+                
+                
+                $query             = $manager->inscription($consumer);
+                $_SESSION['login'] = $login;
+                
             
-        $manager = new SessionManager();
-    
-        
-        $query = $manager->inscription($consumer);
-              $_SESSION['name'] = $_POST['name'];
-        
-        header('Location: TLI/projet/pathologies');
-      // $this->controller_pathos->getAll();
-
-      
-        
+                // header('Location: TLI/projet/pathologies');
+                //
+                
+                
+                //On fournit toutes les variables nécessaires au template
+                //$this->smarty->assign(array(
+                //  'template' => 'templates/pathos.tpl',
+                //  'query' => $querym));
+                $this->controller_pathos->getAll();
+                $this->smarty->display('templates/index.tpl');
+                
+                
+                
+            }
+            
+        }
+        else 
+        {
+            echo "déja connecté"
         }
         
-     }
-       
-
-       
-//**************************************************************
-       
-    public function deconnexion(){
+    }
+    
+    //**************************************************************
+    
+    public function deconnexion()
+    {
         
-        session_start();
-        session_unset();
+        session_unset('login');
         session_destroy();
+        
         
         //Remplace le header        
         $this->smarty->assign(array(
             'template' => 'templates/presentation.tpl'
         ));
-
+        
         $this->smarty->display("templates/index.tpl");
-    
+        
     }
 }
 

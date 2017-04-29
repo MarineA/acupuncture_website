@@ -1,7 +1,7 @@
 <div class="inscription">
 <h2>Inscription </h2>
 
-<form method="post" action="session/inscription" id="formulaire">
+<form method="post" action="inscription" id="formulaire">
 
     <ul>
         <li>

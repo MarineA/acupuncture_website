@@ -11,13 +11,18 @@
                     Pathologies
                 </a>
             </li>
+            <li class="liste_droite">
+                <a href="deconnexion">
+                    <img id="logout" src="public/img/logout.png" alt="Déconnexion">
+                </a>
+            </li>
            <li class="liste_droite">
-                <a href="session/connexion_form">
+                <a href="connexion_form">
                     Connexion
                 </a>
             </li>
             <li class="liste_droite">
-                <a href="session/inscription_form">
+                <a href="inscription_form">
                     Inscription
                 </a>
             </li>

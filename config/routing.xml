@@ -20,30 +20,30 @@
     </route>
     
     <route>
-        <path>/session/connexion_form</path>
+        <path>/connexion_form</path>
         <controller>Session</controller>
         <action>connexion_form</action>
     </route>
     
     <route>
-        <path>/session/connexion</path>
+        <path>/connexion</path>
         <controller>Session</controller>
         <action>connexion</action>
     </route>
     
     <route>
-        <path>/session/inscription_form</path>
+        <path>/inscription_form</path>
         <controller>Session</controller>
         <action>inscription_form</action>
     </route>
     <route>
-        <path>/session/inscription</path>
+        <path>/inscription</path>
         <controller>Session</controller>
         <action>inscription</action>
     </route>
 
     <route>
-        <path>/session/deconnexion</path>
+        <path>/deconnexion</path>
         <controller>Session</controller>
         <action>deconnexion</action>
     </route> 

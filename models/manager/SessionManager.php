@@ -16,13 +16,11 @@ class SessionManager {
     public function connexion($infos){
         
         
-    // Connexion à la database  
-    echo $this->db->getDb();
-        
-
-    $sql = $this->db->getDb()->prepare('SELECT id FROM consumer where emailAddr = :emailAddr AND password_main = :password_main');
-        
-    $req = $this->db->getDb()->prepare($sql);
+    // Connexion à la database          
+       
+    //$sql = $this->db->getDb()->prepare('SELECT id FROM consumer where emailAddr = :emailAddr AND password_main = :password_main');
+    $sql = 'SELECT id FROM consumer where login = :login AND emailAddr = :emailAddr AND password_main = :password_main';
+    $req = $this->db->prepare($sql);
 
 
     $req->execute($infos);
