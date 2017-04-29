@@ -1,19 +1,36 @@
 /* CSS pour l'impression */
 
+#header{
+    display: inline;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    margin: 0px 0px 50px 0px;
+}
+
+
+#footer{
+    position:fixed;
+    text-align: center;
+    width: 100%;
+    bottom : 0;
+}
+
 
 #menu, .banniere {
     display: none;
 }
 
+
 .introduction{
     display: block;
 }
+
 
 li {
     /*float: left;*/
     list-style-position: outside;
 }
-
 
 li a {
     display: block;
@@ -89,16 +106,4 @@ table#tab_patho td {
 .rss_title .rss_description {
     position: relative;
     padding: 10px;
-}
-
-
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow: auto;
-    width: 100%;
-    text-align: center;
 }

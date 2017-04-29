@@ -1,3 +1,6 @@
+<h1>Actualités</h1>
+
+
 <div id="flux_rss">
 
     {foreach from=$donnee_rss->item item=item}

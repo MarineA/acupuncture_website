@@ -23,7 +23,7 @@
 
             <li>
                 <a href="actualite" tabindex="0">
-                    Actualité
+                    Actualités
                 </a>
             </li>
         </ul>
