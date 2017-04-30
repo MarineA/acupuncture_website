@@ -1,6 +1,5 @@
 <?php
 
-
 require_once("lib/smarty/Smarty.class.php");
 require_once("models/manager/PathoManager.php");
 require_once ("models/manager/SymptomeManager.php");

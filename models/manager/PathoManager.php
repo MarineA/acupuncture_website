@@ -3,7 +3,8 @@
 require_once("models/database/ConnexionDb.php");
 require_once("models/Patho.php");
 
-class PathoManager {
+class PathoManager
+{
 
     private $db;
 
@@ -12,10 +13,12 @@ class PathoManager {
         $this->db = new ConnexionDb;
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         $sql = 'SELECT * FROM patho';
         $listePatho = array();
         $result = $this->db->requete($sql);
+
         foreach ($result as $row) {
             $patho = new Patho($row['mer'], $row['type'], $row['desc']);
             array_push($listePatho, $patho);
@@ -23,23 +26,25 @@ class PathoManager {
         return $listePatho;
     }
 
-    public function getPathoBySymptome($symptomes){
-        $sql = 'SELECT mer, type, patho.desc FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on symptPatho.idS = symptome.idS WHERE symptome.desc =' . '\'' .$symptomes . '\'';
+    public function getPathoBySymptome($symptomes)
+    {
+        $sql = 'SELECT mer, type, patho.desc FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on symptPatho.idS = symptome.idS WHERE symptome.desc =' . '\'' . $symptomes . '\'';
         $listePatho = array();
         $result = $this->db->requete($sql);
 
-            foreach ($result as $row) {
-                $patho = new Patho($row['mer'], $row['type'], $row['desc']);
-                array_push($listePatho, $patho);
-            }
+        foreach ($result as $row) {
+            $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+            array_push($listePatho, $patho);
+        }
 
         return $listePatho;
 
     }
 
-    public function getPathoByMeridien($meridiens) {
+    public function getPathoByMeridien($meridiens)
+    {
 
-        $sql = 'SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer = code WHERE nom =' . '\'' .$meridiens . '\'';
+        $sql = 'SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer = code WHERE nom =' . '\'' . $meridiens . '\'';
         $listePatho = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {
@@ -50,7 +55,8 @@ class PathoManager {
 
     }
 
-    public function getPathoByType() {
+    public function getPathoByType()
+    {
         $sql = 'SELECT * FROM patho WHERE  ';
         $listePatho = array();
         $result = $this->db->requete($sql);
@@ -61,17 +67,5 @@ class PathoManager {
         return $listePatho;
 
     }
-
-    public function getMeridiens() {
-        $sql = 'SELECT mer FROM patho ';
-        $listeMeridiens = array();
-        $result = $this->db->requete($sql);
-        foreach ($result as $row) {
-            $mer = $row['mer'];
-            array_push($listeMeridiens, $mer);
-        }
-        return $listeMeridiens;
-    }
 }
-
 ?>

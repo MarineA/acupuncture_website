@@ -1,6 +1,8 @@
 <?php
 
 require_once("lib/smarty/Smarty.class.php");
+require_once("controller/PathoController.php");
+
 
 class HomeController
 {
@@ -23,9 +25,8 @@ class HomeController
 
     public function getInfos()
     {
-
         $this->smarty->assign(array(
-            'template' => 'templates/infos.tpl',
+           'template' => 'templates/infos.tpl',
         ));
 
         $this->smarty->display("templates/index.tpl");
@@ -34,9 +35,8 @@ class HomeController
 
     public function getRSS()
     {
-
         $donnee = null;
-        if ($flux = simplexml_load_file('https://medworm.com/rss/medicalfeeds/therapies/Acupuncture-News.xml')) {
+        if ($flux = simplexml_load_file('http://www.santepubliquefrance.fr/content/view/rss/426')) {
             $donnee = $flux->channel;
         }
 

@@ -28,7 +28,7 @@
 
             <li>
                 <a href="actualite" tabindex="0">
-                    Actualité
+                    Actualité santé
                 </a>
             </li>
             < marine_dev
