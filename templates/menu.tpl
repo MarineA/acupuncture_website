@@ -31,7 +31,6 @@
                     Actualité santé
                 </a>
             </li>
-            < marine_dev
             <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
