@@ -1,6 +1,6 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
+include_once("lib/smarty/Smarty.class.php");
 
 class HomeController
 {

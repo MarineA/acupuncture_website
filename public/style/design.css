@@ -41,6 +41,15 @@ li a:hover { /*hover : passer la souris */
     background-color: #111;
 }
 
+#navigation .liste_droite {
+    float:right;
+}
+
+.logout {
+    width: 20px;
+    height: 20px;
+}
+//.center > section {
 .banniere {
 	min-height: 300px;
 	background-image: url('../img/acup.png');
@@ -49,10 +58,13 @@ li a:hover { /*hover : passer la souris */
 	background-repeat: no-repeat; 
 }
 
+/*
 img {
     max-width: 100%;
     height: 100px;
 }
+*/
+
 h1 {
     text-align: center;
 }

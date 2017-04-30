@@ -40,6 +40,36 @@ Et enlever les commentaires de la partie DTD
         <controller>Patho</controller>
         <action>getAll</action>
     </route>
+    
+    <route>
+        <path>/connexion_form</path>
+        <controller>Session</controller>
+        <action>connexion_form</action>
+    </route>
+    
+    <route>
+        <path>/connexion</path>
+        <controller>Session</controller>
+        <action>connexion</action>
+    </route>
+    
+    <route>
+        <path>/inscription_form</path>
+        <controller>Session</controller>
+        <action>inscription_form</action>
+    </route>
+    <route>
+        <path>/inscription</path>
+        <controller>Session</controller>
+        <action>inscription</action>
+    </route>
+
+    <route>
+        <path>/deconnexion</path>
+        <controller>Session</controller>
+        <action>deconnexion</action>
+    </route> 
+
 
     <route>
         <path>/actualite</path>
