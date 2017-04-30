@@ -22,8 +22,10 @@ class ConnexionDb{
         $resu =null;
         
         $db = $this->getDB();
-        
-        foreach ($db->query($sql) as $row) {
+
+        $res= $db->query($sql);
+
+        foreach ($res as $row) {
             $resu[] = $row;
         }
         

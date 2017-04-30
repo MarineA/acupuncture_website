@@ -35,6 +35,7 @@ Et enlever les commentaires de la partie DTD
         <action>home</action>
     </route>
 
+
     <route>
         <path>/pathologies</path>
         <controller>Patho</controller>
@@ -88,6 +89,26 @@ Et enlever les commentaires de la partie DTD
         <controller>Calculatrice</controller>
         <action>descriptionCalculatrice</action>
     </route>
+
+    <route>
+        <path>/resultats</path>
+        <controller>Patho</controller>
+        <action>getPathoBySymptome</action>
+    </route>
+
+    <route>
+        <path>/resultatsM</path>
+        <controller>Patho</controller>
+        <action>getPathoByMeridien</action>
+    </route>
+
+
+    <route>
+        <path>/recherches</path>
+        <controller>Symptome</controller>
+        <action>getSymptome</action>
+    </route>
+
 
     <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>

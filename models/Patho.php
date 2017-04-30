@@ -22,5 +22,6 @@ class Patho{
     public function getDesc(){
         return $this->desc;
     }
+
 }
 ?>
