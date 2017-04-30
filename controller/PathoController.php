@@ -7,17 +7,18 @@ class PathoController
 {
     private $smarty;
 
+    private $pathoManager;
+
     public function __construct() {
         $this->smarty = new Smarty();
+        $this->pathoManager = new PathoManager();
     }
 
 
     //Fonction permettant de récupérer la liste des pathologies 
     public function getAll(){
 
-        $manager = new PathoManager();
-
-        $query = $manager->getAll();
+        $query = $this->pathoManager->getAll();
 
         //On fournit toutes les variables nécessaires au template
         $this->smarty->assign(array(
@@ -26,8 +27,5 @@ class PathoController
 
         $this->smarty->display('templates/index.tpl');
     }
-
-
-
 
 }

@@ -1,16 +1,32 @@
 <div id="menu">
-    <section id="section">
         <ul id="navigation">
            <li>
-              <a href="home">
+              <a href="home" tabindex="3">
                  Home
               </a> 
            </li>
             <li>
-                <a href="pathologies">
+                <a href="pathologies" tabindex="2">
                     Pathologies
                 </a>
             </li>
+            <li>
+                <a href="informations" tabindex="1">
+                    Informations
+                </a>
+            </li>
+            <li>
+                <a href="calculatrice" tabindex="0">
+                    Webservices
+                </a>
+            </li>
+
+            <li>
+                <a href="actualite" tabindex="0">
+                    Actualité
+                </a>
+            </li>
+            < marine_dev
             <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
@@ -26,10 +42,11 @@
                     Inscription
                 </a>
             </li>
-        </ul>  
-    </section>
+        </ul>
 </div>
 
-<div class="center">
-    <section></section>
+
+<div class="banniere">
+
 </div>
+

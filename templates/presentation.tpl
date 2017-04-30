@@ -1,5 +1,5 @@
 
-<div class="center">
+<div class="introduction">
     
     <h1>Remède par l'acupuncture</h1>
 <p>
@@ -20,7 +20,6 @@ The setting is quiet and inviting, allowing patients to relax and enjoy a little
 </div>
 
     
-
 
 </div>
 
