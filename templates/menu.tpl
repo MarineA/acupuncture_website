@@ -28,10 +28,9 @@
 
             <li>
                 <a href="actualite" tabindex="0">
-                    Actualité
+                    Actualité santé
                 </a>
             </li>
-            < marine_dev
             <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
@@ -52,7 +51,5 @@
 
 
 <div class="banniere">
-
->>>>>>> origin/dev
 </div>
 

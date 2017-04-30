@@ -19,7 +19,7 @@ class SymptomeManager
         $this->db = new ConnexionDb;
     }
 
-    public function getSymptomes(){
+    public function getNames(){
         $sql = 'SELECT * FROM symptome';
         $listeSymptomes = array();
         $result = $this->db->requete($sql);
