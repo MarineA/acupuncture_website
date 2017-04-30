@@ -20,18 +20,18 @@
         <action>getAll</action>
     </route>
 
-    <!--<route>
-        <path>/pathologies_recherche</path>
-        <controller>Patho</controller>
-        <action>getSymptomes</action>
-    </route>
--->
-
     <route>
-        <path>/pathologies_symptome</path>
+        <path>/resultats</path>
         <controller>Patho</controller>
         <action>getPathoBySymptome</action>
     </route>
+
+    <route>
+        <path>/resultatsM</path>
+        <controller>Patho</controller>
+        <action>getPathoByMeridien</action>
+    </route>
+
 
     <route>
         <path>/recherches</path>
@@ -39,11 +39,6 @@
         <action>getSymptome</action>
     </route>
 
-    <route>
-        <path>/recherches/symptomes</path>
-        <controller>Symptome</controller>
-        <action>getPathoBySymptome</action>
-    </route>
 
     <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
