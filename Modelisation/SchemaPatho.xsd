@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- J'ai pas encore réussi à intégrer les types pour être plus précis dans la définition de notre structure xml.
+    A voir plus tard -->
+
+
+    <!-- Dans les expressions régulières : ^et $ sont implicites et redondants si on les met -->
+    <!-- nouveau type type_idP pour forcer un chiffre entre 0 et 99 999 999 999 / -->
+    <!--
+    <xsd:simpleType name="type_idP">
+        <xsd:restriction base="xsd:int">
+            <xsd:pattern value="[0-9]{1,11}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    -->
+
+    <!-- nouveau type type_meridien pour forcer une chaîne majuscule non nulle et de 5 caractères maximum / -->
+    <!--
+    <xsd:simpleType name="type_meridien">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="5"/>
+            <xsd:pattern value="[A-Z]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    -->
+
+    <!-- nouveau type type_typeP pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 10 caractères -->
+    <!--
+    <xsd:simpleType name="type_typeP">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+            <xsd:pattern value="[a-z]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    -->
+
+    <!-- nouveau type type_desc pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 50 caractères -->
+    <!--
+    <xsd:simpleType name="type_desc">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="50"/>
+            <xsd:pattern value="[a-z]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    -->
+
+
+    <!-- création de l'élément route appelé ensuite dans routing / -->
+    <xsd:element name="database">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="table" minOccurs="0" maxOccurs="unbounded" >
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="column" minOccurs="1" maxOccurs="4" >
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:string">
+                                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute name="name" type="xsd:string" fixed="patho" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" fixed="acupuncteurs" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
+
+
+

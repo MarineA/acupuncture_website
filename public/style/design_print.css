@@ -1,0 +1,104 @@
+/* CSS pour l'impression */
+
+
+#menu, .banniere {
+    display: none;
+}
+
+.introduction{
+    display: block;
+}
+
+li {
+    /*float: left;*/
+    list-style-position: outside;
+}
+
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px; /* marges intérieures*/
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.connexion {
+    display:inline-block;
+    width: 42%;
+    height: auto;
+    vertical-align:top;
+}
+
+.inscription {
+    display:inline-block;
+    width: 54%;
+    height: auto;
+}
+
+#formulaire ul li{
+    list-style-type: none;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
+
+}
+
+label{
+    display: block;
+    width: 55%;
+    float: left;
+}
+
+table#tab_patho {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#tab_patho th {
+    background-color: #333;
+    color : white;
+    border-bottom: solid black 1px;
+}
+
+table#tab_patho td {
+    border-bottom: solid black 1px;
+}
+
+/* Style pour la partie RSS */
+
+.rss_article {
+    margin-top: 2%;
+    width : 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.rss_title .rss_description {
+    position: relative;
+    padding: 10px;
+}
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    text-align: center;
+}

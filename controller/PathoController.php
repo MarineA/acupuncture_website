@@ -1,9 +1,11 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
-require("models/manager/PathoManager.php");
-include_once ("models/manager/SymptomeManager.php");
-include_once ("models/manager/MeridienManager.php");
+
+require_once("lib/smarty/Smarty.class.php");
+require_once("models/manager/PathoManager.php");
+require_once ("models/manager/SymptomeManager.php");
+require_once ("models/manager/MeridienManager.php");
+
 
 class PathoController
 {
@@ -17,13 +19,13 @@ class PathoController
         $this->manager = new PathoManager();
         $this->symptomanager = new SymptomeManager();
         $this->meridienmanager = new MeridienManager();
-
+        $this->pathoManager = new PathoManager();
     }
+
 
     //Fonction permettant de récupérer la liste des pathologies et les symptomes dans un select
     public function getAll(){
-
-        $query = $this->manager->getAll();
+        $query = $this->pathoManager->getAll();
         $query2 = $this->manager->getMeridiens();
         $query3 = $this->symptomanager->getSymptomes();
 
@@ -33,12 +35,10 @@ class PathoController
             'query' => $query,
             'query2' => $query2,
             'query3' => $query3,
-            //'query4' => $query4
         ));
 
         $this->smarty->display('templates/index.tpl');
     }
-
 
     public function getPathoBySymptome() {
         $symptomes = $_GET['symptomes'];
@@ -69,5 +69,4 @@ class PathoController
         $this->smarty->display('templates/index.tpl');
 
     }
-
 }

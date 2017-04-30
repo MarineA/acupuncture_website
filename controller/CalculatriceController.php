@@ -1,7 +1,7 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
-require("service/CalculatriceService.php");
+include_once("lib/smarty/Smarty.class.php");
+include_once("service/CalculatriceService.php");
 
 class CalculatriceController
 {
@@ -51,6 +51,12 @@ class CalculatriceController
         $this->smarty->display("templates/result.tpl");
 
         return;
+    }
+
+    public function descriptionCalculatrice(){
+        $this->smarty->assign('template', 'templates/calculatrice.tpl');
+
+        $this->smarty->display("templates/index.tpl");
     }
 
 }

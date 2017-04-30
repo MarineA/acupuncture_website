@@ -41,7 +41,16 @@ li a:hover { /*hover : passer la souris */
     background-color: #111;
 }
 
-.center > section {
+#navigation .liste_droite {
+    float:right;
+}
+
+.logout {
+    width: 20px;
+    height: 20px;
+}
+//.center > section {
+.banniere {
 	min-height: 300px;
 	background-image: url('../img/acup.png');
 	background-size: cover; /*étendre l'image au maximum*/
@@ -49,10 +58,13 @@ li a:hover { /*hover : passer la souris */
 	background-repeat: no-repeat; 
 }
 
+/*
 img {
     max-width: 100%;
     height: 100px;
 }
+*/
+
 h1 {
     text-align: center;
 }
@@ -103,6 +115,29 @@ table#tab_patho td {
     border-bottom: solid black 1px;
 }
 
+/* Style pour la partie RSS */
+
+.rss_article {
+    margin-top: 2%;
+    width : 100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightslategray;
+}
+
+.rss_title {
+    position: relative;
+    background-color: seagreen;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.rss_description {
+    position: relative;
+    border-radius: 0 0 10px 10px;
+    background-color: #fafafa;
+    padding: 10px;
+}
 
 #footer {
     list-style-type: none;
@@ -112,9 +147,8 @@ table#tab_patho td {
     background-color: #333;
     width: 100%;
     color : white;
-    text-align: right;
+    text-align: center;
 }
-
 
 
 
