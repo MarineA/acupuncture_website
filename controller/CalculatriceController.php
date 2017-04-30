@@ -1,7 +1,7 @@
 <?php
 
-include_once("lib/smarty/Smarty.class.php");
-include_once("service/CalculatriceService.php");
+require_once("lib/smarty/Smarty.class.php");
+require_once("service/CalculatriceService.php");
 
 class CalculatriceController
 {

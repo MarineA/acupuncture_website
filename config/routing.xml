@@ -103,12 +103,17 @@ Et enlever les commentaires de la partie DTD
     </route>
 
 
-    <route>
+    <!--<route>
         <path>/recherches</path>
         <controller>Symptome</controller>
         <action>getSymptome</action>
-    </route>
+    </route>-->
 
+    <route>
+        <path>/recherches</path>
+        <controller>Patho</controller>
+        <action>getPatho</action>
+    </route>
 
     <route>
         <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>

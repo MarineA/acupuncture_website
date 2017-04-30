@@ -13,58 +13,75 @@ class PathoController
     private $manager;
     private $symptomanager;
     private $meridienmanager;
+    private $meridiensNames;
+    private $symptomeNames;
 
     public function __construct() {
         $this->smarty = new Smarty();
         $this->manager = new PathoManager();
         $this->symptomanager = new SymptomeManager();
         $this->meridienmanager = new MeridienManager();
-        $this->pathoManager = new PathoManager();
+        $this->symptomeNames = $this->symptomanager->getNames();
+        $this->meridiensNames = $this->meridienmanager->getNames();
     }
 
+    public function getPatho(){
+        $symptomes = $_GET['symptomes'];
+
+        $meridiens = $_GET['meridiens'];
+
+        if ($symptomes == null && $meridiens == null){
+            $this->getAll();
+        } elseif ($symptomes != null) {
+            $this->getPathoBySymptome($symptomes);
+        } elseif ($meridiens != null) {
+            $this->getPathoByMeridien($meridiens);
+        }
+
+    }
 
     //Fonction permettant de récupérer la liste des pathologies et les symptomes dans un select
     public function getAll(){
-        $query = $this->pathoManager->getAll();
-        $query2 = $this->manager->getMeridiens();
-        $query3 = $this->symptomanager->getSymptomes();
+        $query = $this->manager->getAll();
 
         //On fournit toutes les variables nécessaires au template
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
             'query' => $query,
-            'query2' => $query2,
-            'query3' => $query3,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames
         ));
 
         $this->smarty->display('templates/index.tpl');
     }
 
-    public function getPathoBySymptome() {
-        $symptomes = $_GET['symptomes'];
+    public function getPathoBySymptome($symptomes) {
 
-        $query4 = $this->manager->getPathoBySymptome($symptomes);
+        $query = $this->manager->getPathoBySymptome($symptomes);
 
         //On fournit toutes les variables nécessaires au template
         $this->smarty->assign(array(
-            'template' => 'templates/resultats.tpl',
-           // 'query3' => $query3,
-            'query4' => $query4));
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames
+        ));
 
         $this->smarty->display('templates/index.tpl');
 
     }
 
-    public function getPathoByMeridien() {
-        $meridiens = $_GET['meridiens'];
+    public function getPathoByMeridien($meridiens) {
 
-        $query5 = $this->manager->getPathoByMeridien($meridiens);
+        $query = $this->manager->getPathoByMeridien($meridiens);
 
         //On fournit toutes les variables nécessaires au template
         $this->smarty->assign(array(
-            'template' => 'templates/resultatsM.tpl',
-            // 'query3' => $query3,
-            'query5' => $query5));
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames
+        ));
 
         $this->smarty->display('templates/index.tpl');
 

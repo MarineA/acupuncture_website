@@ -52,7 +52,5 @@
 
 
 <div class="banniere">
-
->>>>>>> origin/dev
 </div>
 

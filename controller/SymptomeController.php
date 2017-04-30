@@ -1,14 +1,8 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
-require("models/manager/SymptomeManager.php");
+require_once("lib/smarty/Smarty.class.php");
+require_once("models/manager/SymptomeManager.php");
 
-/**
- * Created by PhpStorm.
- * User: Karen
- * Date: 16/04/2017
- * Time: 11:43
- */
 class SymptomeController
 {
     private $smarty;

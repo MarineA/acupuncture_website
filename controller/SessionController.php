@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-include_once("lib/smarty/Smarty.class.php");
-include_once("models/manager/SessionManager.php");
-include_once("controller/PathoController.php");
+require_once("lib/smarty/Smarty.class.php");
+require_once("models/manager/SessionManager.php");
+require_once("controller/PathoController.php");
 
 class SessionController
 {
@@ -94,7 +94,7 @@ class SessionController
             
         } else 
         {
-            echo "déja connecté"
+            echo "déja connecté";
         }
         
     }
@@ -151,7 +151,7 @@ class SessionController
         }
         else 
         {
-            echo "déja connecté"
+            echo "déja connecté";
         }
         
     }

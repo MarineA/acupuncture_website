@@ -1,7 +1,7 @@
 <?php
 
-include_once("models/database/ConnexionDb.php");
-include_once("models/Patho.php");
+require_once("models/database/ConnexionDb.php");
+require_once("models/Patho.php");
 
 class PathoManager {
 
@@ -39,7 +39,7 @@ class PathoManager {
 
     public function getPathoByMeridien($meridiens) {
 
-        $sql = 'SELECT mer, type, patho.desc FROM patho WHERE mer =' . '\'' .$meridiens . '\'';
+        $sql = 'SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer = code WHERE nom =' . '\'' .$meridiens . '\'';
         $listePatho = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {
@@ -72,10 +72,6 @@ class PathoManager {
         }
         return $listeMeridiens;
     }
-
-
-
-
 }
 
 ?>
