@@ -20,12 +20,6 @@
                     Webservices
                 </a>
             </li>
-
-            <li>
-                <a href="actualite" tabindex="0">
-                    Actualité santé
-                </a>
-            </li>
             {if !isset($session)}
             <li class="liste_droite">
                 <a href="inscription_form">
