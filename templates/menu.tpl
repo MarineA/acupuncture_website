@@ -11,11 +11,6 @@
                 </a>
             </li>
             <li>
-                <a href="recherches">
-                    Recherches
-                </a>
-            </li>
-            <li>
                 <a href="informations" tabindex="1">
                     Informations
                 </a>

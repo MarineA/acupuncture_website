@@ -1,7 +1,6 @@
 /* CSS pour l'impression */
 
-
-#menu, .banniere {
+#menu, #formulaire_recherche_patho, .banniere {
     display: none;
 }
 
