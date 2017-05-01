@@ -50,20 +50,14 @@ li a:hover { /*hover : passer la souris */
     height: 20px;
 }
 
-.banniere {
+#banniere {
+    position: relative;
 	min-height: 300px;
 	background-image: url('../img/acup.png');
 	background-size: cover; /*étendre l'image au maximum*/
 	background-position: center;
 	background-repeat: no-repeat; 
 }
-
-/*
-img {
-    max-width: 100%;
-    height: 100px;
-}
-*/
 
 h1 {
     text-align: center;
@@ -73,11 +67,23 @@ h2 {
     color:limegreen;
 }
 
-.connexion {
+#connexion {
     display:inline-block;
     width: 42%; 
     height: auto;  
     vertical-align:top;
+    float : left;
+    position: relative;
+}
+
+#introduction {
+    display:inline-block;
+    width: 42%;
+    height: auto;
+    vertical-align:top;
+    right: 0;
+    float : right;
+    position: relative;
 }
 
 .inscription {
@@ -115,13 +121,29 @@ table#tab_patho td {
     border-bottom: solid black 1px;
 }
 
+#footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+    color : white;
+    text-align: center;
+}
+
 /* Style pour la partie RSS */
+#flux_rss {
+    position: relative;
+    float: left;
+}
 
 .rss_article {
     margin-top: 2%;
     width : 100%;
     border-radius: 10px;
     box-shadow: 1px 1px 10px lightslategray;
+    position: relative;
 }
 
 .rss_title {
@@ -139,16 +161,6 @@ table#tab_patho td {
     padding: 10px;
 }
 
-#footer {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    background-color: #333;
-    width: 100%;
-    color : white;
-    text-align: center;
-}
 
 
 

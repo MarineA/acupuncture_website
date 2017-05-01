@@ -1,5 +1,5 @@
 <div class="inscription">
-<h2>Inscription </h2>
+<h1>Inscription </h1>
 
 <form method="post" action="inscription" id="formulaire">
 
