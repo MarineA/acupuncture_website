@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION))
+{
+    session_start();
+}
 require_once("lib/smarty/Smarty.class.php");
 require_once("models/manager/PathoManager.php");
 require_once ("models/manager/SymptomeManager.php");
@@ -60,6 +64,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -75,6 +80,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -91,6 +97,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -107,6 +114,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -115,5 +123,13 @@ class PathoController
 
         $this->smarty->display('templates/index.tpl');
 
+    }
+
+    private function checkConnexion(){
+        if (isset($_SESSION['login'])){
+            return  $_SESSION['login'];
+        } else {
+            return null;
+        }
     }
 }

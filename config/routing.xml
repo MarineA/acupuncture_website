@@ -42,12 +42,6 @@ Et enlever les commentaires de la partie DTD
     </route>
     
     <route>
-        <path>/connexion_form</path>
-        <controller>Session</controller>
-        <action>connexion_form</action>
-    </route>
-    
-    <route>
         <path>/connexion</path>
         <controller>Session</controller>
         <action>connexion</action>

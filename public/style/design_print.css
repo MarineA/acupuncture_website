@@ -1,11 +1,13 @@
 /* CSS pour l'impression */
 
-#menu, #formulaire_recherche_patho, .banniere {
+#menu, #formulaire_recherche_patho, #banniere, #connexion {
     display: none;
 }
 
-.introduction{
+#introduction{
     display: block;
+    width : 100%;
+    float: left;
 }
 
 li {
@@ -32,13 +34,6 @@ h2 {
 
 a {
     text-decoration: none;
-}
-
-.connexion {
-    display:inline-block;
-    width: 42%;
-    height: auto;
-    vertical-align:top;
 }
 
 .inscription {
@@ -89,8 +84,6 @@ table#tab_patho td {
     position: relative;
     padding: 10px;
 }
-
-
 
 #footer {
     position: absolute;

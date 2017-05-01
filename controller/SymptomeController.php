@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION))
+{
+    session_start();
+}
 require_once("lib/smarty/Smarty.class.php");
 require_once("models/manager/SymptomeManager.php");
 
