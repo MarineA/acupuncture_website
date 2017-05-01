@@ -1,9 +1,9 @@
 <div id="formulaire_recherche_patho">
-    <form method="get" action="recherches">
+    <form method="get" action="pathologies">
 
         <div class="element_formulaire">
-            <label for="symptomes">Recherche par symptome:</label>
-            <select name="symptomes">
+            <label for="symptome">Recherche par symptome:</label>
+            <select name="symptome">
                 <option ></option>
                 {foreach from=$symptomes item=item}
                     <option >{$item->getDesc()}</option>
@@ -14,8 +14,8 @@
         </div>
 
         <div class="element_formulaire">
-            <label for="meridiens">Recherche par meridien:</label>
-            <select name="meridiens">
+            <label for="meridien">Recherche par meridien:</label>
+            <select name="meridien">
                     <option ></option>
                 {foreach from=$meridiens item=item}
                     <option >{$item}</option>
@@ -24,6 +24,19 @@
             </select>
 
         </div>
+
+        <div class="element_formulaire">
+            <label for="type">Recherche par type de pathologie:</label>
+            <select name="type">
+                <option ></option>
+                {foreach from=$types item=item}
+                    <option >{$item}</option>
+                {/foreach}
+
+            </select>
+
+        </div>
+
 
         <input type="submit" value="Rechercher" />
     </form>
