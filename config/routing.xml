@@ -40,6 +40,12 @@ Et enlever les commentaires de la partie DTD
         <controller>Patho</controller>
         <action>getPatho</action>
     </route>
+
+    <route>
+        <path>/symptomes</path>
+        <controller>Symptome</controller>
+        <action>getSymptome</action>
+    </route>
     
     <route>
         <path>/connexion_form</path>

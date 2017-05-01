@@ -1,11 +1,11 @@
 <div id="formulaire_recherche_patho">
-    <form method="get" action="pathologies">
+    <form method="get" action="symptomes">
 
 
         <div class="element_formulaire">
-            <label for="symptome">Recherche par symptome:</label>
-            <select name="symptomes">
-                    {foreach from=$query item=item}
+            <label for="patho">Recherche par patho:</label>
+            <select name="patho">
+                    {foreach from=$pathos item=item}
                         <option>{$item->getDesc()}</option>
                     {/foreach}
 
@@ -14,19 +14,19 @@
         </div>
         <input type="submit" value="Rechercher" />
 
-        <!--<div class="element_formulaire">
-            <label for="mot-cle">Recherche par mot clé :</label>
-            <input type="text" id="mot-cle" placeholder="Entrez un symptôme...">
-        </div>
-        -->
-
-
-
-
     </form>
 </div>
 
 <div id="resultat">
-
+    <table id="tab_patho">
+        <tr>
+            <th>Description</th>
+        </tr>
+        {foreach from=$query item=item}
+            <tr>
+                <td>{$item->getDesc()}</td>
+            </tr>
+        {/foreach}
+    </table>
 
 </div>
