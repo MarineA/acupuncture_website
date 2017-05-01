@@ -62,13 +62,6 @@ Et enlever les commentaires de la partie DTD
         <path>/deconnexion</path>
         <controller>Session</controller>
         <action>deconnexion</action>
-    </route> 
-
-
-    <route>
-        <path>/actualite</path>
-        <controller>Home</controller>
-        <action>getRSS</action>
     </route>
 
     <route>
