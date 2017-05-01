@@ -1,16 +1,119 @@
-<?php    
+<?php
+
+require_once("lib/smarty/Smarty.class.php");
+require_once("models/manager/PathoManager.php");
+require_once ("models/manager/SymptomeManager.php");
+require_once ("models/manager/MeridienManager.php");
+
 
 class PathoController
 {
-    //Fonction permettant de récupérer la liste des pathologies 
-    public function getAll($smarty, $db){
-        $sql = 'SELECT * FROM patho'; 
-        $listePatho = array();
-        $result = $db->requete($sql);
-        foreach ($result as $row) {
-            $patho = new Patho($row['mer'], $row['type'], $row['desc']);
-            array_push($listePatho, $patho);
+    private $smarty;
+    private $manager;
+    private $symptomanager;
+    private $meridienmanager;
+    private $meridiensNames = null;
+    private $symptomeNames = null;
+    private $types = null;
+
+    public function __construct() {
+        $this->smarty = new Smarty();
+        $this->manager = new PathoManager();
+        $this->symptomanager = new SymptomeManager();
+        $this->meridienmanager = new MeridienManager();
+        $this->symptomeNames = $this->symptomanager->getNames();
+        $this->meridiensNames = $this->meridienmanager->getNames();
+        $this->types = $this->manager->getTypes();
+    }
+
+    public function getPatho(){
+        $symptome = null;
+        $meridien = null;
+        $type = null;
+
+        if (isset($_GET['symptome'])) {
+            $symptome = $_GET['symptome'];
         }
-        return $listePatho;
+
+        if (isset($_GET['meridien'])) {
+            $meridien = $_GET['meridien'];
+        }
+
+        if (isset($_GET['type'])){
+            $type = $_GET['type'];
+        }
+
+        if ($symptome != null) {
+            $this->getPathoBySymptome($symptome);
+        } elseif ($meridien != null) {
+            $this->getPathoByMeridien($meridien);
+        } elseif ($type != null) {
+            $this->getPathoByType($type);
+        } else {
+            $this->getAll();
+        }
+
+    }
+
+    public function getAll(){
+        $query = $this->manager->getAll();
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+    }
+
+    public function getPathoBySymptome($symptome) {
+
+        $query = $this->manager->getPathoBySymptome($symptome);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+
+    }
+
+    public function getPathoByMeridien($meridien) {
+
+        $query = $this->manager->getPathoByMeridien($meridien);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+
+    }
+
+    public function getPathoByType($type) {
+
+        $query = $this->manager->getPathoByType($type);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+
     }
 }
