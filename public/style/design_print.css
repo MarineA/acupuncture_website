@@ -2,10 +2,12 @@
 
 #header{
     display: inline;
-    position: fixed;
+    position: relative;
     text-align: center;
     width: 100%;
-    margin: 0px 0px 50px 0px;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
 }
 
 
@@ -101,9 +103,11 @@ table#tab_patho td {
     width : 100%;
     border: 1px solid black;
     border-radius: 10px;
+    page-break-inside: avoid;
 }
 
 .rss_title .rss_description {
     position: relative;
     padding: 10px;
 }
+
