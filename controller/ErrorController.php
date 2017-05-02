@@ -1,6 +1,10 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
+if(!isset($_SESSION))
+{
+    session_start();
+}
+require_once("lib/smarty/Smarty.class.php");
 
 class ErrorController
 {

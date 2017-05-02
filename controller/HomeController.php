@@ -1,6 +1,11 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
+if(!isset($_SESSION))
+{
+    session_start();
+}
+require_once("lib/smarty/Smarty.class.php");
+require_once("controller/PathoController.php");
 
 class HomeController
 {
@@ -13,9 +18,16 @@ class HomeController
 
     public function home()
     {
+        // récupération des articles du flux RSS
+        $donnee = null;
+        if ($flux = simplexml_load_file('http://www.santepubliquefrance.fr/content/view/rss/426')) {
+            $donnee = $flux->channel;
+        }
 
         $this->smarty->assign(array(
             'template' => 'templates/presentation.tpl',
+            'donnee_rss' => $donnee,
+            'session' => $this->checkConnexion()
         ));
 
         $this->smarty->display("templates/index.tpl");
@@ -23,30 +35,20 @@ class HomeController
 
     public function getInfos()
     {
-
         $this->smarty->assign(array(
-            'template' => 'templates/infos.tpl',
+           'template' => 'templates/infos.tpl',
+           'session' => $this->checkConnexion()
         ));
 
         $this->smarty->display("templates/index.tpl");
     }
 
-
-    public function getRSS()
-    {
-
-        $donnee = null;
-        if ($flux = simplexml_load_file('https://medworm.com/rss/medicalfeeds/therapies/Acupuncture-News.xml')) {
-            $donnee = $flux->channel;
+    private function checkConnexion(){
+        if (isset($_SESSION['login'])){
+            return  $_SESSION['login'];
+        } else {
+            return null;
         }
-
-        $this->smarty->assign(array(
-            'template' => 'templates/articles.tpl',
-            'donnee_rss' => $donnee
-        ));
-
-        $this->smarty->display("templates/index.tpl");
     }
-
 }
 ?>

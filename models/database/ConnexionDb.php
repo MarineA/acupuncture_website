@@ -4,6 +4,7 @@ class ConnexionDb{
     private $dbName = "acupuncteurs";/*mettre le nom de votre base de donnée*/
     private $pass = "root"; /*donnez le mot de passe de votre bd */
     private $user = "root"; /*donnez le nom d’utilisateur de la bd (probablement root)*/
+    private $db;
 
     private function getDB(){
         $db = null;
@@ -20,12 +21,23 @@ class ConnexionDb{
         $resu =null;
         
         $db = $this->getDB();
-        
-        foreach ($db->query($sql) as $row) {
+
+        $res= $db->query($sql);
+
+        foreach ($res as $row) {
             $resu[] = $row;
         }
         
         return $resu;
     }
+    
+    public function prepare($sql){
+        $db = $this->getDB();
+        
+        return $db->prepare($sql);
+        
+    
+    }
+    
 }
 ?>

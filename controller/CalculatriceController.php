@@ -1,7 +1,11 @@
 <?php
 
-require("lib/smarty/Smarty.class.php");
-require("service/CalculatriceService.php");
+if(!isset($_SESSION))
+{
+    session_start();
+}
+require_once("lib/smarty/Smarty.class.php");
+require_once("service/CalculatriceService.php");
 
 class CalculatriceController
 {
