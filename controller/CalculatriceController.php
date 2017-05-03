@@ -58,9 +58,20 @@ class CalculatriceController
     }
 
     public function descriptionCalculatrice(){
-        $this->smarty->assign('template', 'templates/calculatrice.tpl');
+        $this->smarty->assign(array(
+        'template' => 'templates/calculatrice.tpl',
+        'session' => $this->checkConnexion()
+        ));
 
         $this->smarty->display("templates/index.tpl");
+    }
+    
+     private function checkConnexion(){
+        if (isset($_SESSION['login'])){
+            return  $_SESSION['login'];
+        } else {
+            return null;
+        }
     }
 
 }

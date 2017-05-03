@@ -45,11 +45,17 @@ li a:hover { /*hover : passer la souris */
     float:right;
 }
 
-.logout {
+img#logout {
     width: 20px;
     height: 20px;
 }
 
+li#session{
+    color : white;
+    text-align: center;
+    padding: 14px 16px; /* marges intérieures*/
+        
+}
 #banniere {
     position: relative;
 	min-height: 300px;

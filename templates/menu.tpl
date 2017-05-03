@@ -28,12 +28,12 @@
             </li>
             {else}
             <li class="liste_droite">
-                {$session}
-            </li>
-            <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
                 </a>
+            </li>
+            <li class="liste_droite" id="session">
+                {$session}
             </li>
             {/if}
         </ul>

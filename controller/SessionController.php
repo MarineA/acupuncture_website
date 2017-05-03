@@ -42,13 +42,11 @@ class SessionController
 
                 // Connexion à la database
                 $login = $_POST['login'];
-                $emailAddr = $_POST['emailAddr'];
                 $password_main = $_POST['password_main'];
                 $password_main = hash("sha256", $password_main); //Hash du mot de passe
                 
                 $infos = array(
                     "login" => $login,
-                    "emailAddr" => $emailAddr,
                     "password_main" => $password_main
                 );
                 
@@ -60,8 +58,6 @@ class SessionController
 
                 //    
                 if ($id != 0) {
-                    //$_SESSION['AuthAdmin'] = array( 'emailAddr' => $emailAddr, 'password_main' => $password_main);
-                    
                     $_SESSION['login'] = $login;
                     //redirection
                     $this->controller_home->home();

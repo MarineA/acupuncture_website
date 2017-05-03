@@ -19,7 +19,7 @@ class SessionManager {
     // Connexion à la database          
        
     //$sql = $this->db->getDb()->prepare('SELECT id FROM consumer where emailAddr = :emailAddr AND password_main = :password_main');
-    $sql = 'SELECT id FROM consumer where login = :login AND emailAddr = :emailAddr AND password_main = :password_main';
+    $sql = 'SELECT id FROM consumer where login = :login AND password_main = :password_main';
     $req = $this->db->prepare($sql);
 
 
