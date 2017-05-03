@@ -1,18 +1,38 @@
 /* CSS pour l'impression */
 
-#menu, #formulaire_recherche_patho, .banniere {
+#header{
+    display: inline;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+
+#footer{
+    position:fixed;
+    text-align: center;
+    width: 100%;
+    bottom : 0;
+}
+
+
+#menu, #banniere {
     display: none;
 }
+
 
 .introduction{
     display: block;
 }
 
+
 li {
     /*float: left;*/
     list-style-position: outside;
 }
-
 
 li a {
     display: block;
@@ -83,6 +103,7 @@ table#tab_patho td {
     width : 100%;
     border: 1px solid black;
     border-radius: 10px;
+    page-break-inside: avoid;
 }
 
 .rss_title .rss_description {
@@ -90,14 +111,3 @@ table#tab_patho td {
     padding: 10px;
 }
 
-
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow: auto;
-    width: 100%;
-    text-align: center;
-}

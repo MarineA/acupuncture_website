@@ -25,31 +25,24 @@
                     Webservices
                 </a>
             </li>
-
-            <li>
-                <a href="actualite" tabindex="0">
-                    Actualité santé
+            {if !isset($session)}
+            <li class="liste_droite">
+                <a href="inscription_form">
+                    Inscription
                 </a>
+            </li>
+            {else}
+            <li class="liste_droite">
+                {$session}
             </li>
             <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
                 </a>
             </li>
-           <li class="liste_droite">
-                <a href="connexion_form">
-                    Connexion
-                </a>
-            </li>
-            <li class="liste_droite">
-                <a href="inscription_form">
-                    Inscription
-                </a>
-            </li>
+            {/if}
         </ul>
 </div>
 
-
-<div class="banniere">
-</div>
+<div id="banniere"></div>
 
