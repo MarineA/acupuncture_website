@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-
-	    <html lang="fr">
-		    <head>
+	<html lang="fr">
+		<head>
 		      <meta charset="UTF-8">
 			    <title>Remède par l'acupuncture</title>
 			    <meta name="keywords" content="HTMLW3C">    
@@ -12,4 +11,5 @@
 			    <script type='text/javascript' src='public/scripts/inscription.js'></script>
 			</head>
 
-			<body>
+		<body>
+			<div id="header">Remède par l'acupuncture</div>

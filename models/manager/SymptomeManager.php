@@ -31,7 +31,7 @@ class SymptomeManager
     }
 
     public function getSymptomeByPatho($patho) {
-        $sql = 'SELECT * FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='. '\''. $patho . '\'' ;
+        $sql = 'SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='. '\''. $patho . '\'' ;
         $listeSymptome = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {

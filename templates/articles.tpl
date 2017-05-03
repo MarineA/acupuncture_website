@@ -1,3 +1,6 @@
+<h1>Actualités</h1>
+
+
 <div id="flux_rss">
 
     {foreach from=$donnee_rss->item item=item}
@@ -10,10 +13,6 @@
                 <a href={$item->link}>Lire l'article...</a>
             </div>
         </div>
-        <! -- On n'affiche que 10 articles -->
-        {if $item@index eq 9}
-            {break}
-        {/if}
     {/foreach}
 
 </div>

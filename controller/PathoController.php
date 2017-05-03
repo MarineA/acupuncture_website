@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION))
+{
+    session_start();
+}
 require_once("lib/smarty/Smarty.class.php");
 require_once("models/manager/PathoManager.php");
 require_once ("models/manager/SymptomeManager.php");
@@ -31,25 +35,47 @@ class PathoController
         $meridien = null;
         $type = null;
 
-        if (isset($_GET['symptome'])) {
+        if(isset($_GET['symptome']) && isset($_GET['meridien']) && isset($_GET['type'])){
             $symptome = $_GET['symptome'];
-        }
-
-        if (isset($_GET['meridien'])) {
             $meridien = $_GET['meridien'];
-        }
-
-        if (isset($_GET['type'])){
             $type = $_GET['type'];
+            $this->getPathoByAll($symptome, $meridien, $type);
         }
 
-        if ($symptome != null) {
+        else if(isset($_GET['symptome']) && isset($_GET['meridien']) && !isset($_GET['type'])){
+            $symptome = $_GET['symptome'];
+            $meridien = $_GET['meridien'];
+            $this->getPathoBySymptomeMeridien($symptome, $meridien);
+        }
+
+        else if(isset($_GET['symptome']) && !isset($_GET['meridien']) && isset($_GET['type'])){
+            $symptome = $_GET['symptome'];
+            $type = $_GET['type'];
+            $this->getPathoBySymptomeType($symptome, $type);
+        }
+
+        else if(!isset($_GET['symptome']) && isset($_GET['meridien']) && isset($_GET['type'])){
+            $meridien = $_GET['meridien'];
+            $type = $_GET['type'];
+            $this->getPathoByMeridienType($meridien, $type);
+        }
+
+        else if (isset($_GET['symptome'])) {
+            $symptome = $_GET['symptome'];
             $this->getPathoBySymptome($symptome);
-        } elseif ($meridien != null) {
+        }
+
+        else if (isset($_GET['meridien'])) {
+            $meridien = $_GET['meridien'];
             $this->getPathoByMeridien($meridien);
-        } elseif ($type != null) {
+        }
+
+        else if (isset($_GET['type'])){
+            $type = $_GET['type'];
             $this->getPathoByType($type);
-        } else {
+        }
+
+        else {
             $this->getAll();
         }
 
@@ -60,6 +86,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -75,6 +102,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -91,6 +119,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -107,6 +136,7 @@ class PathoController
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'symptomes' => $this->symptomeNames,
             'meridiens' => $this->meridiensNames,
@@ -115,5 +145,81 @@ class PathoController
 
         $this->smarty->display('templates/index.tpl');
 
+    }
+
+    //
+
+    public function getPathoByAll($symptome, $meridien, $type){
+
+        $query = $this->manager->getPathoByAll($symptome, $meridien, $type);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+    }
+
+    public function getPathoBySymptomeMeridien($symptome, $meridien) {
+
+        $query = $this->manager->getPathoBySymptomeMeridien($symptome, $meridien);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+    }
+
+    public function getPathoBySymptomeType($symptome, $type) {
+
+        $query = $this->manager->getPathoBySymptomeType($symptome, $type);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+
+    }
+
+    public function getPathoByMeridienType($meridien, $type){
+
+        $query = $this->manager->getPathoByMeridienType($meridien, $type);
+
+        $this->smarty->assign(array(
+            'template' => 'templates/pathos.tpl',
+            'session' => $this->checkConnexion(),
+            'query' => $query,
+            'symptomes' => $this->symptomeNames,
+            'meridiens' => $this->meridiensNames,
+            'types' => $this->types
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+
+    }
+
+    private function checkConnexion(){
+        if (isset($_SESSION['login'])){
+            return  $_SESSION['login'];
+        } else {
+            return null;
+        }
     }
 }
