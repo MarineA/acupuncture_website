@@ -19,13 +19,19 @@
 }
 
 
-#menu, #banniere {
+#menu, #banniere, #connexion {
     display: none;
 }
 
+.rss_description a{
+    display : none;
+}
 
-.introduction{
+
+#introduction{
     display: block;
+    text-align: center;
+    width: 100%;
 }
 
 
