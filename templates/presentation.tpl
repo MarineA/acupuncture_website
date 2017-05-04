@@ -6,15 +6,14 @@
         <ul>
             <li>
                 <label for="login">Login&nbsp;:</label>
-                <input type="text" id="login" name="login" required
-                       oninput="checkLogin(this)">
+                <input type="text" id="login" alt="Entrez votre login" name="login" tabindex="0" required oninput="checkLogin(this)">
             </li>
             <li>
                 <label for="password">Mot de passe&nbsp;:</label>
-                <input type="password" id="password_main" name="password_main" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required oninput="checkPassword(this)">
+                <input type="password" id="password_main" alt="Entrez votre mot de passe" name="password_main" tabindex="0" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required oninput="checkPassword(this)">
             </li>
             <li>
-                <input type="submit" value="Connexion" />
+                <input type="submit" alt="Validez la connexion" tabindex="0" value="Connexion" />
             </li>
         </ul>
     </form>

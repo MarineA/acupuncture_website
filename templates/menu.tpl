@@ -1,17 +1,17 @@
 <div id="menu">
         <ul id="navigation">
            <li>
-              <a href="home" tabindex="3">
+              <a href="home" tabindex="0">
                  Home
               </a> 
            </li>
             <li>
-                <a href="pathologies" tabindex="2">
+                <a href="pathologies" tabindex="0">
                     Pathologies
                 </a>
             </li>
             <li>
-                <a href="informations" tabindex="1">
+                <a href="informations" tabindex="0">
                     Informations
                 </a>
             </li>
