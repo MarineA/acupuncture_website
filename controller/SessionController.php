@@ -4,6 +4,7 @@ if(!isset($_SESSION))
 {
     session_start();
 }
+
 require_once("lib/smarty/Smarty.class.php");
 require_once("controller/SessionController.php");
 require_once("models/manager/SessionManager.php");
@@ -16,6 +17,11 @@ class SessionController
     private $smarty;
     private $controller_home;
     
+    /**
+     * Cette méthode est le constructeur pour la class SessionController
+     *
+     * 
+     */
     public function __construct()
     {
         $this->manager = new SessionManager();
@@ -23,6 +29,10 @@ class SessionController
         $this->controller_home = new HomeController();
     }
     
+    /**
+     * Cette méthode permet de retourner le formulaire d'inscription
+     *
+     */
     public function inscription_form()
     {
         //Route pour le menu
@@ -33,22 +43,25 @@ class SessionController
         $this->smarty->display("templates/index.tpl");
     }
     
+    /**
+     * Cette méthode permet de se connecter
+     *
+     * 
+     */
     public function connexion()
     {
         if (!isset($_SESSION['login'])) {
 
-            //Formulaire de connexion
+        
             if (!empty($_POST)) {
 
                 // Connexion à la database
                 $login = $_POST['login'];
-                $emailAddr = $_POST['emailAddr'];
                 $password_main = $_POST['password_main'];
                 $password_main = hash("sha256", $password_main); //Hash du mot de passe
                 
                 $infos = array(
                     "login" => $login,
-                    "emailAddr" => $emailAddr,
                     "password_main" => $password_main
                 );
                 
@@ -60,8 +73,6 @@ class SessionController
 
                 //    
                 if ($id != 0) {
-                    //$_SESSION['AuthAdmin'] = array( 'emailAddr' => $emailAddr, 'password_main' => $password_main);
-                    
                     $_SESSION['login'] = $login;
                     //redirection
                     $this->controller_home->home();
@@ -82,13 +93,17 @@ class SessionController
         
     }
     
+    /**
+     * Cette méthode permet de s'inscrire
+     *
+     * 
+     */
     //**************************************************************
     public function inscription()
     {
         if (!isset($_SESSION['login'])) {
             
-            //Formualire d'inscritption
-            if (!empty($_POST) && strlen($_POST['name']) > 2 && strlen($_POST['firstname']) > 2 && filter_var($_POST['emailAddr'], FILTER_VALIDATE_EMAIL)) {
+            if (!empty($_POST) && strlen($_POST['name']) > 2 && strlen($_POST['firstname']) > 2 && strlen($_POST['login']) > 2 && filter_var($_POST['emailAddr'], FILTER_VALIDATE_EMAIL)) {
                 
                 $name = $_POST['name'];
                 $firstname = $_POST['firstname'];
@@ -113,10 +128,7 @@ class SessionController
                 $query = $manager->inscription($consumer);
                 $_SESSION['login'] = $login;
 
-                //On fournit toutes les variables nécessaires au template
-                //$this->smarty->assign(array(
-                //  'template' => 'templates/pathos.tpl',
-                //  'query' => $querym));
+
                 $this->controller_home->home();
             }
             
@@ -128,8 +140,12 @@ class SessionController
         
     }
     
+    /**
+     * Cette méthode permet de se déconnecter
+     *
+     * 
+     */
     //**************************************************************
-    
     public function deconnexion()
     {
         

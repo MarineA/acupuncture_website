@@ -1,22 +1,22 @@
 <div id="menu">
         <ul id="navigation">
            <li>
-              <a href="home" tabindex="3">
+              <a href="home" tabindex="0">
                  Home
               </a> 
            </li>
             <li>
-                <a href="pathologies" tabindex="2">
+                <a href="pathologies" tabindex="0">
                     Pathologies
                 </a>
             </li>
             <li>
-                <a href="symptomes" tabindex="4">
+                <a href="symptomes" tabindex="0">
                     Symptomes
                 </a>
             </li>
             <li>
-                <a href="informations" tabindex="1">
+                <a href="informations" tabindex="0">
                     Informations
                 </a>
             </li>
@@ -33,12 +33,12 @@
             </li>
             {else}
             <li class="liste_droite">
-                {$session}
-            </li>
-            <li class="liste_droite">
                 <a href="deconnexion">
                     <img id="logout" src="public/img/logout.png" alt="Déconnexion">
                 </a>
+            </li>
+            <li class="liste_droite" id="session">
+                {$session}
             </li>
             {/if}
         </ul>
