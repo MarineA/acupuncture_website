@@ -14,14 +14,29 @@
         </div>
 
         <div class="element_formulaire">
-            <input type="submit" value="Rechercher" id="validationBouton"/>
+            <label for="keyword">Recherche par mot-clé:</label>
+            <select name="keyword">
+                {foreach from=$keywords item=item}
+                    <option>{$item->getName()}</option>
+                {/foreach}
+
+            </select>
         </div>
+
+<!--
+        <div class="element_formulaire">
+            <input type="submit" value="Rechercher" id="validationBouton"/>
+        </div> -->
 
     </form>
 </div>
+<!--
+<div id="resultat">
+    <table id="tab_patho">
 
-<div id="div_tab_res">
-    <table id="tab_res">
+<!-- <div id="div_tab_res">
+    <table id="tab_res"> -->
+
         <tr>
             <th>Description</th>
         </tr>
@@ -33,3 +48,4 @@
     </table>
 
 </div>
+

@@ -77,6 +77,90 @@ class PathoManager
         return $listePatho;
     }
 
+    public function getPathoByAll($symptome, $meridien, $type)
+    {
+        //$sql = "SELECT * FROM patho WHERE type =" . "'" . $type . "'" . "AND WHERE patho.desc =" . "'" . $symptome . "'" . "AND WHERE mer =" . "'" . $meridien . "'" ;
+
+        $sql = "SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer =" . "'" . $meridien . "'". " JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on  symptome.desc =" . "'" . $symptome . "'" ." WHERE type = " . "'" . $type . "'" ;
+
+        $listePatho = array();
+        $result = $this->db->requete($sql);
+
+        if (!$result==null){
+            echo 'salut';
+            foreach ($result as $row) {
+                $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+                array_push($listePatho, $patho);
+            }
+        }
+        else {
+            $patho = new Patho('', '', '');
+            array_push($listePatho, $patho);
+        }
+        return $listePatho;
+
+    }
+
+
+    public function getPathoBySymptomeMeridien($symptome, $meridien){
+        $sql = "SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer =" . "'" . $meridien . "'". " JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on  symptome.desc =" . "'" . $symptome . "'" ;
+
+        $listePatho = array();
+        $result = $this->db->requete($sql);
+
+        if (!$result==null){
+            foreach ($result as $row) {
+                $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+                array_push($listePatho, $patho);
+            }
+        }
+        else {
+            $patho = new Patho('', '', '');
+            array_push($listePatho, $patho);
+        }
+        return $listePatho;
+    }
+
+
+    public function getPathoBySymptomeType($symptome, $type) {
+        $sql = "SELECT mer, type, patho.desc FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on  symptome.desc =" . "'" . $symptome . "'" ." WHERE type = " . "'" . $type . "'" ;
+
+        $listePatho = array();
+        $result = $this->db->requete($sql);
+
+        if (!$result==null){
+            foreach ($result as $row) {
+                $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+                array_push($listePatho, $patho);
+            }
+        }
+        else {
+            $patho = new Patho('', '', '');
+            array_push($listePatho, $patho);
+        }
+        return $listePatho;
+    }
+
+    public function getPathoByMeridienType($meridien, $type) {
+        $sql = "SELECT mer, type, patho.desc FROM patho JOIN meridien ON mer =" . "'" . $meridien . "'". "  WHERE type = " . "'" . $type . "'" ;
+
+        $listePatho = array();
+        $result = $this->db->requete($sql);
+
+        if (!$result==null){
+            echo 'salut';
+            foreach ($result as $row) {
+                $patho = new Patho($row['mer'], $row['type'], $row['desc']);
+                array_push($listePatho, $patho);
+            }
+        }
+        else {
+            $patho = new Patho('', '', '');
+            array_push($listePatho, $patho);
+        }
+        return $listePatho;
+    }
+
     /**
      * @param $query
      */
