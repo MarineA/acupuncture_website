@@ -1,7 +1,7 @@
-<div class="inscription">
 <h1>Inscription </h1>
 
-<form method="post" action="inscription" id="formulaire">
+<div class="inscription">
+<form method="post" action="inscription" id="formulaire_inscription">
 
     <ul>
         <li>
@@ -58,7 +58,7 @@
         </li>
 
         <li>
-            <input type="submit" value="Valider le formulaire" />
+            <input type="submit" value="Valider le formulaire" id="validation_form_inscr"/>
         </li>
     </ul>
 </form>

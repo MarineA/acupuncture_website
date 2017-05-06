@@ -1,7 +1,7 @@
 <div id="connexion">
     {if !isset($session)}
     <h1> Connexion </h1>
-    <form method="post" action="connexion" id="formulaire">
+    <form method="post" action="connexion" id="formulaire_presentation">
 
         <ul>
             <li>
@@ -55,9 +55,6 @@
 
 </div>
 
-    
-
-</div>
 
 
 			

@@ -1,3 +1,4 @@
+<h1> Pathologies </h1>
 <div id="formulaire_recherche_patho">
     <form method="get" action="pathologies">
 
@@ -42,19 +43,20 @@
     </form>
 </div>
 
-<table id="tab_patho">
-    <tr>
-        <th>Type</th>
-        <th>Méridien</th>
-        <th>Description</th> 
-    </tr>
-    {foreach from=$query item=item}
-      <tr>
-        <td>{$item->getType()}</td>
-        <td>{$item->getMer()}</td>
-        <td>{$item->getDesc()}</td>
-      </tr>
-    {/foreach}
-</table>
-
+<div id="div_tab_patho">
+    <table id="tab_patho">
+        <tr>
+            <th>Type</th>
+            <th>Méridien</th>
+            <th>Description</th>
+        </tr>
+        {foreach from=$query item=item}
+          <tr>
+            <td>{$item->getType()}</td>
+            <td>{$item->getMer()}</td>
+            <td>{$item->getDesc()}</td>
+          </tr>
+        {/foreach}
+    </table>
+</div>
     
