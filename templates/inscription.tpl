@@ -58,7 +58,7 @@
         </li>
 
         <li>
-            <input type="submit" value="Valider le formulaire" id="validation_form_inscr"/>
+            <input type="submit" value="Valider le formulaire" id="validationBouton"/>
         </li>
     </ul>
 </form>

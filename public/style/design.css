@@ -10,6 +10,12 @@ body{
 	margin-right: 5%;
 }
 
+#texte{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 50px;
+}
+
 #menu ul {
     list-style-type: none;
     margin: 0;
@@ -63,25 +69,15 @@ h1 {
 }
 
 h2 {
+    margin-left: 4%;
     color:limegreen;
 }
 
+h3{
+    margin-top: 40px;
+}
 
 /* Formulaires */
-
-#formulaire_presentation ul li {
-    list-style-type: none;
-    margin-left: 10%;
-    max-width: 90%;
-    padding: 2px;
-}
-
-#formulaire_inscription ul li {
-    list-style-type: none;
-    margin-left: 10%;
-    max-width: 90%;
-    padding: 2px;
-}
 
 li {
     /*float: left;*/
@@ -108,12 +104,6 @@ label{
 }
 
 
-/*A mettre à droite
-#validation_form_inscr{
-    text-align: right;
-}
-*/
-
 /* Page Home */
 
 #connexion {
@@ -135,10 +125,20 @@ label{
     position: relative;
 }
 
+
+#formulaire_presentation ul li {
+    list-style-type: none;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
+}
+
+
 /* Style pour la partie RSS */
 #flux_rss {
     position: relative;
     float: left;
+    margin-bottom: 50px;
 }
 
 .rss_article {
@@ -165,49 +165,44 @@ label{
 }
 
 
-/* Inscription */
+/* Inscription et Patho */
 
-.inscription {
+.inscription, #formulaire_recherche_pathos, #formulaire_recherche_symptomes  {
     display:inline-block;
     height: auto;
     width: 100%;
 }
 
+#formulaire_inscription ul li, #formulaire_recherche_pathos .element_formulaire,   #formulaire_recherche_symptomes .element_formulaire{
+    list-style-type: none;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
+}
 
-/* Patho */
+#validationBouton{
+    margin-top: 10px;
+    padding: 6px;
+}
 
-table#tab_patho {
+#div_tab_res{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+table#tab_res {
     border-collapse: collapse;
     width: 100%;
 }
 
-table#tab_patho th {
+table#tab_res th {
     background-color: #333;
     color : white;
     border-bottom: solid black 1px;
 }
 
-table#tab_patho td {
+table#tab_res td {
     border-bottom: solid black 1px;
 }
-
-
-/* Autre */
-
-
-
-
-
-/*
-#formulaire_recherche_patho{
-    display:inline-block;
-    width: 50%;
-    height: auto;
-    vertical-align:top;
-    float : left;
-    position: relative;
-}
-*/
-
 
 

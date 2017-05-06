@@ -1,4 +1,6 @@
-<div id="formulaire_recherche_patho">
+<h1> Symptomes </h1>
+
+<div id="formulaire_recherche_symptomes">
     <form method="get" action="symptomes">
 
 
@@ -8,17 +10,18 @@
                     {foreach from=$pathos item=item}
                         <option>{$item->getDesc()}</option>
                     {/foreach}
-
             </select>
-
         </div>
-        <input type="submit" value="Rechercher" />
+
+        <div class="element_formulaire">
+            <input type="submit" value="Rechercher" id="validationBouton"/>
+        </div>
 
     </form>
 </div>
 
-<div id="resultat">
-    <table id="tab_patho">
+<div id="div_tab_res">
+    <table id="tab_res">
         <tr>
             <th>Description</th>
         </tr>

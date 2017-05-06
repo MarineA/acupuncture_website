@@ -19,7 +19,7 @@
                 <input type="password" id="password_main" name="password_main" pattern="[a-z]+[A-Z]+[0-9]+]{6}" required oninput="checkPassword(this)">
             </li>
             <li>
-                <input type="submit" value="Connexion" />
+                <input type="submit" value="Connexion" id="validationBouton"/>
             </li>
         </ul>
     </form>
