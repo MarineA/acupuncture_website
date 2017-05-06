@@ -6,6 +6,7 @@ if(!isset($_SESSION))
 }
 require_once("lib/smarty/Smarty.class.php");
 require_once("models/manager/SymptomeManager.php");
+require_once("models/manager/PathoManager.php");
 
 class SymptomeController
 {
@@ -13,47 +14,52 @@ class SymptomeController
 
     public function __construct() {
         $this->smarty = new Smarty();
+        $this->manager = new SymptomeManager();
+        $this->pathomanager = new PathoManager();
+        $this->pathoNames = $this->pathomanager->getAll();
     }
 
     //Fonction permettant de récupérer les symptômes
     public function getSymptome(){
 
-        $manager = new SymptomeManager();
+        $patho = null;
 
-        $query = $manager->getSymptomes();
+        if (isset($_GET['patho'])) {
+            $patho = $_GET['patho'];
+        }
 
-        //On fournit toutes les variables nécessaires au template
+        if ($patho != null) {
+            $this->getSymptomeByPatho($patho);
+        } else {
+            $this->getNames();
+        }
+    }
+
+    public function getSymptomeByPatho($patho) {
+
+        //$manager = new SymptomeManager();
+        $query = $this->manager->getSymptomeByPatho($patho);
+
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
-            'query' => $query));
+            'query' => $query,
+            'pathos' => $this->pathoNames));
 
         $this->smarty->display('templates/index.tpl');
     }
 
-/*    public function getSymptomeByPatho() {
 
-        $manager = new SymptomeManager();
-        $query = $manager->getSymptomes();
+    public function getNames(){
+        $query = $this->manager->getNames();
 
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
-            'query' => $query));
+            'query' => $query,
+            'pathos' => $this->pathoNames
+
+        ));
 
         $this->smarty->display('templates/index.tpl');
     }
-*/
-    public function getPathoBySymptome() {
-        $symptomes = $_GET['symptomes'];
-        $manager = new SymptomeManager();
 
-        $query = $manager->getPathoBySymptome($symptomes);
-
-        //On fournit toutes les variables nécessaires au template
-        $this->smarty->assign(array(
-            'template' => 'templates/symptome.tpl',
-            'query' => $query));
-
-        $this->smarty->display('templates/index.tpl');
-
-    }
 }
