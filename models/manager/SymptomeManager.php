@@ -2,6 +2,7 @@
 
 include_once("models/database/ConnexionDb.php");
 include_once("models/Symptome.php");
+include_once("models/Keyword.php");
 include_once("models/Patho.php");
 
 /**
@@ -32,6 +33,18 @@ class SymptomeManager
 
     public function getSymptomeByPatho($patho) {
         $sql = 'SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='. '\''. $patho . '\'' ;
+        $listeSymptome = array();
+        $result = $this->db->requete($sql);
+        foreach ($result as $row) {
+            $symptome = new Symptome($row['desc']);
+            array_push($listeSymptome, $symptome);
+        }
+        return $listeSymptome;
+
+    }
+
+    public function getSymptomeByKeywords($keyword) {
+        $sql = 'SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idP WHERE keywords.name ='. '\''. $keyword . '\'' ;
         $listeSymptome = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {

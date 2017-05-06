@@ -10,13 +10,26 @@
                     {/foreach}
 
             </select>
-
         </div>
+
+        <div class="element_formulaire">
+            <label for="keyword">Recherche par mot-clé:</label>
+            <select name="keyword">
+                {foreach from=$keywords item=item}
+                    <option>{$item->getName()}</option>
+                {/foreach}
+
+            </select>
+        </div>
+
         <input type="submit" value="Rechercher" />
 
     </form>
 </div>
 
+
+
+<!--
 <div id="resultat">
     <table id="tab_patho">
         <tr>
@@ -30,3 +43,4 @@
     </table>
 
 </div>
+
