@@ -11,6 +11,11 @@
                 </a>
             </li>
             <li>
+                <a href="symptomes" tabindex="0">
+                    Symptomes
+                </a>
+            </li>
+            <li>
                 <a href="informations" tabindex="0">
                     Informations
                 </a>

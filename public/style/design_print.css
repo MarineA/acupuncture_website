@@ -1,20 +1,44 @@
 /* CSS pour l'impression */
 
-#menu, #formulaire_recherche_patho, #banniere, #connexion {
+#header{
+    display: inline;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+
+#footer{
+    position:fixed;
+    text-align: center;
+    width: 100%;
+    bottom : 0;
+}
+
+
+#menu, #banniere, #connexion, #formulaire_recherche_symptomes, #formulaire_recherche_pathos {
     display: none;
 }
 
+.rss_description a{
+    display : none;
+}
+
+
 #introduction{
     display: block;
-    width : 100%;
-    float: left;
+    text-align: center;
+    width: 100%;
 }
+
 
 li {
     /*float: left;*/
     list-style-position: outside;
 }
-
 
 li a {
     display: block;
@@ -34,6 +58,13 @@ h2 {
 
 a {
     text-decoration: none;
+}
+
+.connexion {
+    display:inline-block;
+    width: 42%;
+    height: auto;
+    vertical-align:top;
 }
 
 .inscription {
@@ -56,18 +87,23 @@ label{
     float: left;
 }
 
-table#tab_patho {
+#tab_res {
     border-collapse: collapse;
     width: 100%;
 }
 
-table#tab_patho th {
+#tab_res th {
     background-color: #333;
     color : white;
     border-bottom: solid black 1px;
 }
 
-table#tab_patho td {
+#tab_res tr{
+    page-break-inside:avoid;
+    page-break-after:auto
+}
+
+#tab_res td {
     border-bottom: solid black 1px;
 }
 
@@ -78,6 +114,7 @@ table#tab_patho td {
     width : 100%;
     border: 1px solid black;
     border-radius: 10px;
+    page-break-inside: avoid;
 }
 
 .rss_title .rss_description {
@@ -85,12 +122,3 @@ table#tab_patho td {
     padding: 10px;
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow: auto;
-    width: 100%;
-    text-align: center;
-}

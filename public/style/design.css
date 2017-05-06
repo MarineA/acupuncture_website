@@ -1,11 +1,20 @@
+/* CSS du Menu */
+
+#header{
+  display: none;
+}
+
 
 body{
 	margin-left: 5%;
 	margin-right: 5%;
-	
 }
 
-
+#texte{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 50px;
+}
 
 #menu ul {
     list-style-type: none;
@@ -20,12 +29,60 @@ body{
 	float: left;
 }
 
+#navigation .liste_droite {
+    float:right;
+}
+
+.logout {
+    width: 20px;
+    height: 20px;
+}
+
+#banniere {
+    position: relative;
+    min-height: 300px;
+    background-image: url('../img/acup.png');
+    background-size: cover; /*étendre l'image au maximum*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Pied de page */
+
+#footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+    color : white;
+    text-align: center;
+}
+
+
+/* Titres */
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-left: 4%;
+    color:limegreen;
+}
+
+h3{
+    margin-top: 40px;
+}
+
+/* Formulaires */
 
 li {
     /*float: left;*/
     list-style-position: outside;
 }
-
 
 li a {
     display: block;
@@ -34,7 +91,6 @@ li a {
     padding: 14px 16px; /* marges intérieures*/
     text-decoration: none;
 }
-
 
 /* Change the link color to #111 (black) on hover */
 li a:hover { /*hover : passer la souris */
@@ -56,6 +112,7 @@ li#session{
     padding: 14px 16px; /* marges intérieures*/
         
 }
+
 #banniere {
     position: relative;
 	min-height: 300px;
@@ -63,20 +120,19 @@ li#session{
 	background-size: cover; /*étendre l'image au maximum*/
 	background-position: center;
 	background-repeat: no-repeat; 
-}
 
-h1 {
-    text-align: center;
+label{
+    display: block;
+    width: 55%;
+    float: left;
 }
-
-h2 {
-    color:limegreen;
-}
+  
+/* Page Home */
 
 #connexion {
     display:inline-block;
-    width: 42%; 
-    height: auto;  
+    width: 42%;
+    height: auto;
     vertical-align:top;
     float : left;
     position: relative;
@@ -92,56 +148,20 @@ h2 {
     position: relative;
 }
 
-.inscription {
-    display:inline-block;
-    width: 54%; 
-    height: auto;
-}
 
-#formulaire ul li{
-	list-style-type: none;
-	margin-left: 10%;
-	max-width: 90%;
-	padding: 2px;
-
-}
-
-label{
-	display: block;
-	width: 55%;
-	float: left;
-}
-
-table#tab_patho {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-table#tab_patho th {
-    background-color: #333;
-    color : white;
-    border-bottom: solid black 1px;
-}
-
-table#tab_patho td {
-    border-bottom: solid black 1px;
-}
-
-#footer {
+#formulaire_presentation ul li {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
-    background-color: #333;
-    width: 100%;
-    color : white;
-    text-align: center;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
 }
+
 
 /* Style pour la partie RSS */
 #flux_rss {
     position: relative;
     float: left;
+    margin-bottom: 50px;
 }
 
 .rss_article {
@@ -168,5 +188,44 @@ table#tab_patho td {
 }
 
 
+/* Inscription et Patho */
+
+.inscription, #formulaire_recherche_pathos, #formulaire_recherche_symptomes  {
+    display:inline-block;
+    height: auto;
+    width: 100%;
+}
+
+#formulaire_inscription ul li, #formulaire_recherche_pathos .element_formulaire,   #formulaire_recherche_symptomes .element_formulaire{
+    list-style-type: none;
+    margin-left: 10%;
+    max-width: 90%;
+    padding: 2px;
+}
+
+#validationBouton{
+    margin-top: 10px;
+    padding: 6px;
+}
+
+#div_tab_res{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+table#tab_res {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#tab_res th {
+    background-color: #333;
+    color : white;
+    border-bottom: solid black 1px;
+}
+
+table#tab_res td {
+    border-bottom: solid black 1px;
+}
 
 
