@@ -1,0 +1,162 @@
+#header{
+  display: none;
+}
+
+
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+	
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+}
+
+#menu ul li {
+	float: left;
+}
+
+li {
+    /*float: left;*/
+    list-style-position: outside;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px; /* marges intérieures*/
+    text-decoration: none;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+li a:hover { /*hover : passer la souris */
+    background-color: #111;
+}
+
+#navigation .liste_droite {
+    float:right;
+}
+
+.logout {
+    width: 20px;
+    height: 20px;
+}
+
+#banniere {
+    position: relative;
+	min-height: 300px;
+	background-image: url('../img/acup.png');
+	background-size: cover; /*étendre l'image au maximum*/
+	background-position: center;
+	background-repeat: no-repeat; 
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color:limegreen;
+}
+
+#connexion {
+    display:inline-block;
+    width: 42%; 
+    height: auto;  
+    vertical-align:top;
+    float : left;
+    position: relative;
+}
+
+#introduction {
+    display:inline-block;
+    width: 42%;
+    height: auto;
+    vertical-align:top;
+    right: 0;
+    float : right;
+    position: relative;
+}
+
+.inscription {
+    display:inline-block;
+    width: 54%; 
+    height: auto;
+}
+
+#formulaire ul li{
+	list-style-type: none;
+	margin-left: 10%;
+	max-width: 90%;
+	padding: 2px;
+
+}
+
+label{
+	display: block;
+	width: 55%;
+	float: left;
+}
+
+table#tab_patho {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#tab_patho th {
+    background-color: #333;
+    color : white;
+    border-bottom: solid black 1px;
+}
+
+table#tab_patho td {
+    border-bottom: solid black 1px;
+}
+
+/* Style pour la partie RSS */
+#flux_rss {
+    position: relative;
+    float: left;
+}
+
+.rss_article {
+    margin-top: 2%;
+    width : 100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightslategray;
+    position: relative;
+}
+
+.rss_title {
+    position: relative;
+    background-color: seagreen;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.rss_description {
+    position: relative;
+    border-radius: 0 0 10px 10px;
+    background-color: #fafafa;
+    padding: 10px;
+}
+
+#footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* si notre désignation dépasse de la taille prévue*/
+    background-color: #333;
+    width: 100%;
+    color : white;
+    text-align: center;
+}

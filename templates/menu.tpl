@@ -1,18 +1,48 @@
 <div id="menu">
-    <section id="section">
-        {* We generate the menu list from the available pages in the menu *} 
-        <ul id="navigation"> 
-        {foreach key=url_val item=template_name from=$menu} 
-           <li> 
-              <a href="{$SCRIPT_NAME}?{$page_var}={$url_val}"> 
-                 {$url_val}<br /> 
+        <ul id="navigation">
+           <li>
+              <a href="home" tabindex="3">
+                 Home
               </a> 
-           </li> 
-        {/foreach} 
-        </ul>  
-    </section>
+           </li>
+            <li>
+                <a href="pathologies" tabindex="2">
+                    Pathologies
+                </a>
+            </li>
+            <li>
+                <a href="symptomes" tabindex="4">
+                    Symptomes
+                </a>
+            </li>
+            <li>
+                <a href="informations" tabindex="1">
+                    Informations
+                </a>
+            </li>
+            <li>
+                <a href="calculatrice" tabindex="0">
+                    Webservices
+                </a>
+            </li>
+            {if !isset($session)}
+            <li class="liste_droite">
+                <a href="inscription_form">
+                    Inscription
+                </a>
+            </li>
+            {else}
+            <li class="liste_droite">
+                {$session}
+            </li>
+            <li class="liste_droite">
+                <a href="deconnexion">
+                    <img id="logout" src="public/img/logout.png" alt="Déconnexion">
+                </a>
+            </li>
+            {/if}
+        </ul>
 </div>
 
-<div class="center">
-    <section></section>
-</div>
+<div id="banniere"></div>
+

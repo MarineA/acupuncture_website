@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Site pour faire la vérification de la DTD et du schéma : http://www.xmlvalidation.com -->
+
+<!-- : Structure schéma de la base:
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <pma:structure_schemas>
+        <pma:database name="acupuncteurs" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="patho">
+                CREATE TABLE `patho` (
+                `idP` int(11) NOT NULL AUTO_INCREMENT,
+                `mer` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'code du méridien',
+                `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `desc` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'description de la pathologie',
+                PRIMARY KEY (`idP`),
+                KEY `code` (`mer`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+</pma_xml_export>
+-->
+
+
+<!-- Si on veut enlever le schema pour mettre juste la DTD, enlever la partie
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="SchemaPatho.xsd"
+située en paramètre de database
+Et enlever les commentaires de la partie DTD
+-->
+<!--
+<!DOCTYPE database [
+        <!ELEMENT database (table*)>
+        <!ATTLIST database name (acupuncteurs) #REQUIRED>
+        <!ELEMENT table (column+)>
+        <!ATTLIST table name (patho) #REQUIRED>
+        <!ELEMENT column (#PCDATA)>
+        <!ATTLIST column name (idP|mer|type|desc) #IMPLIED>
+        ]>
+-->
+
+<!--
+- Base de données :  'acupuncteurs'
+-->
+    <database name="acupuncteurs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="SchemaPatho.xsd" >
+        <!-- Table patho -->
+        <table name="patho">
+            <column name="idP">1</column>
+            <column name="mer">P</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du poumon externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">2</column>
+            <column name="mer">P</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du poumon interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">3</column>
+            <column name="mer">P</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du poumon pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">4</column>
+            <column name="mer">P</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du poumon vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">5</column>
+            <column name="mer">P</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du poumon</column>
+        </table>
+        <table name="patho">
+            <column name="idP">6</column>
+            <column name="mer">P</column>
+            <column name="type">tfp</column>
+            <column name="desc">zang poumon plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">7</column>
+            <column name="mer">P</column>
+            <column name="type">tfv</column>
+            <column name="desc">zang poumon vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">8</column>
+            <column name="mer">P</column>
+            <column name="type">tfc</column>
+            <column name="desc">zang poumon chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">9</column>
+            <column name="mer">P</column>
+            <column name="type">tff</column>
+            <column name="desc">zang poumon froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">10</column>
+            <column name="mer">GI</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du gros intestin externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">11</column>
+            <column name="mer">GI</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du gros intestin interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">12</column>
+            <column name="mer">GI</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du gros intestin pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">13</column>
+            <column name="mer">GI</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du gros intestin vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">14</column>
+            <column name="mer">GI</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du gros intestin</column>
+        </table>
+        <table name="patho">
+            <column name="idP">15</column>
+            <column name="mer">GI</column>
+            <column name="type">tfp</column>
+            <column name="desc">fu gros intestin plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">16</column>
+            <column name="mer">GI</column>
+            <column name="type">tfv</column>
+            <column name="desc">fu gros intestin vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">17</column>
+            <column name="mer">GI</column>
+            <column name="type">tfc</column>
+            <column name="desc">fu gros intestin chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">18</column>
+            <column name="mer">GI</column>
+            <column name="type">tff</column>
+            <column name="desc">fu gros intestin froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">19</column>
+            <column name="mer">E</column>
+            <column name="type">me</column>
+            <column name="desc">méridien de l'estomac externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">20</column>
+            <column name="mer">E</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien de l'estomac interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">21</column>
+            <column name="mer">E</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo de l'estomac pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">22</column>
+            <column name="mer">E</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo de l'estomac vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">23</column>
+            <column name="mer">E</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin de l'estomac</column>
+        </table>
+        <table name="patho">
+            <column name="idP">24</column>
+            <column name="mer">E</column>
+            <column name="type">tfpc</column>
+            <column name="desc">fu estomac plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">25</column>
+            <column name="mer">E</column>
+            <column name="type">tfvf</column>
+            <column name="desc">fu estomac vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">26</column>
+            <column name="mer">Rte</column>
+            <column name="type">me</column>
+            <column name="desc">méridien de la rate externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">27</column>
+            <column name="mer">Rte</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien de la rate interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">28</column>
+            <column name="mer">Rte</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo de la rate pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">29</column>
+            <column name="mer">Rte</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo de la rate vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">30</column>
+            <column name="mer">Rte</column>
+            <column name="type">l2p</column>
+            <column name="desc">voie grand luo de la rate pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">31</column>
+            <column name="mer">Rte</column>
+            <column name="type">l2v</column>
+            <column name="desc">voie grand luo de la rate vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">32</column>
+            <column name="mer">Rte</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin de la rate</column>
+        </table>
+        <table name="patho">
+            <column name="idP">33</column>
+            <column name="mer">Rte</column>
+            <column name="type">tfpc</column>
+            <column name="desc">zang rate plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">34</column>
+            <column name="mer">Rte</column>
+            <column name="type">tfvf</column>
+            <column name="desc">zang rate vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">35</column>
+            <column name="mer">C</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du cœur externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">36</column>
+            <column name="mer">C</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du cœur interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">37</column>
+            <column name="mer">C</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du cœur pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">38</column>
+            <column name="mer">C</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du cœur vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">39</column>
+            <column name="mer">C</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du cœur</column>
+        </table>
+        <table name="patho">
+            <column name="idP">40</column>
+            <column name="mer">C</column>
+            <column name="type">tfp</column>
+            <column name="desc">zang cœur plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">41</column>
+            <column name="mer">C</column>
+            <column name="type">tfv</column>
+            <column name="desc">zang  cœur vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">42</column>
+            <column name="mer">IG</column>
+            <column name="type">me</column>
+            <column name="desc">méridien de l'intestin grêle externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">43</column>
+            <column name="mer">IG</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien de l'intestin grêle interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">44</column>
+            <column name="mer">IG</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo de l'intestin grêle pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">45</column>
+            <column name="mer">IG</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo de l'intestin grêle vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">46</column>
+            <column name="mer">IG</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin de l'intestin grêle</column>
+        </table>
+        <table name="patho">
+            <column name="idP">47</column>
+            <column name="mer">IG</column>
+            <column name="type">tfpc</column>
+            <column name="desc">fu intestin grêle plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">48</column>
+            <column name="mer">IG</column>
+            <column name="type">tfvf</column>
+            <column name="desc">fu intestin grêle vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">49</column>
+            <column name="mer">V</column>
+            <column name="type">me</column>
+            <column name="desc">méridien de la vessie externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">50</column>
+            <column name="mer">V</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien de la vessie interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">51</column>
+            <column name="mer">V</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo de la vessie pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">52</column>
+            <column name="mer">V</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo de la vessie vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">53</column>
+            <column name="mer">V</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin de la vessie</column>
+        </table>
+        <table name="patho">
+            <column name="idP">54</column>
+            <column name="mer">V</column>
+            <column name="type">tfpc</column>
+            <column name="desc">fu vessie plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">55</column>
+            <column name="mer">V</column>
+            <column name="type">tfvf</column>
+            <column name="desc">fu vessie vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">56</column>
+            <column name="mer">R</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du rein externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">57</column>
+            <column name="mer">R</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du rein interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">58</column>
+            <column name="mer">R</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du rein pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">59</column>
+            <column name="mer">R</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du rein vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">60</column>
+            <column name="mer">R</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du rein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">61</column>
+            <column name="mer">R</column>
+            <column name="type">tfv-</column>
+            <column name="desc">zang rein yin vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">62</column>
+            <column name="mer">R</column>
+            <column name="type">tfv+</column>
+            <column name="desc">zang rein yang vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">63</column>
+            <column name="mer">MC</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du maître du cœur externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">64</column>
+            <column name="mer">MC</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du maître du cœur interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">65</column>
+            <column name="mer">MC</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du maître du cœur pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">66</column>
+            <column name="mer">MC</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du maître du cœur vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">67</column>
+            <column name="mer">MC</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du maître du cœur</column>
+        </table>
+        <table name="patho">
+            <column name="idP">68</column>
+            <column name="mer">MC</column>
+            <column name="type">tfp</column>
+            <column name="desc">zang maître du cœur plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">69</column>
+            <column name="mer">MC</column>
+            <column name="type">tfv</column>
+            <column name="desc">zang maître du cœur vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">70</column>
+            <column name="mer">TR</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du triple réchauffeur externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">71</column>
+            <column name="mer">TR</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du triple réchauffeur interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">72</column>
+            <column name="mer">TR</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du triple réchauffeur pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">73</column>
+            <column name="mer">TR</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du triple réchauffeur vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">74</column>
+            <column name="mer">TR</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du triple réchauffeur</column>
+        </table>
+        <table name="patho">
+            <column name="idP">75</column>
+            <column name="mer">TR</column>
+            <column name="type">tfvfs</column>
+            <column name="desc">fu du triple réchauffeur supérieur vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">76</column>
+            <column name="mer">TR</column>
+            <column name="type">tfpcs</column>
+            <column name="desc">fu du triple réchauffeur supérieur plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">77</column>
+            <column name="mer">TR</column>
+            <column name="type">tfvfm</column>
+            <column name="desc">fu du triple réchauffeur moyen vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">78</column>
+            <column name="mer">TR</column>
+            <column name="type">tfpcm</column>
+            <column name="desc">fu du triple réchauffeur moyen plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">79</column>
+            <column name="mer">TR</column>
+            <column name="type">tfvfi</column>
+            <column name="desc">fu du triple réchauffeur inférieur vide et froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">80</column>
+            <column name="mer">TR</column>
+            <column name="type">tfpci</column>
+            <column name="desc">fu du triple réchauffeur inférieur plein et chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">81</column>
+            <column name="mer">VB</column>
+            <column name="type">me</column>
+            <column name="desc">méridien de la vésicule biliaire externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">82</column>
+            <column name="mer">VB</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien de la vésicule biliaire interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">83</column>
+            <column name="mer">VB</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo de la vésicule biliaire pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">84</column>
+            <column name="mer">VB</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo de la vésicule biliaire vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">85</column>
+            <column name="mer">VB</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin de la vésicule biliaire</column>
+        </table>
+        <table name="patho">
+            <column name="idP">86</column>
+            <column name="mer">VB</column>
+            <column name="type">tfp</column>
+            <column name="desc">fu vésicule biliaire plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">87</column>
+            <column name="mer">VB</column>
+            <column name="type">tfv</column>
+            <column name="desc">fu vésicule biliaire vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">88</column>
+            <column name="mer">VB</column>
+            <column name="type">tfc</column>
+            <column name="desc">fu vésicule biliaire chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">89</column>
+            <column name="mer">VB</column>
+            <column name="type">tff</column>
+            <column name="desc">fu vésicule biliaire froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">90</column>
+            <column name="mer">F</column>
+            <column name="type">me</column>
+            <column name="desc">méridien du foie externe</column>
+        </table>
+        <table name="patho">
+            <column name="idP">91</column>
+            <column name="mer">F</column>
+            <column name="type">mi</column>
+            <column name="desc">méridien du foie interne</column>
+        </table>
+        <table name="patho">
+            <column name="idP">92</column>
+            <column name="mer">F</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du foie pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">93</column>
+            <column name="mer">F</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du foie vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">94</column>
+            <column name="mer">F</column>
+            <column name="type">j</column>
+            <column name="desc">jing jin du foie</column>
+        </table>
+        <table name="patho">
+            <column name="idP">95</column>
+            <column name="mer">F</column>
+            <column name="type">tfp</column>
+            <column name="desc">zang foie plein</column>
+        </table>
+        <table name="patho">
+            <column name="idP">96</column>
+            <column name="mer">F</column>
+            <column name="type">tfv</column>
+            <column name="desc">zang foie vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">97</column>
+            <column name="mer">F</column>
+            <column name="type">tfc</column>
+            <column name="desc">zang foie chaud</column>
+        </table>
+        <table name="patho">
+            <column name="idP">98</column>
+            <column name="mer">F</column>
+            <column name="type">tff</column>
+            <column name="desc">zang foie froid</column>
+        </table>
+        <table name="patho">
+            <column name="idP">101</column>
+            <column name="mer">DM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Du Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">102</column>
+            <column name="mer">RM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Ren Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">103</column>
+            <column name="mer">ChM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie générale du Chong Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">104</column>
+            <column name="mer">ChM</column>
+            <column name="type">mvi</column>
+            <column name="desc">Pathologie de la branche inférieure du Chong Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">105</column>
+            <column name="mer">ChM</column>
+            <column name="type">mvp</column>
+            <column name="desc">Pathologie de la branche postérieure du Chong Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">106</column>
+            <column name="mer">ChM</column>
+            <column name="type">mva</column>
+            <column name="desc">Pathologie de la branche antérieure du Chong Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">107</column>
+            <column name="mer">DaiM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Dai Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">108</column>
+            <column name="mer">+QM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Yang Qiao Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">109</column>
+            <column name="mer">-QM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Yin Qiao Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">110</column>
+            <column name="mer">+WM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Yang Wei Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">111</column>
+            <column name="mer">-WM</column>
+            <column name="type">mv</column>
+            <column name="desc">Pathologie du Yin Wei Mai</column>
+        </table>
+        <table name="patho">
+            <column name="idP">112</column>
+            <column name="mer">DM</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du Du Mai pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">113</column>
+            <column name="mer">DM</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du Du Mai vide</column>
+        </table>
+        <table name="patho">
+            <column name="idP">114</column>
+            <column name="mer">RM</column>
+            <column name="type">lp</column>
+            <column name="desc">voie luo du Ren Mai pleine</column>
+        </table>
+        <table name="patho">
+            <column name="idP">115</column>
+            <column name="mer">RM</column>
+            <column name="type">lv</column>
+            <column name="desc">voie luo du Ren Mai vide</column>
+        </table>
+    </database>

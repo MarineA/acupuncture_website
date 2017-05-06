@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-
-	    <html lang="fr">
-		    <head>
-		        <link rel="stylesheet" href="style/design.css">
-		        <link rel="stylesheet" href="style/inscription/inscription.css">
-		        <meta charset="UTF-8">
+	<html lang="fr">
+		<head>
+		      <meta charset="UTF-8">
 			    <title>Remède par l'acupuncture</title>
-			    <meta name="keywords" content="HTMLW3C">
+			    <meta name="keywords" content="HTMLW3C">    
+		      <link rel="stylesheet" type="text/css" href="public/style/design.css">
+		      <link rel="stylesheet" type="text/css" href="public/style/inscription/inscription.css">
+				  <link rel="stylesheet" type="text/css" href="public/style/design_print.css" media="print" />
 			    <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
-			    <script type='text/javascript' src='scripts/inscription.js'></script>
+			    <script type='text/javascript' src='public/scripts/inscription.js'></script>
 			</head>
 
-			<body>
+		<body>
+			<div id="header">Remède par l'acupuncture</div>

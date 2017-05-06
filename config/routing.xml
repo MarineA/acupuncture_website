@@ -1,0 +1,94 @@
+<?xml version='1.0' standalone='no'?>
+
+
+<!-- Si on veut enlever le schema pour mettre juste la DTD, enlever la partie
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="SchemaRouting.xsd"
+située en paramètre de routing
+Et enlever les commentaires de la partie DTD
+-->
+<!--
+<!DOCTYPE routing [
+        <!ELEMENT routing (route*)>
+        <!ELEMENT route (path, controller, action,operation?,valeur1?, valeur2?)>
+        <!ELEMENT path (#PCDATA)>
+        <!ELEMENT controller (#PCDATA)>
+        <!ELEMENT action (#PCDATA)>
+        <!ELEMENT operation (#PCDATA)>
+        <!ELEMENT valeur1 (#PCDATA)>
+        <!ELEMENT valeur2 (#PCDATA)>
+        ]>
+-->
+
+<routing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="SchemaRouting.xsd">
+
+    <route>
+        <path>/</path>
+        <controller>Home</controller>
+        <action>home</action>
+    </route>
+
+    <route>
+        <path>/home</path>
+        <controller>Home</controller>
+        <action>home</action>
+    </route>
+
+    <route>
+        <path>/pathologies</path>
+        <controller>Patho</controller>
+        <action>getPatho</action>
+    </route>
+
+    <route>
+        <path>/symptomes</path>
+        <controller>Symptome</controller>
+        <action>getSymptome</action>
+    </route>
+    
+    <route>
+        <path>/connexion</path>
+        <controller>Session</controller>
+        <action>connexion</action>
+    </route>
+    
+    <route>
+        <path>/inscription_form</path>
+        <controller>Session</controller>
+        <action>inscription_form</action>
+    </route>
+    <route>
+        <path>/inscription</path>
+        <controller>Session</controller>
+        <action>inscription</action>
+    </route>
+
+    <route>
+        <path>/deconnexion</path>
+        <controller>Session</controller>
+        <action>deconnexion</action>
+    </route>
+
+    <route>
+        <path>/informations</path>
+        <controller>Home</controller>
+        <action>getInfos</action>
+    </route>
+
+    <route>
+        <path>/calculatrice</path>
+        <controller>Calculatrice</controller>
+        <action>descriptionCalculatrice</action>
+    </route>
+
+    <route>
+        <path>/calculatrice/{operation}/{valeur1}/{valeur2}</path>
+        <controller>Calculatrice</controller>
+        <action>calcul</action>
+        <operation>(addition|soustraction|division|multiplication)</operation>
+        <valeur1>(\d+)</valeur1>
+        <valeur2>(\d+)</valeur2>
+    </route>
+
+</routing>
