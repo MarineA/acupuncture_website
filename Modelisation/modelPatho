@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Site pour faire la vérification de la DTD et du schéma : http://www.xmlvalidation.com -->
-
-<!-- : Structure schéma de la base:
-<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
-    <pma:structure_schemas>
-        <pma:database name="acupuncteurs" collation="latin1_swedish_ci" charset="latin1">
-            <pma:table name="patho">
-                CREATE TABLE `patho` (
-                `idP` int(11) NOT NULL AUTO_INCREMENT,
-                `mer` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'code du méridien',
-                `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-                `desc` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'description de la pathologie',
-                PRIMARY KEY (`idP`),
-                KEY `code` (`mer`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-            </pma:table>
-        </pma:database>
-    </pma:structure_schemas>
-</pma_xml_export>
--->
-
+<!-- Site possible pour faire la vérification de la DTD et du schéma : http://www.xmlvalidation.com -->
 
 <!-- Si on veut enlever le schema pour mettre juste la DTD, enlever la partie
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="SchemaPatho.xsd"
-située en paramètre de database
+située en paramètre de la balise database
 Et enlever les commentaires de la partie DTD
 -->
+
+
+<!--  DTD interne
+Commentaires :
+Ligne 1 : La balise "database" peut contenir une ou plusieurs balises "table"
+Ligne 2 : L'attribut "name" de "database" ayant pour valeur "acupuncteurs" est obligatoire
+Ligne 3 : La balise "table" contient au minimum une balise "column"
+Ligne 4 : L'attribut "name" de "table" ayant pour valeur "patho" est obligatoire
+Ligne 5 : La balise "column" contient une valeur
+Ligne 6 : L'attribut "name" de "column" est facultatif et peut avoir comme valeur possible la liste suivante : "idP", "mer", "type", "desc".
+-->
+
 <!--
 <!DOCTYPE database [
         <!ELEMENT database (table*)>
@@ -38,6 +30,8 @@ Et enlever les commentaires de la partie DTD
         <!ATTLIST column name (idP|mer|type|desc) #IMPLIED>
         ]>
 -->
+<!--  Fin de la DTD interne -->
+
 
 <!--
 - Base de données :  'acupuncteurs'
