@@ -4,7 +4,7 @@
         <div class="element_formulaire">
             <label for="symptome">Recherche par symptome:</label>
             <select name="symptome">
-                <option ></option>
+                <option value="" ></option>
                 {foreach from=$symptomes item=item}
                     <option >{$item->getDesc()}</option>
                 {/foreach}
@@ -16,7 +16,7 @@
         <div class="element_formulaire">
             <label for="meridien">Recherche par meridien:</label>
             <select name="meridien">
-                    <option ></option>
+                    <option value="" ></option>
                 {foreach from=$meridiens item=item}
                     <option >{$item}</option>
                 {/foreach}
@@ -28,7 +28,7 @@
         <div class="element_formulaire">
             <label for="type">Recherche par type de pathologie:</label>
             <select name="type">
-                <option ></option>
+                <option value=""></option>
                 {foreach from=$types item=item}
                     <option >{$item}</option>
                 {/foreach}
