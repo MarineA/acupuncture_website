@@ -28,22 +28,13 @@ class SymptomeController
         $patho = null;
         $keyword = null;
 
-        if (isset($_GET['patho'])) {
+        if ($_GET['patho']!="") {
             $patho = $_GET['patho'];
-        }
-
-        //TESTER SI ON EST CONNECTE
-        if (isset ($_GET['keyword'])) {
-            $keyword = $_GET['keyword'];
-        }
-
-        //TESTER SI ON EST CONNECTE
-        if($keyword != null){
-            $this->getSymptomeByKeywords($keyword);
-        }
-
-        else if ($patho != null) {
             $this->getSymptomeByPatho($patho);
+        }
+        else if ($_GET['keyword']!="") {
+            $keyword = $_GET['keyword'];
+            $this->getSymptomeByKeywords($keyword);
         } else {
             $this->getAll();
         }
@@ -54,7 +45,7 @@ class SymptomeController
         $query = $this->manager->getNames();
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
-            //'session' => $this->checkConnexion(),
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'pathos' => $this->pathoNames,
             'keywords' => $this->keywordNames
@@ -72,8 +63,11 @@ class SymptomeController
 
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
-            'pathos' => $this->pathoNames));
+            'pathos' => $this->pathoNames,
+            'keywords' => $this->keywordNames
+        ));
 
         $this->smarty->display('templates/index.tpl');
     }
@@ -92,19 +86,6 @@ class SymptomeController
         $this->smarty->display('templates/index.tpl');
     }
 
-    public function getKWNames(){
-        $keywordmanager = new KeywordManager();
-        $keywords = $keywordmanager->getNames();
-
-        $this->smarty->assign(array(
-            'template' => 'templates/symptome.tpl',
-            'keywords' => $keywords
-
-        ));
-
-        $this->smarty->display('templates/index.tpl');
-    }
-
     public function getSymptomeByKeywords($keyword) {
 
         $query = $this->manager->getSymptomeByKeywords($keyword);
@@ -112,12 +93,20 @@ class SymptomeController
 
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
+            'session' => $this->checkConnexion(),
             'query' => $query,
             'pathos' => $this->pathoNames,
-            'keywords' => $this->keywords
-
+            'keywords' => $this->keywordNames
         ));
 
         $this->smarty->display('templates/index.tpl');
+    }
+
+    private function checkConnexion(){
+        if (isset($_SESSION['login'])){
+            return  $_SESSION['login'];
+        } else {
+            return null;
+        }
     }
 }

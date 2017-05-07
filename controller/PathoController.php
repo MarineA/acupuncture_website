@@ -35,42 +35,42 @@ class PathoController
         $meridien = null;
         $type = null;
 
-        if(isset($_GET['symptome']) && isset($_GET['meridien']) && isset($_GET['type'])){
+        if($_GET['symptome']!="--" && $_GET['meridien']!="--" && $_GET['type']!="--"){
             $symptome = $_GET['symptome'];
             $meridien = $_GET['meridien'];
             $type = $_GET['type'];
             $this->getPathoByAll($symptome, $meridien, $type);
         }
 
-        else if(isset($_GET['symptome']) && isset($_GET['meridien']) && !isset($_GET['type'])){
+        else if($_GET['symptome']!="--" && $_GET['meridien']!="--" && $_GET['type']=="--"){
             $symptome = $_GET['symptome'];
             $meridien = $_GET['meridien'];
             $this->getPathoBySymptomeMeridien($symptome, $meridien);
         }
 
-        else if(isset($_GET['symptome']) && !isset($_GET['meridien']) && isset($_GET['type'])){
+        else if($_GET['symptome']!="--" && $_GET['meridien']=="--" && $_GET['type']!="--"){
             $symptome = $_GET['symptome'];
             $type = $_GET['type'];
             $this->getPathoBySymptomeType($symptome, $type);
         }
 
-        else if(!isset($_GET['symptome']) && isset($_GET['meridien']) && isset($_GET['type'])){
+        else if($_GET['symptome']=="--" && $_GET['meridien']!="--" && $_GET['type']!="--"){
             $meridien = $_GET['meridien'];
             $type = $_GET['type'];
             $this->getPathoByMeridienType($meridien, $type);
         }
 
-        else if (isset($_GET['symptome'])) {
+        else if ($_GET['symptome']!="--" && $_GET['meridien']=="--" && $_GET['type']=="--") {
             $symptome = $_GET['symptome'];
             $this->getPathoBySymptome($symptome);
         }
 
-        else if (isset($_GET['meridien'])) {
+        else if ($_GET['symptome']=="--" && $_GET['meridien']!="--" && $_GET['type']=="--") {
             $meridien = $_GET['meridien'];
             $this->getPathoByMeridien($meridien);
         }
 
-        else if (isset($_GET['type'])){
+        else if ($_GET['symptome']=="--" && $_GET['meridien']=="--" && $_GET['type']!="--"){
             $type = $_GET['type'];
             $this->getPathoByType($type);
         }
@@ -78,7 +78,6 @@ class PathoController
         else {
             $this->getAll();
         }
-
     }
 
     public function getAll(){
@@ -167,7 +166,7 @@ class PathoController
 
     public function getPathoBySymptomeMeridien($symptome, $meridien) {
 
-        $query = $this->manager->getPathoBySymptomeMeridien($symptome, $meridien);
+        $query = $this->manager->getPathoBySymptomeAndMeridien($symptome, $meridien);
 
         $this->smarty->assign(array(
             'template' => 'templates/pathos.tpl',

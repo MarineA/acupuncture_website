@@ -11,7 +11,6 @@ class KeywordManager {
         $this->db = new ConnexionDb;
     }
 
-    //Retourne les noms de méridiens
     public function getNames(){
 
         $sql = 'SELECT name FROM keywords';
