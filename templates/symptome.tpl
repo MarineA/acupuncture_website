@@ -1,12 +1,12 @@
-<h1> Symptomes </h1>
+<h1> Symptômes </h1>
 
 <div id="formulaire_recherche_symptomes">
     <form method="get" action="symptomes">
 
 
         <div class="element_formulaire">
-            <label for="patho">Recherche par patho:</label>
-            <select name="patho">
+            <label for="patho">Recherche par pathologie :</label>
+            <select name="patho" id="patho">
                 <option>--</option>
                 {foreach from=$pathos item=item}
                     <option>{$item->getDesc()}</option>
@@ -16,8 +16,8 @@
 
         {if isset($session)}
         <div class="element_formulaire">
-            <label for="keyword">Recherche par mot-clé:</label>
-            <select name="patho">
+            <label for="keyword">Recherche par mot-clés :</label>
+            <select name="keyword" id="keyword">
                 <option>--</option>
                 {foreach from=$keywords item=item}
                     <option>{$item}</option>
@@ -35,7 +35,7 @@
 
 <div id="div_tab_res">
     <table id="tab_res">
-
+        <caption>Liste des symptômes</caption>
         <tr>
             <th>Description</th>
         </tr>

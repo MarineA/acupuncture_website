@@ -2,7 +2,7 @@
 class ConnexionDb{
 
     private $dbName = "acupuncteurs";/*mettre le nom de votre base de donnée*/
-    private $pass = "root"; /*donnez le mot de passe de votre bd */
+    private $pass = ""; /*donnez le mot de passe de votre bd */
     private $user = "root"; /*donnez le nom d’utilisateur de la bd (probablement root)*/
     private $db;
 

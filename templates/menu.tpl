@@ -12,7 +12,7 @@
             </li>
             <li>
                 <a href="symptomes" tabindex="0">
-                    Symptomes
+                    Symptômes
                 </a>
             </li>
             <li>
@@ -22,7 +22,7 @@
             </li>
             <li>
                 <a href="calculatrice" tabindex="0">
-                    Webservices
+                    Services Web
                 </a>
             </li>
             {if !isset($session)}

@@ -4,8 +4,8 @@
 
 
         <div class="element_formulaire">
-            <label for="symptome">Recherche par symptome:</label>
-            <select name="symptome">
+            <label for="symptome">Recherche par symptôme :</label>
+            <select name="symptome" id="symptome">
                 <option value="" >--</option>
                 {foreach from=$symptomes item=item}
                     <option >{$item->getDesc()}</option>
@@ -15,8 +15,8 @@
 
 
         <div class="element_formulaire">
-            <label for="meridien">Recherche par meridien:</label>
-            <select name="meridien">
+            <label for="meridien">Recherche par méridien :</label>
+            <select name="meridien" id="meridien">
                     <option value="" >--</option>
                 {foreach from=$meridiens item=item}
                     <option >{$item}</option>
@@ -26,8 +26,8 @@
 
 
         <div class="element_formulaire">
-            <label for="type">Recherche par type de pathologie:</label>
-            <select name="type">
+            <label for="type">Recherche par type de pathologie :</label>
+            <select name="type" id="type">
                 <option value="">--</option>
                 {foreach from=$types item=item}
                     <option >{$item}</option>
@@ -43,17 +43,18 @@
 </div>
 
 <div id="div_tab_res">
-    <table id="tab_res">
+     <table id="tab_res">
+        <caption>Liste des pathologies</caption>
         <tr>
-            <th>Type</th>
-            <th>Méridien</th>
-            <th>Description</th>
+            <th id="th_type" >Type</th>
+            <th id="th_meridien">Méridien</th>
+            <th id="th_descr">Description</th>
         </tr>
         {foreach from=$query item=item}
           <tr>
-            <td>{$item->getType()}</td>
-            <td>{$item->getMer()}</td>
-            <td>{$item->getDesc()}</td>
+            <td headers="th_type">{$item->getType()}</td>
+            <td headers="th_meridien">{$item->getMer()}</td>
+            <td headers="th_descr">{$item->getDesc()}</td>
           </tr>
         {/foreach}
     </table>
