@@ -11,6 +11,10 @@ class KeywordManager {
         $this->db = new ConnexionDb;
     }
 
+    /**
+     * @return array
+     * retourne la liste des noms de mots-clé
+     */
     public function getNames(){
 
         $sql = 'SELECT name FROM keywords';
