@@ -7,35 +7,34 @@
         <div class="element_formulaire">
             <label for="patho">Recherche par patho:</label>
             <select name="patho">
-                    {foreach from=$pathos item=item}
-                        <option>{$item->getDesc()}</option>
-                    {/foreach}
+                <option>--</option>
+                {foreach from=$pathos item=item}
+                    <option>{$item->getDesc()}</option>
+                {/foreach}
             </select>
         </div>
 
+        {if isset($session)}
         <div class="element_formulaire">
             <label for="keyword">Recherche par mot-clé:</label>
-            <select name="keyword">
+            <select name="patho">
+                <option>--</option>
                 {foreach from=$keywords item=item}
-                    <option>{$item->getName()}</option>
+                    <option>{$item}</option>
                 {/foreach}
-
             </select>
         </div>
+        {/if}
 
-<!--
         <div class="element_formulaire">
             <input type="submit" value="Rechercher" id="validationBouton"/>
-        </div> -->
+        </div>
 
     </form>
 </div>
-<!--
-<div id="resultat">
-    <table id="tab_patho">
 
-<!-- <div id="div_tab_res">
-    <table id="tab_res"> -->
+<div id="div_tab_res">
+    <table id="tab_res">
 
         <tr>
             <th>Description</th>

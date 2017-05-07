@@ -115,11 +115,12 @@ li#session{
 
 #banniere {
     position: relative;
-	min-height: 300px;
-	background-image: url('../img/acup.png');
-	background-size: cover; /*étendre l'image au maximum*/
-	background-position: center;
-	background-repeat: no-repeat; 
+    min-height: 300px;
+    background-image: url('../img/acup.png');
+    background-size: cover; /*étendre l'image au maximum*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 label{
     display: block;

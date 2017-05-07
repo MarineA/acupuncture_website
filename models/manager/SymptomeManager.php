@@ -5,12 +5,6 @@ include_once("models/Symptome.php");
 include_once("models/Keyword.php");
 include_once("models/Patho.php");
 
-/**
- * Created by PhpStorm.
- * User: Karen
- * Date: 16/04/2017
- * Time: 17:26
- */
 class SymptomeManager
 {
     private $db;
@@ -32,7 +26,7 @@ class SymptomeManager
     }
 
     public function getSymptomeByPatho($patho) {
-        $sql = 'SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='. '\''. $patho . '\'' ;
+        $sql = "SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='". $patho . "'xs" ;
         $listeSymptome = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {
@@ -44,7 +38,7 @@ class SymptomeManager
     }
 
     public function getSymptomeByKeywords($keyword) {
-        $sql = 'SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idP WHERE keywords.name ='. '\''. $keyword . '\'' ;
+        $sql = "SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idP WHERE keywords.name LIKE '%". $keyword ."%'";
         $listeSymptome = array();
         $result = $this->db->requete($sql);
         foreach ($result as $row) {

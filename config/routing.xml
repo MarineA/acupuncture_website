@@ -38,13 +38,13 @@ Et enlever les commentaires de la partie DTD
     <route>
         <path>/pathologies</path>
         <controller>Patho</controller>
-        <action>getPatho</action>
+        <action>getAll</action>
     </route>
 
     <route>
         <path>/symptomes</path>
         <controller>Symptome</controller>
-        <action>getSymptome</action>
+        <action>getAll</action>
     </route>
     
     <route>
