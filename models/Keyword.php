@@ -9,7 +9,7 @@
 
 class Keyword
 {
-    private $name; /* Description d'un symptôme */
+    private $name; /* Noms des mots-clé */
 
     public function __construct($name) {
         $this->name = $name;

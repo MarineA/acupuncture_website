@@ -13,12 +13,22 @@ class PathoManager
         $this->db = new ConnexionDb;
     }
 
+    /**
+     * @return array
+     * retourne toutes les pathos
+     */
     public function getAll()
     {
         $sql = "SELECT * FROM patho";
         return $this->exeQuery($sql);
     }
 
+
+    /**
+     * @param $symptomes
+     * @return array
+     * retourne toutes les pathos en rapport avec les symptomes
+     */
     public function getPathoBySymptome($symptomes)
     {
         $sql = "SELECT mer, type, patho.desc FROM patho JOIN symptPatho on patho.idP=symptPatho.idP JOIN symptome on symptPatho.idS = symptome.idS WHERE symptome.desc =" . "'" . $symptomes . "'";

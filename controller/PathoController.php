@@ -25,11 +25,16 @@ class PathoController
         $this->manager = new PathoManager();
         $this->symptomanager = new SymptomeManager();
         $this->meridienmanager = new MeridienManager();
-        $this->symptomeNames = $this->symptomanager->getNames();
-        $this->meridiensNames = $this->meridienmanager->getNames();
-        $this->types = $this->manager->getTypes();
+        $this->symptomeNames = $this->symptomanager->getNames(); //renvoie la liste de symptomes
+        $this->meridiensNames = $this->meridienmanager->getNames();//renvoie la liste de méridien
+        $this->types = $this->manager->getTypes();// renvoie la liste des types de patho
     }
 
+    /**
+     * fonction appelée par la route
+     * on regarde si l'utilisateur a choisi symptome, méridien et/ou type
+     * en fonction on appelle la fonction qui va récup la liste de patho en fonction des paramètres passés
+     */
     public function getPatho(){
         $symptome = null;
         $meridien = null;
@@ -74,12 +79,16 @@ class PathoController
             $type = $_GET['type'];
             $this->getPathoByType($type);
         }
-
+        //si rien n'est choisi, comme à l'affichage de la page par ex
         else {
             $this->getAll();
         }
     }
 
+    /**
+     * retourne toutes les pathologies
+     * retourne dans le formulaires les listes de symptomes, méridiens et type également
+     */
     public function getAll(){
         $query = $this->manager->getAll();
 
@@ -94,6 +103,11 @@ class PathoController
 
         $this->smarty->display('templates/index.tpl');
     }
+
+    /**
+     * @param $symptome
+     * retourne la liste de pathos en fonction d'un symptome
+     */
 
     public function getPathoBySymptome($symptome) {
 
@@ -112,6 +126,11 @@ class PathoController
 
     }
 
+    /**
+     * @param $meridien
+     * retourne la liste de pathos en fonction d'un méridien
+     */
+
     public function getPathoByMeridien($meridien) {
 
         $query = $this->manager->getPathoByMeridien($meridien);
@@ -128,6 +147,11 @@ class PathoController
         $this->smarty->display('templates/index.tpl');
 
     }
+
+    /**
+     * @param $type
+     * retourne la liste de pathos en fonction du type
+     */
 
     public function getPathoByType($type) {
 
@@ -146,7 +170,12 @@ class PathoController
 
     }
 
-    //
+    /**
+     * @param $symptome
+     * @param $meridien
+     * @param $type
+     * retourne la liste de pathos en fonction du symptome + méridien + type pour affiner les filtres
+     */
 
     public function getPathoByAll($symptome, $meridien, $type){
 
@@ -164,6 +193,12 @@ class PathoController
         $this->smarty->display('templates/index.tpl');
     }
 
+
+    /**
+     * @param $symptome
+     * @param $meridien
+     * retourne la liste de pathos en fonction
+     */
     public function getPathoBySymptomeMeridien($symptome, $meridien) {
 
         $query = $this->manager->getPathoBySymptomeAndMeridien($symptome, $meridien);
@@ -179,6 +214,12 @@ class PathoController
 
         $this->smarty->display('templates/index.tpl');
     }
+
+    /**
+     * @param $symptome
+     * @param $type
+     * retourne la liste de pathos en fonction
+     */
 
     public function getPathoBySymptomeType($symptome, $type) {
 
@@ -197,6 +238,12 @@ class PathoController
 
     }
 
+    /**
+     * @param $meridien
+     * @param $type
+     * retourne la liste de pathos en fonction
+     */
+
     public function getPathoByMeridienType($meridien, $type){
 
         $query = $this->manager->getPathoByMeridienType($meridien, $type);
@@ -214,6 +261,9 @@ class PathoController
 
     }
 
+    /**
+     * @return null ou session
+     */
     private function checkConnexion(){
         if (isset($_SESSION['login'])){
             return  $_SESSION['login'];

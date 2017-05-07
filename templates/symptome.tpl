@@ -1,9 +1,11 @@
 <h1> Symptômes </h1>
 
+
+<!-- Formulaire de recherche -->
 <div id="formulaire_recherche_symptomes">
     <form method="get" action="symptomes">
 
-
+        <!-- Par patho -->
         <div class="element_formulaire">
             <label for="patho">Recherche par pathologie :</label>
             <select name="patho" id="patho">
@@ -14,6 +16,7 @@
             </select>
         </div>
 
+        <!-- Par mot clé uniquement lors d'une connexion -->
         {if isset($session)}
         <div class="element_formulaire">
             <label for="keyword">Recherche par mot-clés :</label>
@@ -33,6 +36,8 @@
     </form>
 </div>
 
+
+<!-- affichage des symptomes -->
 <div id="div_tab_res">
     <table id="tab_res">
         <caption>Liste des symptômes</caption>

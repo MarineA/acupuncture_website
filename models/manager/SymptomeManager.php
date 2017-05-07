@@ -14,6 +14,10 @@ class SymptomeManager
         $this->db = new ConnexionDb;
     }
 
+    /**
+     * @return array
+     * retourne tous les symptomes
+     */
     public function getNames(){
         $sql = 'SELECT * FROM symptome';
         $listeSymptomes = array();
@@ -24,6 +28,12 @@ class SymptomeManager
         }
         return $listeSymptomes;
     }
+
+    /**
+     * @param $patho
+     * @return array
+     * retourne les symptomes en fonction des pathos
+     */
 
     public function getSymptomeByPatho($patho) {
         $sql = "SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='". $patho . "'xs" ;
@@ -37,6 +47,10 @@ class SymptomeManager
 
     }
 
+    /**
+     * @param $keyword
+     * @return array
+     */
     public function getSymptomeByKeywords($keyword) {
         $sql = "SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idP WHERE keywords.name LIKE '%". $keyword ."%'";
         $listeSymptome = array();

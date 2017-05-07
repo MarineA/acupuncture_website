@@ -1,8 +1,10 @@
 <h1> Pathologies </h1>
+
+<!-- Formulaire de recherche -->
 <div id="formulaire_recherche_pathos">
     <form method="get" action="pathologies">
 
-
+        <!-- Par symptome -->
         <div class="element_formulaire">
             <label for="symptome">Recherche par symptôme :</label>
             <select name="symptome" id="symptome">
@@ -13,7 +15,7 @@
             </select>
         </div>
 
-
+        <!-- Par méridien -->
         <div class="element_formulaire">
             <label for="meridien">Recherche par méridien :</label>
             <select name="meridien" id="meridien">
@@ -24,7 +26,7 @@
             </select>
         </div>
 
-
+        <!-- Par type -->
         <div class="element_formulaire">
             <label for="type">Recherche par type de pathologie :</label>
             <select name="type" id="type">
@@ -42,6 +44,7 @@
     </form>
 </div>
 
+<!-- Affichage des pathos -->
 <div id="div_tab_res">
      <table id="tab_res">
         <caption>Liste des pathologies</caption>

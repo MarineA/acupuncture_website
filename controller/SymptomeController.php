@@ -22,7 +22,7 @@ class SymptomeController
         $this->keywordNames = $this->keywordmanager->getNames();
     }
 
-    //Fonction permettant de récupérer les symptômes
+    //Fonction permettant de récupérer les symptômes en fonction des filtres
     public function getSymptome(){
 
         $patho = null;
@@ -40,6 +40,9 @@ class SymptomeController
         }
     }
 
+    /**
+     * On récupère tous les noms des symptomes + les listes des pathos
+     */
     public function getAll() {
 
         $query = $this->manager->getNames();
@@ -55,7 +58,10 @@ class SymptomeController
 
     }
 
-
+    /**
+     * @param $patho
+     * on récupère les symptomes en fonction d'une patho sélectionnée
+     */
     public function getSymptomeByPatho($patho) {
 
         //$manager = new SymptomeManager();
@@ -72,7 +78,9 @@ class SymptomeController
         $this->smarty->display('templates/index.tpl');
     }
 
-
+    /**
+     * on récupère la liste des noms de patho
+     */
     public function getNames(){
         $query = $this->manager->getNames();
 
@@ -86,6 +94,10 @@ class SymptomeController
         $this->smarty->display('templates/index.tpl');
     }
 
+    /**
+     * @param $keyword
+     * on récupère les symptomes associés à un mot clé
+     */
     public function getSymptomeByKeywords($keyword) {
 
         $query = $this->manager->getSymptomeByKeywords($keyword);
