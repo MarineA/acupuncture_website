@@ -22,6 +22,7 @@ body{
     padding: 0;
     overflow: auto; /* si notre désignation dépasse de la taille prévue*/
     background-color: #333;
+    color: transparent;
     width: 100%;
 }
 
@@ -71,6 +72,7 @@ h1 {
 h2 {
     margin-left: 4%;
     color:limegreen;
+    background-color: transparent;
 }
 
 h3{
@@ -86,6 +88,7 @@ li {
 
 li a {
     display: block;
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 14px 16px; /* marges intérieures*/
@@ -95,6 +98,7 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover { /*hover : passer la souris */
     background-color: #111;
+    color: white;
 }
 
 #navigation .liste_droite {
@@ -108,9 +112,9 @@ img#logout {
 
 li#session{
     color : white;
+    background-color: transparent;
     text-align: center;
     padding: 14px 16px; /* marges intérieures*/
-        
 }
 
 #banniere {
@@ -186,6 +190,7 @@ label{
     position: relative;
     border-radius: 0 0 10px 10px;
     background-color: #fafafa;
+    color: black;
     padding: 10px;
 }
 

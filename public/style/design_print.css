@@ -1,13 +1,10 @@
 /* CSS pour l'impression */
 
 #header{
-    display: inline;
     position: relative;
     text-align: center;
     width: 100%;
-    -webkit-box-align:center;
-    -webkit-box-pack:center;
-    display:-webkit-box;
+    display:block;
 }
 
 
@@ -50,10 +47,12 @@ li a {
 h1 {
     text-align: center;
     color: black;
+    background-color: transparent;
 }
 
 h2 {
     color: black;
+    background-color: transparent;
 }
 
 a {
