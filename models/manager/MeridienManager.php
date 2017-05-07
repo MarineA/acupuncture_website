@@ -6,12 +6,18 @@ class MeridienManager {
 
     private $db;
 
+
     public function __construct()
     {
         $this->db = new ConnexionDb;
     }
 
-    //Retourne les noms de méridiens
+
+    /**
+     * Cette méthode retourne tous les noms de méridiens
+     *
+     * @return array
+     */
     public function getNames(){
 
         $sql = 'SELECT nom FROM meridien';

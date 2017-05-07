@@ -105,10 +105,10 @@ class PathoController
     }
 
     /**
+     * On retourne la liste de pathos en fonction d'un symptome
+     *
      * @param $symptome
-     * retourne la liste de pathos en fonction d'un symptome
      */
-
     public function getPathoBySymptome($symptome) {
 
         $query = $this->manager->getPathoBySymptome($symptome);
@@ -127,10 +127,10 @@ class PathoController
     }
 
     /**
+     * On retourne la liste de pathos en fonction d'un méridien
+     *
      * @param $meridien
-     * retourne la liste de pathos en fonction d'un méridien
      */
-
     public function getPathoByMeridien($meridien) {
 
         $query = $this->manager->getPathoByMeridien($meridien);
@@ -149,10 +149,10 @@ class PathoController
     }
 
     /**
+     * On retourne la liste de pathos en fonction du type
+     *
      * @param $type
-     * retourne la liste de pathos en fonction du type
      */
-
     public function getPathoByType($type) {
 
         $query = $this->manager->getPathoByType($type);
@@ -220,7 +220,6 @@ class PathoController
      * @param $type
      * retourne la liste de pathos en fonction
      */
-
     public function getPathoBySymptomeType($symptome, $type) {
 
         $query = $this->manager->getPathoBySymptomeType($symptome, $type);
@@ -243,7 +242,6 @@ class PathoController
      * @param $type
      * retourne la liste de pathos en fonction
      */
-
     public function getPathoByMeridienType($meridien, $type){
 
         $query = $this->manager->getPathoByMeridienType($meridien, $type);
@@ -262,6 +260,8 @@ class PathoController
     }
 
     /**
+     * On vérifie si un utilisateur est connecté
+     *
      * @return null ou session
      */
     private function checkConnexion(){

@@ -12,8 +12,9 @@ class KeywordManager {
     }
 
     /**
+     * Cette méthode retourne la liste des noms de mots-clé
+     *
      * @return array
-     * retourne la liste des noms de mots-clé
      */
     public function getNames(){
 

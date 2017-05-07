@@ -16,6 +16,9 @@ class HomeController
         $this->smarty = new Smarty();
     }
 
+    /**
+     * On affiche la page d'accueil du site
+     */
     public function home()
     {
         // récupération des articles du flux RSS
@@ -33,6 +36,9 @@ class HomeController
         $this->smarty->display("templates/index.tpl");
     }
 
+    /**
+     * On affiche les informations sur le site
+     */
     public function getInfos()
     {
         $this->smarty->assign(array(
@@ -43,6 +49,12 @@ class HomeController
         $this->smarty->display("templates/index.tpl");
     }
 
+
+    /**
+     * On vérifie si un utilisateur est connecté
+     *
+     * @return null ou session
+     */
     private function checkConnexion(){
         if (isset($_SESSION['login'])){
             return  $_SESSION['login'];

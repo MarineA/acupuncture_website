@@ -9,7 +9,6 @@ class SessionManager {
 
     /**
      * Cette méthode est le constructeur pour la class SessionManager
-     *
      * 
      */
     public function __construct()

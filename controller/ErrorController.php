@@ -14,6 +14,9 @@ class ErrorController
         $this->smarty = new Smarty();
     }
 
+    /**
+     * On affiche l'erreur 404 gérée
+     */
     public function showError404() {
         $this->smarty->display("templates/error404.tpl");
     }

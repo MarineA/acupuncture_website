@@ -17,6 +17,14 @@ class CalculatriceController
         $this->service = new CalculatriceService();
     }
 
+
+    /**
+     * Annalyse du webservice demandé
+     *
+     * @param $param
+     *
+     * @return null ou session
+     */
     public function calcul($param){
 
         $result = null;
@@ -57,6 +65,10 @@ class CalculatriceController
         return;
     }
 
+
+    /*
+     * On décrit le focntionnement du webservice de calculatrice
+     */
     public function descriptionCalculatrice(){
         $this->smarty->assign(array(
         'template' => 'templates/calculatrice.tpl',
@@ -65,7 +77,13 @@ class CalculatriceController
 
         $this->smarty->display("templates/index.tpl");
     }
-    
+
+
+    /**
+     * On vérifie si un utilisateur est connecté
+     *
+     * @return null ou session
+     */
      private function checkConnexion(){
         if (isset($_SESSION['login'])){
             return  $_SESSION['login'];

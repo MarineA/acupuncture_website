@@ -22,7 +22,9 @@ class SymptomeController
         $this->keywordNames = $this->keywordmanager->getNames();
     }
 
-    //Fonction permettant de récupérer les symptômes en fonction des filtres
+    /**
+     * Cette méthode permet d'appeler la bonne méthode du controlleur en fonction des paramètres envoyés
+     */
     public function getSymptome(){
 
         $patho = null;
@@ -59,12 +61,11 @@ class SymptomeController
     }
 
     /**
+     * On récupère les symptomes en fonction d'une patho sélectionnée
+     *
      * @param $patho
-     * on récupère les symptomes en fonction d'une patho sélectionnée
      */
     public function getSymptomeByPatho($patho) {
-
-        //$manager = new SymptomeManager();
         $query = $this->manager->getSymptomeByPatho($patho);
 
         $this->smarty->assign(array(
@@ -79,7 +80,7 @@ class SymptomeController
     }
 
     /**
-     * on récupère la liste des noms de patho
+     * On récupère la liste des noms de patho
      */
     public function getNames(){
         $query = $this->manager->getNames();
@@ -95,8 +96,9 @@ class SymptomeController
     }
 
     /**
+     * On récupère les symptomes associés à un mot clé
+     *
      * @param $keyword
-     * on récupère les symptomes associés à un mot clé
      */
     public function getSymptomeByKeywords($keyword) {
 
@@ -114,6 +116,11 @@ class SymptomeController
         $this->smarty->display('templates/index.tpl');
     }
 
+    /**
+     * On vérifie si un utilisateur est connecté
+     *
+     * @return session ou null
+     */
     private function checkConnexion(){
         if (isset($_SESSION['login'])){
             return  $_SESSION['login'];

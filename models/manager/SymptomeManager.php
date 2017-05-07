@@ -9,14 +9,19 @@ class SymptomeManager
 {
     private $db;
 
+    /**
+     * Cette méthode est le constructeur
+     *
+     */
     public function __construct()
     {
         $this->db = new ConnexionDb;
     }
 
     /**
+     * Cette méthode retourne tous les symptomes
+     *
      * @return array
-     * retourne tous les symptomes
      */
     public function getNames(){
         $sql = 'SELECT * FROM symptome';
@@ -30,11 +35,12 @@ class SymptomeManager
     }
 
     /**
+     * Cette méthode retourne les symptomes en fonction des pathos
+     *
      * @param $patho
+     *
      * @return array
-     * retourne les symptomes en fonction des pathos
      */
-
     public function getSymptomeByPatho($patho) {
         $sql = "SELECT symptome.desc FROM symptome JOIN symptPatho on symptome.idS = symptPatho.idS JOIN patho on symptPatho.idP=patho.idP WHERE patho.desc ='". $patho . "'xs" ;
         $listeSymptome = array();
@@ -48,7 +54,10 @@ class SymptomeManager
     }
 
     /**
+     *  Cette méthode retourne les symptomes en fonction des mots clés
+     *
      * @param $keyword
+     *
      * @return array
      */
     public function getSymptomeByKeywords($keyword) {
