@@ -13,6 +13,6 @@
 
 			<body>
                 
-                <p>Vous n'êtes pas connecté, accés interdit !</p>
+                <p>Vous n'êtes pas connectés, accés interdit !</p>
             </body>
 </html>

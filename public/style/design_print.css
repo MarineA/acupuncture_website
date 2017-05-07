@@ -19,13 +19,19 @@
 }
 
 
-#menu, #banniere {
+#menu, #banniere, #connexion, #formulaire_recherche_symptomes, #formulaire_recherche_pathos {
     display: none;
 }
 
+.rss_description a{
+    display : none;
+}
 
-.introduction{
+
+#introduction{
     display: block;
+    text-align: center;
+    width: 100%;
 }
 
 
@@ -81,18 +87,23 @@ label{
     float: left;
 }
 
-table#tab_patho {
+#tab_res {
     border-collapse: collapse;
     width: 100%;
 }
 
-table#tab_patho th {
+#tab_res th {
     background-color: #333;
     color : white;
     border-bottom: solid black 1px;
 }
 
-table#tab_patho td {
+#tab_res tr{
+    page-break-inside:avoid;
+    page-break-after:auto
+}
+
+#tab_res td {
     border-bottom: solid black 1px;
 }
 

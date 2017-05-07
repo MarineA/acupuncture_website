@@ -1,55 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
+<!--
+Documentation du schéma "SchemaPatho.xsd" :
+Le document xml suivant ce schéma doit :
+Contenir une balise "database" possédant obligatoirement un attribut "name" de valeur "acupuncteurs" (type string).
+La balise "database" peut contenir des balises "table".
+Chaque balise "table" contient de une à quatre balises "column" et possède obligatoirement un attribut name de valeur "patho" (type string).
+Chaque balise "column" doit contenir un attribut "name" de type string.
+
+-->
+
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <!-- J'ai pas encore réussi à intégrer les types pour être plus précis dans la définition de notre structure xml.
-    A voir plus tard -->
-
-
-    <!-- Dans les expressions régulières : ^et $ sont implicites et redondants si on les met -->
-    <!-- nouveau type type_idP pour forcer un chiffre entre 0 et 99 999 999 999 / -->
-    <!--
-    <xsd:simpleType name="type_idP">
-        <xsd:restriction base="xsd:int">
-            <xsd:pattern value="[0-9]{1,11}" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    -->
-
-    <!-- nouveau type type_meridien pour forcer une chaîne majuscule non nulle et de 5 caractères maximum / -->
-    <!--
-    <xsd:simpleType name="type_meridien">
-        <xsd:restriction base="xsd:string">
-            <xsd:maxLength value="5"/>
-            <xsd:pattern value="[A-Z]+" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    -->
-
-    <!-- nouveau type type_typeP pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 10 caractères -->
-    <!--
-    <xsd:simpleType name="type_typeP">
-        <xsd:restriction base="xsd:string">
-            <xsd:maxLength value="10"/>
-            <xsd:pattern value="[a-z]+" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    -->
-
-    <!-- nouveau type type_desc pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 50 caractères -->
-    <!--
-    <xsd:simpleType name="type_desc">
-        <xsd:restriction base="xsd:string">
-            <xsd:minLength value="1"/>
-            <xsd:maxLength value="50"/>
-            <xsd:pattern value="[a-z]+" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    -->
-
-
-    <!-- création de l'élément route appelé ensuite dans routing / -->
     <xsd:element name="database">
         <xsd:complexType>
             <xsd:sequence>
@@ -75,6 +38,53 @@
     </xsd:element>
 
 </xsd:schema>
+
+
+
+
+        <!-- J'ai pas réussi à intégrer les types pour être plus précis dans la définition de notre structure xml. -->
+
+        <!-- Dans les expressions régulières : ^et $ sont implicites et redondants si on les met -->
+        <!-- nouveau type type_idP pour forcer un chiffre entre 0 et 99 999 999 999 / -->
+        <!--
+        <xsd:simpleType name="type_idP">
+            <xsd:restriction base="xsd:int">
+                <xsd:pattern value="[0-9]{1,11}" />
+            </xsd:restriction>
+        </xsd:simpleType>
+        -->
+
+        <!-- nouveau type type_meridien pour forcer une chaîne majuscule non nulle et de 5 caractères maximum / -->
+        <!--
+        <xsd:simpleType name="type_meridien">
+            <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="5"/>
+                <xsd:pattern value="[A-Z]+" />
+            </xsd:restriction>
+        </xsd:simpleType>
+        -->
+
+        <!-- nouveau type type_typeP pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 10 caractères -->
+        <!--
+        <xsd:simpleType name="type_typeP">
+            <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10"/>
+                <xsd:pattern value="[a-z]+" />
+            </xsd:restriction>
+        </xsd:simpleType>
+        -->
+
+        <!-- nouveau type type_desc pour forcer une chaîne de caractère non vide minuscule allant jusqu'à 50 caractères -->
+        <!--
+        <xsd:simpleType name="type_desc">
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="50"/>
+                <xsd:pattern value="[a-z]+" />
+            </xsd:restriction>
+        </xsd:simpleType>
+        -->
+
 
 
 
