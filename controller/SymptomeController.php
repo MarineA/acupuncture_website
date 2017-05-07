@@ -114,7 +114,7 @@ class SymptomeController
             'template' => 'templates/symptome.tpl',
             'query' => $query,
             'pathos' => $this->pathoNames,
-            'keywords' => $this->keywords
+            'keywords' => $this->keywordNames
 
         ));
 

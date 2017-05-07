@@ -5,6 +5,7 @@
         <div class="element_formulaire">
             <label for="patho">Recherche par patho:</label>
             <select name="patho">
+                    <option></option>
                     {foreach from=$pathos item=item}
                         <option>{$item->getDesc()}</option>
                     {/foreach}
@@ -14,12 +15,8 @@
 
         <div class="element_formulaire">
             <label for="keyword">Recherche par mot-clé:</label>
-            <select name="keyword">
-                {foreach from=$keywords item=item}
-                    <option>{$item->getName()}</option>
-                {/foreach}
+            <input type="texte" name="keyword"/>
 
-            </select>
         </div>
 
         <input type="submit" value="Rechercher" />
@@ -29,7 +26,7 @@
 
 
 
-<!--
+
 <div id="resultat">
     <table id="tab_patho">
         <tr>

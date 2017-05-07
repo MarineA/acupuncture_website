@@ -44,13 +44,21 @@ class SymptomeManager
     }
 
     public function getSymptomeByKeywords($keyword) {
-        $sql = 'SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idP WHERE keywords.name ='. '\''. $keyword . '\'' ;
+        $sql = 'SELECT symptome.desc FROM symptome JOIN keySympt on symptome.idS = keySympt.idS JOIN keywords on keySympt.idK=keywords.idK WHERE keywords.name LIKE'. '\''. $keyword . '\'' ;
+
         $listeSymptome = array();
         $result = $this->db->requete($sql);
-        foreach ($result as $row) {
-            $symptome = new Symptome($row['desc']);
-            array_push($listeSymptome, $symptome);
+
+        if ($result != null) {
+            foreach ($result as $row) {
+                $symptome = new Symptome($row['desc']);
+                array_push($listeSymptome, $symptome);
+            }
         }
+        else {
+            array_push($listeSymptome,new Symptome(''));
+        }
+
         return $listeSymptome;
 
     }
