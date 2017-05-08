@@ -1,0 +1,88 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-08 14:39:22
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/inscription.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_591066fa236be3_18122282',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7477293fbe06b36d315ee26f3cf576651f430c24' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/inscription.tpl',
+      1 => 1494193332,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_591066fa236be3_18122282 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<h1>Inscription </h1>
+
+<div class="inscription">
+<form method="post" action="inscription" id="formulaire_inscription">
+
+    <ul>
+        <li>
+            <label for="name">Nom&nbsp;:</label>
+            <input type="text" id="name" name="name" tabindex="0" placeholder="Dupont" required oninput="checkFNames(this);">
+        </li>
+
+        <li>
+            <label for="firstname">Prénom&nbsp;:</label>
+            <input type="text" id="firstname" name="firstname" tabindex="0" placeholder="Camille" required
+                   oninput="checkFNames(this)">
+        </li>
+
+        <li>
+            <label for="birthdate">Date de naissance&nbsp;:</label>
+            <input type="date" id="birthdate" name="birthdate" tabindex="0" max="" min="" data-placeholder="jj/mm/aaaa" required
+                onblur="dateNow(this)" onclick="dateNow(this)" >  
+        </li>
+
+        <li>
+            <label for="emailAddr">Adresse e-mail&nbsp;:</label>
+            <input type="email" id="emailAddr"  name="emailAddr" tabindex="0" placeholder="dupontcamille@a.fr" required>
+        </li>
+
+        <li>
+            <label for="emailAddrRepeat">Confirmez l'adresse e-mail&nbsp;:</label>
+            <input type="email" id="emailAddrRepeat" name="emailAddrRepeat" tabindex="0" placeholder="dupontcamille@a.fr" required
+            oninput="checkMail(this)">
+        </li>
+
+        <li>
+            <label for="phone">Numéro de téléphone&nbsp;:</label>
+            <input type="text" id="phone" name="phone" tabindex="0" placeholder="0123456789" required
+                   oninput="checkPhone(this)">
+        </li>
+
+        <li>
+            <label for="login">Login&nbsp;:</label>
+            <input type="text" id="login" name="login" tabindex="0" required oninput="checkLogin(this)">
+        </li>
+
+        <li>
+            <label for="password_main">Mot de passe&nbsp;:</label>
+            <input type="password" id="password_main" name="password_main"  tabindex="0" required oninput="checkPassword(this)">
+        </li>
+
+        <li>
+            <label for="password_repeat">Confirmez votre mot de passe&nbsp;:</label>
+            <input type="password" id="password_repeat" name="password_repeat" tabindex="0" required oninput="checkPasswordRepeat(this)">
+        </li>
+
+        <li>
+            <input type="submit" tabindex="0" value="Valider le formulaire" id="validationBouton"/>
+        </li>
+    </ul>
+</form>
+</div>
+<?php }
+}
+

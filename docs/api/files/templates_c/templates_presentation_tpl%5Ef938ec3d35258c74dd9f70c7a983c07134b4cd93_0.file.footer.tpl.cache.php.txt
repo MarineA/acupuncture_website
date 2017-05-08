@@ -1,0 +1,36 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-03-22 08:34:26
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/footer.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58d229027ef4d4_76069129',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f938ec3d35258c74dd9f70c7a983c07134b4cd93' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/footer.tpl',
+      1 => 1490167823,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58d229027ef4d4_76069129 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '9346613958d229027ee7e1_65340977';
+?>
+<div id="footer">
+    <p> Site acupuncture - créé dans le cadre d'un projet pour l'école CPE Lyon par M. ALCADE, J. BODET-VILLARD, V. MONTELIMARD, K. OUBARHOU en 4ième année. 
+    </p>
+</div>
+
+
+</body>
+
+</html><?php }
+}
+

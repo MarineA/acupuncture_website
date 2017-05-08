@@ -1,0 +1,55 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-01 11:07:40
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/connexion.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5906fadc279313_32698423',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '9959231eba4eaa966dafc10f81b01594269abff5' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/connexion.tpl',
+      1 => 1493588323,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5906fadc279313_32698423 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<div class="connexion">
+<h2> Connexion </h2>
+    
+   <form method="post" action="connexion" id="formulaire">
+
+    <ul>
+        <li>
+            <label for="login">Login&nbsp;:</label>
+            <input type="text" id="login" name="login" required
+                   oninput="checkLogin(this)">
+        </li>
+
+        <li>
+            <label for="email_addr">Adresse e-mail&nbsp;:</label>
+            <input type="email" id="emailAddr" name="emailAddr" required oninput="checkMail(this)">
+        </li>
+        <li>
+            <label for="password">Mot de passe&nbsp;:</label>
+            <input type="password" id="password_main" name="password_main" pattern="[a-z]+[A-Z]+[0-9]+]<?php echo 6;?>
+" required oninput="checkPassword(this)">
+        </li>
+        <li>
+            <input type="submit" value="Connexion" /> 
+        </li>
+    </ul>
+</form>
+    
+    
+</div><?php }
+}
+

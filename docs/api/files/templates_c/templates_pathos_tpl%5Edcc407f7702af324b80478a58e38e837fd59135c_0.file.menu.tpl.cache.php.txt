@@ -1,0 +1,58 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-03-20 14:38:38
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/menu.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58cfdb5ec8cc79_86954804',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'dcc407f7702af324b80478a58e38e837fd59135c' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/menu.tpl',
+      1 => 1490016910,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58cfdb5ec8cc79_86954804 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '14282515558cfdb5ec7f8b5_46383019';
+?>
+<div id="menu">
+    <section id="section">
+         
+        <ul id="navigation"> 
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['menu']->value, 'template_name', false, 'url_val');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['url_val']->value => $_smarty_tpl->tpl_vars['template_name']->value) {
+?> 
+           <li> 
+              <a href="<?php echo $_smarty_tpl->tpl_vars['SCRIPT_NAME']->value;?>
+?<?php echo $_smarty_tpl->tpl_vars['page_var']->value;?>
+=<?php echo $_smarty_tpl->tpl_vars['url_val']->value;?>
+"> 
+                 <?php echo $_smarty_tpl->tpl_vars['url_val']->value;?>
+<br /> 
+              </a> 
+           </li> 
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+ 
+        </ul>  
+    </section>
+</div>
+
+<div class="center">
+    <section></section>
+</div><?php }
+}
+

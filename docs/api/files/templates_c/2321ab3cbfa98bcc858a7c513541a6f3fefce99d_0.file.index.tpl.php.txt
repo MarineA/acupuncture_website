@@ -1,0 +1,42 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-06 16:56:41
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_590de429e29d24_91469992',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2321ab3cbfa98bcc858a7c513541a6f3fefce99d' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/index.tpl',
+      1 => 1494082583,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:menu.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_590de429e29d24_91469992 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender($_smarty_tpl->tpl_vars['template']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+
+<?php }
+}
+

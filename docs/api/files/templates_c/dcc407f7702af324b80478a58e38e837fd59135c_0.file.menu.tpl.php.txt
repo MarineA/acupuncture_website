@@ -1,0 +1,76 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-07 23:48:01
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/menu.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_590f961170b051_30243835',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'dcc407f7702af324b80478a58e38e837fd59135c' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/menu.tpl',
+      1 => 1494193332,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_590f961170b051_30243835 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<div id="menu">
+        <ul id="navigation">
+           <li>
+              <a href="home" tabindex="0">
+                 Home
+              </a> 
+           </li>
+            <li>
+                <a href="pathologies" tabindex="0">
+                    Pathologies
+                </a>
+            </li>
+            <li>
+                <a href="symptomes" tabindex="0">
+                    Symptômes
+                </a>
+            </li>
+            <li>
+                <a href="informations" tabindex="0">
+                    Informations
+                </a>
+            </li>
+            <li>
+                <a href="calculatrice" tabindex="0">
+                    Services Web
+                </a>
+            </li>
+            <?php if (!isset($_smarty_tpl->tpl_vars['session']->value)) {?>
+            <li class="liste_droite">
+                <a href="inscription_form">
+                    Inscription
+                </a>
+            </li>
+            <?php } else { ?>
+            <li class="liste_droite">
+                <a href="deconnexion">
+                    <img id="logout" src="public/img/logout.png" alt="Déconnexion">
+                </a>
+            </li>
+            <li class="liste_droite" id="session">
+                <?php echo $_smarty_tpl->tpl_vars['session']->value;?>
+
+            </li>
+            <?php }?>
+        </ul>
+</div>
+
+<div id="banniere"></div>
+
+<?php }
+}
+

@@ -1,0 +1,42 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-07 23:48:01
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/infos.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_590f961170ee89_69121991',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '75e6f8d93555ff0b507af191eb074d79be6a1084' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/infos.tpl',
+      1 => 1494193332,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_590f961170ee89_69121991 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<h1>Page d'informations sur notre site</h1>
+
+<h2>But</h2>
+<p>Site créé par 4 étudiantes en formation d'ingénieur à l'école CPE Lyon, en 2017. C'est dans le cadre du module TLI (télécomunications et langages de l'internet) que  celui-ci fut conçu.</p>
+
+<p>Un cahier des charges a été suivi dans une démarche de rendre ce site le plus accessible possible par tous.</p>
+
+
+<h2>Fonctionnalités</h2>
+
+<p> Sur ce site, vous pourrez consulter un tableau de pathologies.
+    En vous identifiant, vous aurez également accès aux recherches par mots-clés de ces pathologies.
+</p>
+<p> Des modules supplémentaires vous sont proposés : une calculatrice avec son mode d'emploi et sur la page principale un flux rss permettant de consulter des articles du domaine de la santé.</p>
+
+<h3> Bonne visite !</h3><?php }
+}
+

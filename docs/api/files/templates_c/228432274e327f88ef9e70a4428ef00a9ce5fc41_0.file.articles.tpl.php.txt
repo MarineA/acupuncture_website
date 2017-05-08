@@ -1,0 +1,61 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-29 12:14:53
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/articles.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5904679dd7b236_29532502',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '228432274e327f88ef9e70a4428ef00a9ce5fc41' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/articles.tpl',
+      1 => 1493460888,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5904679dd7b236_29532502 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<div id="flux_rss">
+
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['donnee_rss']->value->item, 'item');
+$_smarty_tpl->tpl_vars['item']->index = -1;
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->index++;
+$__foreach_item_0_saved = $_smarty_tpl->tpl_vars['item'];
+?>
+        <div class="rss_article">
+            <div class="rss_title">
+                <?php echo $_smarty_tpl->tpl_vars['item']->value->title;?>
+
+            </div>
+            <div class="rss_description">
+                <p><?php echo $_smarty_tpl->tpl_vars['item']->value->description;?>
+</p>
+                <a href=<?php echo $_smarty_tpl->tpl_vars['item']->value->link;?>
+>Lire l'article...</a>
+            </div>
+        </div>
+        <! -- On n'affiche que 10 articles -->
+        <?php if ($_smarty_tpl->tpl_vars['item']->index == 9) {?>
+            <?php break 1;?>
+        <?php }?>
+    <?php
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved;
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+
+</div><?php }
+}
+

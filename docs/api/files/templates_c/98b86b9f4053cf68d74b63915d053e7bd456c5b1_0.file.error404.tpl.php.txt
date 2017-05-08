@@ -1,0 +1,36 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-06 16:56:42
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/error404.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_590de42a7b3941_43444278',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '98b86b9f4053cf68d74b63915d053e7bd456c5b1' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/error404.tpl',
+      1 => 1494082583,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+  ),
+),false)) {
+function content_590de42a7b3941_43444278 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+
+<h1>Oops !!!</h1>
+<p>Il n'y a rien à voir ici.</p>
+
+</body>
+
+</html><?php }
+}
+

@@ -1,0 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-08 20:17:11
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/result.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58e92927a63496_73754330',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'b556e4f8cbdb0707d8255b0c5344818261469c98' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/result.tpl',
+      1 => 1491675418,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58e92927a63496_73754330 (Smarty_Internal_Template $_smarty_tpl) {
+echo $_smarty_tpl->tpl_vars['result']->value;
+}
+}
+

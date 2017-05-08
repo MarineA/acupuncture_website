@@ -1,0 +1,99 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-08 08:41:00
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/presentation.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_591012fc0b51e5_20135171',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a02c2bb240dc1659d65939acb8e024e4cfed6518' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/presentation.tpl',
+      1 => 1494193332,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_591012fc0b51e5_20135171 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<div id="connexion">
+    <?php if (!isset($_smarty_tpl->tpl_vars['session']->value)) {?>
+    <h1> Connexion </h1>
+    <form method="post" action="connexion" id="formulaire_presentation">
+
+        <ul>
+            <li>
+                <label for="login">Login&nbsp;:</label>
+                <input type="text" id="login" name="login" tabindex="0" required oninput="checkLogin(this)">
+            </li>
+            <li>
+                <label for="password_main">Mot de passe&nbsp;:</label>
+                <input type="password" id="password_main" name="password_main" tabindex="0" pattern="[a-z]+[A-Z]+[0-9]+]<?php echo 6;?>
+" required oninput="checkPassword(this)">
+            </li>
+            <li>
+                <input type="submit" tabindex="0" value="Connexion" />
+            </li>
+        </ul>
+    </form>
+    <?php } else { ?>
+        <h1>Bonjour <?php echo $_smarty_tpl->tpl_vars['session']->value;?>
+</h1>
+    <?php }?>
+</div>
+
+<div id="introduction">
+    <h1>Remède par l'acupuncture</h1>
+    <p>
+        Site web dédié à l'acupuncture.
+    </p>
+</div>
+
+<div id="flux_rss">
+
+    <h1>Flux RSS : santé</h1>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['donnee_rss']->value->item, 'item');
+$_smarty_tpl->tpl_vars['item']->index = -1;
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->index++;
+$__foreach_item_0_saved = $_smarty_tpl->tpl_vars['item'];
+?>
+        <div class="rss_article">
+            <div class="rss_title">
+                <?php echo $_smarty_tpl->tpl_vars['item']->value->title;?>
+
+            </div>
+            <div class="rss_description">
+                <p><?php echo $_smarty_tpl->tpl_vars['item']->value->description;?>
+</p>
+                <a href=<?php echo $_smarty_tpl->tpl_vars['item']->value->link;?>
+>Lire l'article...</a>
+            </div>
+        </div>
+        <! -- On n'affiche que 10 articles -->
+        <?php if ($_smarty_tpl->tpl_vars['item']->index == 9) {?>
+            <?php break 1;?>
+        <?php }?>
+    <?php
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved;
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+
+</div>
+
+
+
+			<?php }
+}
+

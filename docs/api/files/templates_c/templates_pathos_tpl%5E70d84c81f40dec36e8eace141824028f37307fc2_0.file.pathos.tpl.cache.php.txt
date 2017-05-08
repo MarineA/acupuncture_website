@@ -1,0 +1,55 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-08 15:40:53
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/pathos.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58e8e865994ea9_57548590',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '70d84c81f40dec36e8eace141824028f37307fc2' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/pathos.tpl',
+      1 => 1491656789,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58e8e865994ea9_57548590 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '104635810158e8e865977b54_41590589';
+?>
+<table id="tab_patho">
+    <tr>
+        <th>Type</th>
+        <th>Méridien</th>
+        <th>Description</th> 
+    </tr>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['query']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+      <tr>
+        <td><?php echo $_smarty_tpl->tpl_vars['item']->value->getType();?>
+</td>
+        <td><?php echo $_smarty_tpl->tpl_vars['item']->value->getMer();?>
+</td>
+        <td><?php echo $_smarty_tpl->tpl_vars['item']->value->getDesc();?>
+</td> 
+      </tr>
+    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+</table>
+    
+<?php }
+}
+

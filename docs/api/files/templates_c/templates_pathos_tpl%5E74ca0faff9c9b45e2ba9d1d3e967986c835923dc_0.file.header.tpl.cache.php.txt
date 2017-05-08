@@ -1,0 +1,43 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-08 15:40:53
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/header.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58e8e86596c0b4_95235744',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '74ca0faff9c9b45e2ba9d1d3e967986c835923dc' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/header.tpl',
+      1 => 1491658599,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58e8e86596c0b4_95235744 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '185865421558e8e865926de8_71013540';
+?>
+<!DOCTYPE html>
+
+	    <html lang="fr">
+		    <head>
+		        <link rel="stylesheet" href="public/style/design.css">
+		        <link rel="stylesheet" href="public/style/inscription/inscription.css">
+		        <meta charset="UTF-8">
+			    <title>Remède par l'acupuncture</title>
+			    <meta name="keywords" content="HTMLW3C">
+			    <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
+			    <?php echo '<script'; ?>
+ type='text/javascript' src='public/scripts/inscription.js'><?php echo '</script'; ?>
+>
+			</head>
+
+			<body><?php }
+}
+

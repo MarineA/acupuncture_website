@@ -1,0 +1,140 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-05-08 10:00:08
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/pathos.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_59102588d813d1_04953150',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '70d84c81f40dec36e8eace141824028f37307fc2' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/pathos.tpl',
+      1 => 1494230406,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_59102588d813d1_04953150 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<h1> Pathologies </h1>
+
+<!-- Formulaire de recherche -->
+<div id="formulaire_recherche_pathos">
+    <form method="get" action="pathologies">
+
+        <!-- Par symptome -->
+        <div class="element_formulaire">
+            <label for="symptome">Recherche par symptôme :</label>
+            <select name="symptome" id="symptome">
+                <option>--</option>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['symptomes']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+                    <option><?php echo $_smarty_tpl->tpl_vars['item']->value->getDesc();?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+            </select>
+        </div>
+
+        <!-- Par méridien -->
+        <div class="element_formulaire">
+            <label for="meridien">Recherche par méridien :</label>
+            <select name="meridien" id="meridien">
+                    <option>--</option>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['meridiens']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+                    <option><?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+            </select>
+        </div>
+
+        <!-- Par type -->
+        <div class="element_formulaire">
+            <label for="type">Recherche par type de pathologie :</label>
+            <select name="type" id="type">
+                <option>--</option>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['types']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+                    <option><?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+            </select>
+        </div>
+
+        <div class="element_formulaire">
+        <input type="submit" value="Rechercher" id="validationBouton" />
+        </div>
+
+    </form>
+</div>
+
+<!-- Affichage des pathos -->
+<div id="div_tab_res">
+     <table id="tab_res">
+        <caption>Liste des pathologies</caption>
+        <tr>
+            <th id="th_type" >Type</th>
+            <th id="th_meridien">Méridien</th>
+            <th id="th_descr">Description</th>
+        </tr>
+         <?php if (count($_smarty_tpl->tpl_vars['query']->value) == 0) {?>
+         <tr>
+             Aucun résultat trouvé !
+         </tr>
+         <?php } else { ?>
+         <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['query']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+          <tr>
+            <td headers="th_type"><?php echo $_smarty_tpl->tpl_vars['item']->value->getType();?>
+</td>
+            <td headers="th_meridien"><?php echo $_smarty_tpl->tpl_vars['item']->value->getMer();?>
+</td>
+            <td headers="th_descr"><?php echo $_smarty_tpl->tpl_vars['item']->value->getDesc();?>
+</td>
+          </tr>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+         <?php }?>
+     </table>
+</div>
+    
+<?php }
+}
+

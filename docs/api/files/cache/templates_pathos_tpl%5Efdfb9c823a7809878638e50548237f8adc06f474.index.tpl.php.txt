@@ -1,0 +1,672 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-08 15:40:53
+  from "/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58e8e86599b3c9_40971153',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2321ab3cbfa98bcc858a7c513541a6f3fefce99d' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/index.tpl',
+      1 => 1490016910,
+      2 => 'file',
+    ),
+    '74ca0faff9c9b45e2ba9d1d3e967986c835923dc' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/header.tpl',
+      1 => 1491658599,
+      2 => 'file',
+    ),
+    'dcc407f7702af324b80478a58e38e837fd59135c' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/menu.tpl',
+      1 => 1490016910,
+      2 => 'file',
+    ),
+    '70d84c81f40dec36e8eace141824028f37307fc2' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/pathos.tpl',
+      1 => 1491656789,
+      2 => 'file',
+    ),
+    'f938ec3d35258c74dd9f70c7a983c07134b4cd93' => 
+    array (
+      0 => '/Users/virginiemontelimard/Desktop/acupuncture_website/acupuncture_website/templates/footer.tpl',
+      1 => 1490167823,
+      2 => 'file',
+    ),
+  ),
+  'cache_lifetime' => 3600,
+),true)) {
+function content_58e8e86599b3c9_40971153 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<!DOCTYPE html>
+
+	    <html lang="fr">
+		    <head>
+		        <link rel="stylesheet" href="public/style/design.css">
+		        <link rel="stylesheet" href="public/style/inscription/inscription.css">
+		        <meta charset="UTF-8">
+			    <title>Remède par l'acupuncture</title>
+			    <meta name="keywords" content="HTMLW3C">
+			    <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
+			    <script type='text/javascript' src='public/scripts/inscription.js'></script>
+			</head>
+
+			<body>
+<div id="menu">
+    <section id="section">
+         
+        <ul id="navigation"> 
+         
+           <li> 
+              <a href="/acupuncture_website/index.php?page=Presentation"> 
+                 Presentation<br /> 
+              </a> 
+           </li> 
+         
+           <li> 
+              <a href="/acupuncture_website/index.php?page=Pathologies"> 
+                 Pathologies<br /> 
+              </a> 
+           </li> 
+         
+        </ul>  
+    </section>
+</div>
+
+<div class="center">
+    <section></section>
+</div>
+
+
+<table id="tab_patho">
+    <tr>
+        <th>Type</th>
+        <th>Méridien</th>
+        <th>Description</th> 
+    </tr>
+          <tr>
+        <td>me</td>
+        <td>P</td>
+        <td>méridien du poumon externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>P</td>
+        <td>méridien du poumon interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>P</td>
+        <td>voie luo du poumon pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>P</td>
+        <td>voie luo du poumon vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>P</td>
+        <td>jing jin du poumon</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>P</td>
+        <td>zang poumon plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>P</td>
+        <td>zang poumon vide</td> 
+      </tr>
+          <tr>
+        <td>tfc</td>
+        <td>P</td>
+        <td>zang poumon chaud</td> 
+      </tr>
+          <tr>
+        <td>tff</td>
+        <td>P</td>
+        <td>zang poumon froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>GI</td>
+        <td>méridien du gros intestin externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>GI</td>
+        <td>méridien du gros intestin interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>GI</td>
+        <td>voie luo du gros intestin pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>GI</td>
+        <td>voie luo du gros intestin vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>GI</td>
+        <td>jing jin du gros intestin</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>GI</td>
+        <td>fu gros intestin plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>GI</td>
+        <td>fu gros intestin vide</td> 
+      </tr>
+          <tr>
+        <td>tfc</td>
+        <td>GI</td>
+        <td>fu gros intestin chaud</td> 
+      </tr>
+          <tr>
+        <td>tff</td>
+        <td>GI</td>
+        <td>fu gros intestin froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>E</td>
+        <td>méridien de l'estomac externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>E</td>
+        <td>méridien de l'estomac interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>E</td>
+        <td>voie luo de l'estomac pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>E</td>
+        <td>voie luo de l'estomac vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>E</td>
+        <td>jing jin de l'estomac</td> 
+      </tr>
+          <tr>
+        <td>tfpc</td>
+        <td>E</td>
+        <td>fu estomac plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvf</td>
+        <td>E</td>
+        <td>fu estomac vide et froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>Rte</td>
+        <td>méridien de la rate externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>Rte</td>
+        <td>méridien de la rate interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>Rte</td>
+        <td>voie luo de la rate pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>Rte</td>
+        <td>voie luo de la rate vide</td> 
+      </tr>
+          <tr>
+        <td>l2p</td>
+        <td>Rte</td>
+        <td>voie grand luo de la rate pleine</td> 
+      </tr>
+          <tr>
+        <td>l2v</td>
+        <td>Rte</td>
+        <td>voie grand luo de la rate vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>Rte</td>
+        <td>jing jin de la rate</td> 
+      </tr>
+          <tr>
+        <td>tfpc</td>
+        <td>Rte</td>
+        <td>zang rate plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvf</td>
+        <td>Rte</td>
+        <td>zang rate vide et froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>C</td>
+        <td>méridien du cœur externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>C</td>
+        <td>méridien du cœur interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>C</td>
+        <td>voie luo du cœur pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>C</td>
+        <td>voie luo du cœur vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>C</td>
+        <td>jing jin du cœur</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>C</td>
+        <td>zang cœur plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>C</td>
+        <td>zang  cœur vide</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>IG</td>
+        <td>méridien de l'intestin grêle externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>IG</td>
+        <td>méridien de l'intestin grêle interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>IG</td>
+        <td>voie luo de l'intestin grêle pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>IG</td>
+        <td>voie luo de l'intestin grêle vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>IG</td>
+        <td>jing jin de l'intestin grêle</td> 
+      </tr>
+          <tr>
+        <td>tfpc</td>
+        <td>IG</td>
+        <td>fu intestin grêle plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvf</td>
+        <td>IG</td>
+        <td>fu intestin grêle vide et froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>V</td>
+        <td>méridien de la vessie externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>V</td>
+        <td>méridien de la vessie interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>V</td>
+        <td>voie luo de la vessie pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>V</td>
+        <td>voie luo de la vessie vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>V</td>
+        <td>jing jin de la vessie</td> 
+      </tr>
+          <tr>
+        <td>tfpc</td>
+        <td>V</td>
+        <td>fu vessie plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvf</td>
+        <td>V</td>
+        <td>fu vessie vide et froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>R</td>
+        <td>méridien du rein externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>R</td>
+        <td>méridien du rein interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>R</td>
+        <td>voie luo du rein pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>R</td>
+        <td>voie luo du rein vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>R</td>
+        <td>jing jin du rein</td> 
+      </tr>
+          <tr>
+        <td>tfv-</td>
+        <td>R</td>
+        <td>zang rein yin vide</td> 
+      </tr>
+          <tr>
+        <td>tfv+</td>
+        <td>R</td>
+        <td>zang rein yang vide</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>MC</td>
+        <td>méridien du maître du cœur externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>MC</td>
+        <td>méridien du maître du cœur interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>MC</td>
+        <td>voie luo du maître du cœur pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>MC</td>
+        <td>voie luo du maître du cœur vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>MC</td>
+        <td>jing jin du maître du cœur</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>MC</td>
+        <td>zang maître du cœur plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>MC</td>
+        <td>zang maître du cœur vide</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>TR</td>
+        <td>méridien du triple réchauffeur externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>TR</td>
+        <td>méridien du triple réchauffeur interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>TR</td>
+        <td>voie luo du triple réchauffeur pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>TR</td>
+        <td>voie luo du triple réchauffeur vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>TR</td>
+        <td>jing jin du triple réchauffeur</td> 
+      </tr>
+          <tr>
+        <td>tfvfs</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur supérieur vide et froid</td> 
+      </tr>
+          <tr>
+        <td>tfpcs</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur supérieur plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvfm</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur moyen vide et froid</td> 
+      </tr>
+          <tr>
+        <td>tfpcm</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur moyen plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>tfvfi</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur inférieur vide et froid</td> 
+      </tr>
+          <tr>
+        <td>tfpci</td>
+        <td>TR</td>
+        <td>fu du triple réchauffeur inférieur plein et chaud</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>VB</td>
+        <td>méridien de la vésicule biliaire externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>VB</td>
+        <td>méridien de la vésicule biliaire interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>VB</td>
+        <td>voie luo de la vésicule biliaire pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>VB</td>
+        <td>voie luo de la vésicule biliaire vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>VB</td>
+        <td>jing jin de la vésicule biliaire</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>VB</td>
+        <td>fu vésicule biliaire plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>VB</td>
+        <td>fu vésicule biliaire vide</td> 
+      </tr>
+          <tr>
+        <td>tfc</td>
+        <td>VB</td>
+        <td>fu vésicule biliaire chaud</td> 
+      </tr>
+          <tr>
+        <td>tff</td>
+        <td>VB</td>
+        <td>fu vésicule biliaire froid</td> 
+      </tr>
+          <tr>
+        <td>me</td>
+        <td>F</td>
+        <td>méridien du foie externe</td> 
+      </tr>
+          <tr>
+        <td>mi</td>
+        <td>F</td>
+        <td>méridien du foie interne</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>F</td>
+        <td>voie luo du foie pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>F</td>
+        <td>voie luo du foie vide</td> 
+      </tr>
+          <tr>
+        <td>j</td>
+        <td>F</td>
+        <td>jing jin du foie</td> 
+      </tr>
+          <tr>
+        <td>tfp</td>
+        <td>F</td>
+        <td>zang foie plein</td> 
+      </tr>
+          <tr>
+        <td>tfv</td>
+        <td>F</td>
+        <td>zang foie vide</td> 
+      </tr>
+          <tr>
+        <td>tfc</td>
+        <td>F</td>
+        <td>zang foie chaud</td> 
+      </tr>
+          <tr>
+        <td>tff</td>
+        <td>F</td>
+        <td>zang foie froid</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>DM</td>
+        <td>Pathologie du Du Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>RM</td>
+        <td>Pathologie du Ren Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>ChM</td>
+        <td>Pathologie générale du Chong Mai</td> 
+      </tr>
+          <tr>
+        <td>mvi</td>
+        <td>ChM</td>
+        <td>Pathologie de la branche inférieure du Chong Mai</td> 
+      </tr>
+          <tr>
+        <td>mvp</td>
+        <td>ChM</td>
+        <td>Pathologie de la branche postérieure du Chong Mai</td> 
+      </tr>
+          <tr>
+        <td>mva</td>
+        <td>ChM</td>
+        <td>Pathologie de la branche antérieure du Chong Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>DaiM</td>
+        <td>Pathologie du Dai Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>+QM</td>
+        <td>Pathologie du Yang Qiao Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>-QM</td>
+        <td>Pathologie du Yin Qiao Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>+WM</td>
+        <td>Pathologie du Yang Wei Mai</td> 
+      </tr>
+          <tr>
+        <td>mv</td>
+        <td>-WM</td>
+        <td>Pathologie du Yin Wei Mai</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>DM</td>
+        <td>voie luo du Du Mai pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>DM</td>
+        <td>voie luo du Du Mai vide</td> 
+      </tr>
+          <tr>
+        <td>lp</td>
+        <td>RM</td>
+        <td>voie luo du Ren Mai pleine</td> 
+      </tr>
+          <tr>
+        <td>lv</td>
+        <td>RM</td>
+        <td>voie luo du Ren Mai vide</td> 
+      </tr>
+    
+</table>
+    
+ 
+<div id="footer">
+    <p> Site acupuncture - créé dans le cadre d'un projet pour l'école CPE Lyon par M. ALCADE, J. BODET-VILLARD, V. MONTELIMARD, K. OUBARHOU en 4ième année. 
+    </p>
+</div>
+
+
+</body>
+
+</html><?php }
+}
+
