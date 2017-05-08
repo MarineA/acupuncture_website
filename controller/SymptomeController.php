@@ -30,9 +30,7 @@ class SymptomeController
         $keyword = null;
         if(empty($_GET)){
             $this->getAll();
-        }
-
-        if ($_GET['patho']!="--" && !empty($_GET['keyword'])) {
+        } else if ($_GET['patho']!="--" && !empty($_GET['keyword'])) {
             $patho = $_GET['patho'];
             $keyword = $_GET['keyword'];
             $this->getSymptomeByPathoAndKeyword($patho, $keyword);
