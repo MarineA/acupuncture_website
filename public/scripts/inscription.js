@@ -1,6 +1,6 @@
 /* Formulaire d'inscription' */
 function checkFNames(input) {
-    var reg = new RegExp("^([a-zA-Z])+([- ]?[a-zA-Z])+$");
+    var reg = new RegExp("^([a-zA-Z])+([- ]?[a-zA-Z]){2,255}$");
 
     if(reg.test(input.value))
     {
@@ -68,7 +68,7 @@ function checkPhone(input) {
 
 
 function checkLogin(input) {
-    var reg = new RegExp("^[a-zA-Z1-9]+$");
+    var reg = new RegExp("^[a-zA-Z0-9]{4,255}$");
 
     if(reg.test(input.value))
     {
@@ -77,7 +77,7 @@ function checkLogin(input) {
     }
     else
     {
-        input.setCustomValidity('Le login doit contenir des chiffres et/ou des lettres');
+        input.setCustomValidity('Le login doit contenir entre 4 et 255 chiffres et/ou des lettres');
     }
 }
 
