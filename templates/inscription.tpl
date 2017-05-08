@@ -16,7 +16,7 @@
         </li>
 
         <li>
-            <label for="birthdate">Date de naissance (jj/mm/aaaa):</label>
+            <label for="birthdate">Date de naissance (jj/mm/aaaa)&nbsp;:</label>
             <input type="date" id="birthdate" name="birthdate" tabindex="0" max="" min="" data-placeholder="jj/mm/aaaa" required
                 onblur="dateNow(this)" onclick="dateNow(this)" >  {*onblur (quand on quitte le champ) pour la saisie manuelle, onclick pour le calendrier*}
         </li>
