@@ -20,12 +20,7 @@
         {if isset($session)}
         <div class="element_formulaire">
             <label for="keyword">Recherche par mot-clés :</label>
-            <select name="keyword" id="keyword">
-                <option>--</option>
-                {foreach from=$keywords item=item}
-                    <option>{$item}</option>
-                {/foreach}
-            </select>
+            <input type="text" name="keyword">
         </div>
         {/if}
 
@@ -44,11 +39,17 @@
         <tr>
             <th>Description</th>
         </tr>
+        {if $query|@count == 0}
+           <tr>
+               Aucun résultat trouvé !
+           </tr>
+        {else}
         {foreach from=$query item=item}
             <tr>
                 <td>{$item->getDesc()}</td>
             </tr>
         {/foreach}
+        {/if}
     </table>
 
 </div>

@@ -39,6 +39,9 @@ class PathoController
         $symptome = null;
         $meridien = null;
         $type = null;
+        if(empty($_GET)){
+            $this->getAll();
+        }
 
         if($_GET['symptome']!="--" && $_GET['meridien']!="--" && $_GET['type']!="--"){
             $symptome = $_GET['symptome'];
@@ -46,7 +49,6 @@ class PathoController
             $type = $_GET['type'];
             $this->getPathoByAll($symptome, $meridien, $type);
         }
-
         else if($_GET['symptome']!="--" && $_GET['meridien']!="--" && $_GET['type']=="--"){
             $symptome = $_GET['symptome'];
             $meridien = $_GET['meridien'];
@@ -79,7 +81,6 @@ class PathoController
             $type = $_GET['type'];
             $this->getPathoByType($type);
         }
-        //si rien n'est choisi, comme à l'affichage de la page par ex
         else {
             $this->getAll();
         }

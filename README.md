@@ -1,11 +1,6 @@
 # acupuncture_website
 
-1/ Tuto pour MVC : 
-Partie 1 -> http://fredods.com/creer-votre-site-avec-smarty-en-mvc-partie-1/
-Partie 2 -> http://fredods.com/creer-votre-site-avec-smarty-partie-2/
-
-
-2/ Compte rendu des validations :
+Compte rendu des validations :
 - Validation pour le CSS :
 Tester avec https://jigsaw.w3.org/css-validator/validator niveau 3
 Aucune erreur constatée

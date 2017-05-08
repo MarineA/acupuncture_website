@@ -26,15 +26,20 @@ class SymptomeController
      * Cette méthode permet d'appeler la bonne méthode du controlleur en fonction des paramètres envoyés
      */
     public function getSymptome(){
-
         $patho = null;
         $keyword = null;
+        if(empty($_GET)){
+            $this->getAll();
+        }
 
-        if ($_GET['patho']!="") {
+        if ($_GET['patho']!="--" && !empty($_GET['keyword'])) {
+            $patho = $_GET['patho'];
+            $keyword = $_GET['keyword'];
+            $this->getSymptomeByPathoAndKeyword($patho, $keyword);
+        } else if ($_GET['patho']!="--" && empty($_GET['keyword'])) {
             $patho = $_GET['patho'];
             $this->getSymptomeByPatho($patho);
-        }
-        else if ($_GET['keyword']!="") {
+        } else if (!empty($_GET['keyword']) && $_GET['patho']=="--") {
             $keyword = $_GET['keyword'];
             $this->getSymptomeByKeywords($keyword);
         } else {
@@ -104,6 +109,25 @@ class SymptomeController
 
         $query = $this->manager->getSymptomeByKeywords($keyword);
 
+
+        $this->smarty->assign(array(
+            'template' => 'templates/symptome.tpl',
+            'session' => $this->checkConnexion(),
+            'query' => $query,
+            'pathos' => $this->pathoNames,
+            'keywords' => $this->keywordNames
+        ));
+
+        $this->smarty->display('templates/index.tpl');
+    }
+
+    /**
+     * On récupère les symptomes en fonction d'une patho sélectionnée
+     *
+     * @param $patho
+     */
+    public function getSymptomeByPathoAndKeyword($patho, $keyword) {
+        $query = $this->manager->getSymptomeByPathoAndKeyword($patho, $keyword);
 
         $this->smarty->assign(array(
             'template' => 'templates/symptome.tpl',
